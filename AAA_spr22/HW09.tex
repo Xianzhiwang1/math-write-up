@@ -1,0 +1,120 @@
+\documentclass{article}
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{Homework\ \#09}
+\newcommand{\hmwkDueDate}{May 22, 2022}
+\newcommand{\hmwkClass}{AAA}
+\newcommand{\hmwkClassTime}{Section A}
+\newcommand{\hmwkClassInstructor}{BSM}
+\newcommand{\hmwkAuthorName}{\textbf{Xianzhi}}
+\newcommand{\hmwkAuthor}{\textit{Xianzhi Wang}}
+
+\input{preambleBloat.tex}
+% \usepackage{xianzhi}
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+\begin{homeworkProblem}
+    Suppose that $\gamma$ is an algebraic integer and $n$ is a positive integer. Prove that $\sqrt[n]{\gamma}$ is an algebraic integer.
+\solution
+
+Since $\gamma$ is an algebraic integer, $\exists$ monic $f(x) \neq 0$, and $f(x) \in \Z[x]$ such that $f(\gamma)=0$. 
+Let \begin{align}
+    f = X^m + a_{m-1} X^{m-1} + \ldots + a_1 X + a_0 
+\end{align}
+Consider \begin{align}
+    g = X^{mn} + a_{m-1} X^{n(m-1)} + a_{m-2}X^{n(m-2)} + a_1 X^n + a_0,
+\end{align}
+we see that $\sqrt[n]{\gamma}$ is clearly a root of $g$, since $\gamma$ is a root of $f$. Now, $g$ is monic, $g \in \Z[x], g \neq 0$, since $f \neq 0$.
+
+    
+
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem}
+Let $\alpha$ be an algebraic number, i.e., $g(\alpha) = 0$ for some $0 \neq g(x) \in \Q[x]$.
+Show that $\alpha = \frac{ \beta }{ n }$ with some algebraic integer $\beta$ and positive integer $n$.
+
+\solution
+
+Let $\alpha$ be an algebraic number. 
+Thus $\exists 0 \neq g(x) \in \Q [x]$ such that $g(\alpha) = 0$. $g$ is not necessary in $\Z[x]$, 
+but we can multiply by the least common multiple of the denominators of all the rational coefficients to obtain $g'$ such that
+\begin{align}
+    \label{eqn:gprime}
+    0 = g'(\alpha) = a_n \alpha^n + a_{n-1} \alpha^{n-1} + \ldots + a_1 \alpha + a_0.
+\end{align}
+such that $a_i \in \Z \forall i$. Now we claim that $\beta = a_n \cdot \alpha$ is algebraic integer.
+First, we multiply both sides of equation \ref{eqn:gprime} by $a_{n}^{n-1}$. 
+\begin{align}
+    0 = a_n^n \alpha^n + a_{n-1} a_n^{n-1}\alpha^{n-1} + a_{n-2} a_n^{n-1} \alpha^{n-2} + \ldots + a_1 a_n^{n-1} \alpha + a_0 a_n^{n-1}.
+\end{align}
+Let $X = a_n \cdot \alpha$, Then 
+\begin{align}
+    X^n + a_{n-1} X^{n-1} + \ldots + a_1 a_n^{n-2} X + a_0 a_n^{n-1} 
+\end{align}
+is a monic polynomial with coefficient in $\Z$,
+such that $\beta$ is a root. And this polynomial is non-zero since polynomial $g'$ we started with is non-zero.
+Hence, $\alpha = \frac{ \beta }{ a_n }$ as wanted. 
+    
+
+
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem}
+
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem}
+
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem}
+
+    \begin{proof}
+
+    \end{proof}
+\end{homeworkProblem}
+
+\pagebreak
+
+%
+% Non sequential homework problems
+%
+
+% Jump to problem 18
+\begin{homeworkProblem}[18]
+
+\end{homeworkProblem}
+
+% Continue counting to 19
+\begin{homeworkProblem}
+
+\end{homeworkProblem}
+
+% Go back to where we left off
+\begin{homeworkProblem}[6]
+
+\end{homeworkProblem}
+
+\end{document}

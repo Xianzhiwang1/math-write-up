@@ -1,0 +1,138 @@
+\documentclass[12pt,english]{article}
+\usepackage{xianzhi}
+
+% \usepackage[a4paper,
+%             bindingoffset=0.2in,
+%             left=1in,
+%             right=1in,
+%             top=1in,
+%             bottom=1in,
+%             footskip=.25in]{geometry}
+% \usepackage[utf8]{inputenc}
+% \usepackage{soul}
+% \usepackage{tikz}
+% \usepackage{comment}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%
+% \usepackage{bbm}
+% \usepackage{mathrsfs}
+% \usepackage{amsmath}
+% \usepackage{empheq}
+% \usepackage{amsfonts}
+% \usepackage{amsthm}
+% \usepackage{amssymb}
+% \usepackage{blkarray}
+% \usepackage{mathtools}
+% \usepackage{physics}
+% \usepackage{thmtools}
+% \usepackage{thm-restate}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \declaretheorem[name=Proposition]{proposition}
+% \declaretheorem[name=Assumption]{assumption}
+% \declaretheorem[name=Definition]{definition}
+% \declaretheorem[name=Lemma]{lemma}
+% \declaretheorem[name=Theorem]{theorem}
+% \declaretheorem[name=Corollary]{corollary}
+
+
+\title{Adv Abstract Algebra Spr2022 midterm}
+\author{xianzhi wang}
+\date{Sept 2022}
+
+\begin{document}
+
+\maketitle
+
+\section*{Q 1}
+\begin{question}
+Let $H \leq G$ such that $|G:H| = 4$. Prove: if $g \in G$ and $g$ has order 19, then $g \in H$. 
+\end{question}
+Let $G$ act on $\bigc{Hb} = \cR$, the set of right cosets by right action. We have homomorphism 
+\begin{align*}
+    \rho: G &\mapsto Sym(\cR) \cong S_4 \quad \text{since there are 4 cosets of } H.\\
+    g &\mapsto g^{\rho},\\
+    g^{\rho}: \cR &\mapsto \cR\\
+    Hb &\mapsto Hbg
+\end{align*}
+Let $g \in G$, and $|g| = 19$. Want to show $g \in H$. Since $\rho(g)$ is in $Sym(\cR) \cong S_4$, $|\rho(g)|$ divide $4!$, which is the order of $S_4$. Also, $|\rho(g)|$ divide $|g| = 19$ since $\rho$ is homomorphism, so $|\rho(g)|$ divide $\gcd (24,19) = 1$, so $\rho(g) = id$. So $g$ is mapped to the identity permutation on the right cosets of $H$. Thus, 
+\begin{align*}
+    g \in \ker \rho = \bigcap_{g \in G} g^{-1}Hg \leq H. 
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+\section*{Q 2}
+\begin{question}
+let a (finite) group $G$ act on $\Omega$ and on $\Delta$. the action on $\Omega$ is transitive, and $|\Omega| = 22$, $|\Delta| = 10$. Prove that the action of $G$ on $\Delta$ is not faithful. (i.e. the kernel of the action on $\Delta$ is non-trivial)
+\end{question}
+Use O-S, $G$ act on $\Omega$, for $x \in \Omega$, $|\cO(x)| = 22$,
+\begin{align*}
+    |\cO(x)| \cdot |stab(x)| = |G| \implies 22 \mid |G|
+\end{align*}
+
+
+
+Let $\rho$ be denote the homomorphism assoicated with the group action.
+\begin{align*}
+    \rho: G &\mapsto Sym(\Delta) \cong S_{10}\\
+    g &\mapsto g^{\rho}
+\end{align*}
+We have
+\begin{align*}
+    &G/\ker \rho \cong \Im \rho \leq Sym (\Delta) \\
+    & |\Im \rho| \ \text{divide} \ |G| = 22k\\
+    & |\Im \rho| \ \text{divide} \ 10!
+\end{align*}
+
+If $G$ has finite order, then assume for contradiction $|\ker \rho | =1$, then $|G| = |\Im \rho|$ divide $10!$, but $|G|$ has a factor of 11. Contradiction. So $\ker \rho >1$. \\
+
+If $G$ has infinite order, then since $|\Im \rho| \leq 10! < \infty$, $|\ker \rho|$ must be infinite. 
+
+
+\section*{Q 3}
+\begin{question}
+Let $\C^{\times}$ denote the multiplicative group of all non-zero complex numbers (under the ordinary multiplication). Prove that $\C^{\times}$ does not have any non-trivial subgroup of finite index.
+\end{question}
+Supp that $H$ has finite index in $\C^{\times}$ and $m = [\C^{\times}:H]$. Then for any nonzero complex number $z^m \in H$, we have
+\begin{align*}
+    a^m H = (zH)^m = H, \implies z^m \in H.
+\end{align*} For all $w \in \C$, we can solve $z^m -w =0$ to write $w$ as $z^m$ for some $z$, hence $w\in H$, so $\C \subseteq H$, so $H = \C$. 
+
+
+\section*{Q 4}
+\begin{proposition}
+Let a group $G$ have order $2^2 \cdot 5 \cdot 17$. Show that 
+\begin{enumerate}
+    \item $G$ has a unique Sylow $5$-subgroup and a unique Sylow $17$-subgroup.
+    \item $\exists$ an element of order $85 = 5 \cdot 17$ in $G$.
+\end{enumerate}
+
+\end{proposition}
+
+
+\section*{Q 5}
+\begin{proposition}
+    Let $Z \trianglelefteq G$ such that $ \lvert Z \rvert = 2$ and $ \lvert G:Z \rvert =97 $. Show that
+    \begin{enumerate}
+        \item $Z \leq Z(G)$
+        \item $G$ is cyclic.
+    \end{enumerate}
+    
+\end{proposition}
+
+
+
+
+
+
+
+
+
+
+\end{document}

@@ -101,7 +101,7 @@ Let $\C^{\times}$ denote the multiplicative group of all non-zero complex number
 \end{question}
 Supp that $H$ has finite index in $\C^{\times}$ and $m = [\C^{\times}:H]$. Then for any nonzero complex number $z^m \in H$, we have
 \begin{align*}
-    a^m H = (zH)^m = H, \implies z^m \in H.
+    z^m H = (zH)^m = H, \implies z^m \in H.
 \end{align*} For all $w \in \C$, we can solve $z^m -w =0$ to write $w$ as $z^m$ for some $z$, hence $w\in H$, so $\C \subseteq H$, so $H = \C$. 
 
 
@@ -115,6 +115,51 @@ Let a group $G$ have order $2^2 \cdot 5 \cdot 17$. Show that
 
 \end{proposition}
 
+\textbf{Soln 1: }
+$\lvert G \rvert = 2^2 \cdot 5 \cdot 17$. Let $n_5 = \#$ of Sylow $5$ subgroup.
+By Sylow's theorem, we have:
+\begin{align}
+    &n_5 \equiv 1 \mod 5\\
+    &n_5 \ \vert \ 2^2 \cdot 17
+\end{align}
+hence, $n_5$ can be $1,2,4,17,34, \ 4\cdot 17 = 68$. 
+Only $1 \equiv 1 \mod 5$ among them. Thus, $n_5 = 1$, so Sylow 5 subgroup is unique.\\
+
+Let $n_{17} = \#$ of Sylow $17$ subgroup. We have
+\begin{align}
+    &n_{17} \equiv 1 \mod 17\\
+    &n_{17} \ \vert \ 2\cdot 2 \cdot 5
+\end{align}
+Thus, $n_{17}$ can be $1,2,5,4,10,20$, and only $1$ satisfy
+\begin{align}
+    n_{17} \equiv 1 \mod 17
+\end{align} among them. So $n_{17} = 1$, and the Sylow 17 subgroup is unique.
+
+\textbf{Soln 2: }
+Since there exists unique Sylow 5 subgroup $=: H$
+and there exists unique Sylow 17 subgroup $=: N$. 
+We know that $H \triangleleft G, \ N \triangleleft G$, so we know that $H\cdot N$ is a group (as long as one of $H$ or $N$ is normal).
+\begin{align*}
+    & H \cdot N \leq G\\
+    & |H| = 5\\
+    & |N| = 17\\
+\end{align*}
+Thus, since there are of prime order, they are cyclic. 
+$$\exists h \in H, \ |h|=5$$ (take the generator for example.)
+$$ \exists n \in N, \ |n|=17.$$
+Also, $H \cap N = \{ 1 \}$, since for cyclic group of prime order, every element $\neq 1$ has same order, 
+so if $1\neq x \in H \cap N$, then $x \in H$, $x$ has order $5$, but $x \in N$ implies $|x|$ divide $N=17$, but $|x| = 5 \nmid 17$.\\
+
+$N \cdot N$ is the internal direct product of $N$ and $N$, 
+\begin{align}
+    H \cdot N \cong H \times N \cong \Z^{+}_5 \times \Z^{+}_{17} \cong \Z^+_{5\cdot 17} = \Z^+_{85}
+\end{align}
+Since $5$ and $17$ are coprime, so $\exists$ an element $x \in H \cdot N$ of order $85$,
+since Isomorphism preserve the order, so $x \in H \cdot N \leq G$ implies $x \in G,$ and $x$ has order $85$. 
+
+
+
+
 
 \section*{Q 5}
 \begin{proposition}
@@ -125,6 +170,54 @@ Let a group $G$ have order $2^2 \cdot 5 \cdot 17$. Show that
     \end{enumerate}
     
 \end{proposition}
+
+\textbf{soln to 1:}\\
+$Z \triangleleft G$ and $|Z| = 2$. $97$ is prime. $G$ act on $Z$ by conjugation.
+\begin{align}
+    &G \xmapsto{\rho} Aut(Z)\\
+    &g \mapsto g^{\rho}
+\end{align}
+$g^{\rho} \in Aut(Z)$ so $g^{\rho}: Z \rightarrow Z$ is isomorphism from $Z$ to $Z$, 
+
+\begin{align}
+    & g^{\rho}: Z \rightarrow Z\\
+    & z \rightarrow g^{-1} z g \in Z, 
+\end{align} since $Z \triangleleft G$.
+Recall that ($g$ in the center of $G$) $g \in Z(G) \iff g^{\rho}$ is trivial $\iff g^{\rho} = id.$  \\
+WTS: $x^{\rho} = id \ \forall \ x \in G$ \\
+We have
+\begin{align}
+    & x^{\rho} \in Im \rho \leq Aut(Z) \\
+    & |Aut(z)| = 1 \ \text{since} \ |z|=2
+\end{align}
+Thus, $|x^{\rho}|$ divides $|Aut(z)|=1$.\\
+This implies that $x^{\rho} = id$, and any $x \rightarrow x^{\rho}: \ x^{-1} z x = z$ for $z \in Z$.\\
+$1 \in Z(G)$ automatically, so $Z \subset Z(G)$.
+
+\textbf{soln to 2 (not complete):}\\
+We have $Z \triangleleft G$ and $|G/Z| = 97$. Since $|Z|=2$ is prime, $Z$ is cyclic.\\
+$G/Z$ is cyclic? $G$ abelian? See HW01.
+\begin{align}
+    & G \xmapsto{\eta} G/Z\\
+    & g \mapsto gz
+\end{align}
+Consider the following map?
+\begin{align}
+    f: G &\rightarrow Z \subset Z(G)\\
+    g &\rightarrow g^{97}
+\end{align}
+so we have 
+\begin{align}
+    Z g^{97} = (Z g)^{97} = Z, \ \implies g^{97} \in Z.
+\end{align}
+Do we have 
+\begin{align}
+    G \cong \Z_2 \otimes \Z_{97} \cong \Z_{194} ?
+\end{align}
+
+
+
+
 
 
 

@@ -1,0 +1,38 @@
+\documentclass[12pt,english]{article}
+\usepackage{xianzhi}
+
+\title{Galois Theory hw4}
+\author{xianzhi wang}
+\date{August 2022}
+
+\begin{document}
+
+\maketitle
+Question 1 and 2 are not hard.
+
+\section*{Q3}
+\begin{question}
+Show number of automorphisms of a finite degree field extension divides the degree of the field extension. 
+\end{question}
+Let $K \subset L, L:K$ be a finite degree field extension. Recall
+\begin{align*}
+    \Gamma(L:K) &= \{g \in \Gamma(L): g(x) = x \quad \forall x \in K\}\\
+    \text{WTS:} \quad |\Gamma(L:K)| &\mid [L:K].
+\end{align*} Recall Artin's theorem, let $\Gamma(L:K)$ be the finite subgroup. (Since $|\Gamma(L:K)|$ is bounded by $[L:K]<\infty$.) and 
+\begin{align*}
+    M = \{x \in L: \forall g \in \Gamma(L:K): g(x)= x\}
+\end{align*} so $K \subset M$, and $[L:M]=|\Gamma(L:K)|$. Thus, consider $K \subset M \subset L$,
+\begin{align*}
+    [L:K] = [L:M][M:K]
+\end{align*} where $[L:M] = |\Gamma(L:K)|$, so $|\Gamma(L:K)|$ divides $[L:K]$.
+
+
+
+
+
+
+
+
+
+
+\end{document}

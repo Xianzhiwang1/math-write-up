@@ -1,0 +1,169 @@
+\documentclass{article}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{GAL \ \#09}
+\newcommand{\hmwkDueDate}{Apr 29, 2022}
+\newcommand{\hmwkClass}{Galois Thy}
+\newcommand{\hmwkClassTime}{Sec 12 \& 13}
+\newcommand{\hmwkClassInstructor}{Prof Matyas Domokos}
+\newcommand{\hmwkAuthorName}{\textbf{Xianzhi} }
+\newcommand{\hmwkAuthor}{\textit{Xianzhi Wang}}
+
+\input{preambleBloat.tex}
+% \usepackage{xianzhi}
+
+\begin{document}
+
+\maketitle
+HW09 \\
+Apr 29, 2022 \\
+Exercise 12.4.11\\
+Exercise 13.3.3\\
+Exercise 13.3.5\\
+% \pagebreak
+
+\begin{homeworkProblem}
+\textbf{Exercise 12.4.8} Factor $x^4 + x + 1 \in \F_2[x]$ as a product of irreducibles over $\F_4$.\\
+\solution \\
+
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem}
+\textbf{Exercise 12.4.11} Factor $x^{375} + x^{250} + 2 $ over $ \F_5$ into the product of irreducibles. \\
+\solution \\
+Observe that since $2 \in \F_5$, Frobenius automorphism fixes $2$,
+\begin{align}
+    & \F_5 \xrightarrow{\Phi} \F_5\\
+    & a \rightarrow a^5 \\
+    \text{where} \ &\Phi(2) = 2^5 = 32 = 2 \mod 5.
+\end{align}
+Thus, $\Phi^3(2) = \Phi \circ \Phi \circ \Phi (2) = 2 \implies 2^{125} = 2$.\\
+Thus, because $char \ \F_5 = 5$, we have 
+\begin{align}
+    X^{375} + X^{250} + 2 &= X^{375} + X^{250} + 2^{125}\\
+    &= (X^3 + X^2 + 2)^{125}
+\end{align}
+If $X^3 + X^2 + 2$ is reducible in $\F_5$, it must have a linear factor, so suffice to check for linear factors.\\
+\begin{align}
+    \text{when} \ x &= 0, \ x^3 + x^2 + 2 = 2\\
+    \text{when} \ x &= 1, \ x^3 + x^2 + 2 = 4\\
+    \text{when} \ x &= 2, \ x^3 + x^2 + 2 = 14\\
+    \text{when} \ x &= 3 = -2, \ x^3 + x^2 + 2 = 3\\
+    \text{when} \ x &= -1, \ x^3 + x^2 + 2 = 2
+\end{align}
+Thus, $x^3 + x^2 + 2$ has no linear factors, hence irreducible.\\
+So $(x^3 + x^2 + 2)^{125}$ is the desired factorization.
+
+
+
+\end{homeworkProblem}
+
+\pagebreak
+
+
+\begin{homeworkProblem}
+    \textbf{Exercise 13.3.3} Let $p \in \Q [x]$ be a quartic polynomial with $Gal_{\Q}(p) \cong D_4$, the dihedral group of order $8$.
+    \begin{enumerate}
+        \item Show that $p$ is irreducible over $\Q$.
+        \item Show that the cubic resolvent of $p$ has a rational root.
+    \end{enumerate}
+    \part
+    \textbf{Soln 1: }\\
+    Let $p \in \Q [x]$ be quartic satisfying the assumption. Assume for contradiction that $p$ is reducible.\\
+    So $p$ factor into 
+    \begin{enumerate}
+        \item $4=3+1$,
+        \item $4 = 2+2$,
+        \item $4=2+1+1$,
+        \item $4=1+1+1+1$
+    \end{enumerate}
+    \textbf{Case 1:} $3+1$. a irred. cubic factor $f$ and a linear factor. Then $p$ has a root in $\Q$, and $Gal_{\Q}(p)=Gal_{\Q}(f)$,
+    and since degree of extension of the splitting field of a polynomial of degree $n$ is $\leq n!$, we have 
+    \begin{align}
+        &|Gal_{\Q}(p)| = |Gal_{\Q}(f)| \leq 3! = 6,\\
+        \text{but} \ &|Gal_{\Q}(p)| = 8.
+    \end{align}
+    Hence we have a contradiction.\\
+    \textbf{Case 2:} $2+2$. $p$ factor into $2$ quadratic factor, $f$ and $g$. Now, let $L$ be the splitting field of $f\cdot g$ over $\Q$.
+    Then $|Gal_{\Q}(p)| = |[L:\Q]| \leq 4$. Reason: when we add the roots of $f$, we get a degree $2$ extension (degree 2 extension is normal). 
+    Then if roots of $g$ are already in this extension, $[L:\Q]=2,$ if not, then $[L:\Q]=4$.\\
+    \textbf{Case 3:} $2+1+1$ we have $|Gal_{\Q}(p)| = 2$ Contradiction.\\
+    \textbf{Case 4:} $1+1+1+1$ we have $|Gal_{\Q}(p)| = 1$ Contradiction.\\ 
+    \part
+    \textbf{Soln 2:}\\
+    \begin{align}
+\varphi: Gal_{\Q}(p) \hookrightarrow  S_4
+    \end{align}
+    We could imbed $Gal_{\Q}(p)$ into $S_4$ since an automorphism $\phi \in Gal_{\Q}(p)$ permutes the roots of $p$, ($p$ is irred.) which we call $\alpha_1, \alpha_2, \alpha_3, \alpha_4$.\\
+    Thus, $\phi$ permutes the label $1,2,3,4$. Since every element of $Gal_{\Q}(p)$ defines uniquely a permutation of $1,2,3,4$, we could map $\phi \in Gal_{\Q}(p)$ to 
+    its corresponding permutation, which is a homomorphism, because both group operations are composition. This homomorphism $\varphi$ is injective, since each 
+    element of $Gal_{\Q}(p)$ corresponds uniquely to a permutation. Thus,\\
+\begin{align}
+    D_4 \cong Gal_{\Q}(p) \cong Im \varphi \leq S_4
+\end{align}
+Since groups of order $8$ in $S_4$ are Sylow-2 subgroups of $S_4$, and they are all conjugates of each other, then any conjugate copy of $Im \varphi$
+is going to act like $D_4$ on $\alpha_1, \alpha_2, \alpha_3, \alpha_4,$ up to a relabel of the roots.\\
+Thus, knowing $Gal_{\Q}(p) \cong D_4$ means $Gal_{\Q}(p)$ will act on the $\alpha$'s just like $D_4$ permutes $1,2,3,4$, up to a relabeling of the roots.\\
+Thus, use the formula, let the roots of cubic resolvent of $p$ be denoted by $\beta_1, \beta_2, \beta_3,$ where
+\begin{align}
+    &\beta_1 = (\alpha_1+\alpha_2)(\alpha_3+\alpha_4)  \\
+    &\beta_2 = (\alpha_1+\alpha_3)(\alpha_2+\alpha_4) \\ 
+    &\beta_3 = (\alpha_1+\alpha_4)(\alpha_2+\alpha_3)  
+\end{align}
+Write 
+\begin{align}
+    D_4 = \{ id, (1324), (12)(34), (1423), (13)(24), (14)(23), (12), (34) \}
+\end{align}
+Then we check
+\begin{align}
+    & \beta_1^{id} = \beta_1 = (\alpha_1+\alpha_2)(\alpha_3+\alpha_4)\\
+    & \beta_1^{(1324)} = (\alpha_3+\alpha_4)(\alpha_2+\alpha_1) = \beta_1\\
+    & \beta_1^{(12)(34)} = (\alpha_2+\alpha_1)(\alpha_4+\alpha_3) = \beta_1\\
+    & \beta_1^{(1423)} = (\alpha_4+\alpha_3)(\alpha_1+\alpha_2)=\beta_1\\
+    & \beta_1^{(12)} = (\alpha_2+\alpha_1)(\alpha_3+\alpha_4) = \beta_1\\
+    & \ldots 
+\end{align}
+We could go on and check the action of all $8$ elements of $D_4$. However, it would be sufficient to check that $\beta_1$ is fixed by the generators $(1324)$ and $(12)$.\\
+Thus, $\beta_1$ is fixed by $Gal_{\Q}(p) \Rightarrow \ \beta_1 \in \Q$\\
+Since the labeling of the roots $\alpha_1,\alpha_2,\alpha_3, \alpha_4$ is arbitrary, we showed there is a rational root (of the cubic resolvent of $p$).
+
+
+    
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem}
+    \textbf{Exercise 13.3.5} Let $\alpha$ be a root of $x^2 + ax + b$ and $\beta$ a root of $x^3 + px + q$. 
+    Write down a polynomial with coefficients in $\Q(a,b,p,q)$ having $\alpha + \beta$ as a root.\\
+    \solution \\
+    Let $\alpha_1, \alpha_2$ be roots of $x^2 + ax + b$.\\
+    Let $\beta_1, \beta_2, \beta_3$ be roots of $x^3 + px + q$. Hence, 
+    \begin{align}
+        & \alpha_1 + \alpha_2 = -a\\
+        & \alpha_1 \cdot \alpha_2 = b
+    \end{align}
+    
+
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem}
+
+\end{homeworkProblem}
+
+
+
+\end{document}

@@ -1,0 +1,49 @@
+
+
+\documentclass[12pt,english]{article}
+\usepackage{xianzhi}
+
+\title{Galois Theory hw1}
+\author{xianzhi wang}
+\date{August 2022}
+
+\begin{document}
+
+\maketitle
+
+\section*{2.1.8}
+\begin{question}
+    Let $u$ be one of the complex roots of the polynomial $x^3-2x+2$. Present $u^7$ and $1/(u-1)$ as a $\Q$-linear combination of $1,u,u^2$.
+\end{question}
+
+Since $u$ is a root of $x^3-2x+2$, we have $u^3 = 2u-2$, so
+\begin{align*}
+    u^7 &= u \cdot u^3 \cdot u^3\\
+    &= -8u^2+12u-8
+\end{align*}
+Write
+\begin{align*}
+0 = u^3-2u+2 &= (u^2+u-1)(u-1)+1\\
+    \frac{1}{u-1} &= \frac{u^2+u-1}{(u-1)(u^2+u-1)} = \cdots
+\end{align*}
+
+\section*{2.1.9}
+\begin{proposition}
+A quadratic field extension can always be obtained by adjoining the square root of some element of the base field. 
+\end{proposition}
+$K \subset L$, with $\dim_k(L) = 2$. Take $\alpha \in L, \alpha \not\in K$. Thus, $(1,\alpha)$ is a linearly independent set over $K$. Since $\dim_k(L) = 2$, $(1,\alpha)$ is a basis for $L$. $\alpha^2 \in L$ can be expressed as a linear combination of $1$ and $\alpha$, with coefficients in $K$.
+\begin{align}
+    \alpha^2 &= -b\alpha-c\\
+    \implies \alpha^2 + b\alpha +c &= 0, b,c \in K.
+\end{align} Thus, $\alpha$ is a root of $f(x) = x^2+bx+c$. Since $\alpha \not\in K$, this $f(x)$ is irreducible over $K$. Let $\beta = \sqrt{b^2-4c}$, then $L = K(\beta)$, and $\beta^2 \in K$.
+
+\section*{3.2.10}
+The trick:
+\begin{align*}
+    \bigb{\bigp{\Q(\alpha)}(\beta):\Q} = \underbrace{\bigb{(\Q(\alpha))(\beta):\Q(\alpha)}}_{= \deg_{\Q(\alpha)}(\beta)\leq \deg_{\Q}(\beta)=3} [\Q(\alpha):\Q]
+\end{align*} Enlarge
+\begin{align*}
+     \bigb{(\Q(\alpha))(\beta):\Q(\alpha)}= \deg_{\Q(\alpha)}(\beta)\leq \deg_{\Q}(\beta)=3
+\end{align*}
+
+\end{document}

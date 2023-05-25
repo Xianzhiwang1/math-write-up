@@ -145,15 +145,51 @@ Since the labeling of the roots $\alpha_1,\alpha_2,\alpha_3, \alpha_4$ is arbitr
 \pagebreak
 
 \begin{homeworkProblem}
-    \textbf{Exercise 13.3.5} Let $\alpha$ be a root of $x^2 + ax + b$ and $\beta$ a root of $x^3 + px + q$. 
-    Write down a polynomial with coefficients in $\Q(a,b,p,q)$ having $\alpha + \beta$ as a root.\\
-    \solution \\
-    Let $\alpha_1, \alpha_2$ be roots of $x^2 + ax + b$.\\
-    Let $\beta_1, \beta_2, \beta_3$ be roots of $x^3 + px + q$. Hence, 
-    \begin{align}
-        & \alpha_1 + \alpha_2 = -a\\
-        & \alpha_1 \cdot \alpha_2 = b
-    \end{align}
+\textbf{Exercise 13.3.5} Let $\alpha$ be a root of $x^2 + ax + b$ and $\beta$ a root of $x^3 + px + q$. 
+Write down a polynomial with coefficients in $\Q(a,b,p,q)$ having $\alpha + \beta$ as a root.\\
+\solution \\
+
+Let $\alpha_1, \alpha_2$ be roots of $x^2 + ax + b$.\\
+Let $\beta_1, \beta_2, \beta_3$ be roots of $x^3 + px + q$. Hence, 
+\begin{align}
+    & \alpha_1 + \alpha_2 = -a\\
+    & \alpha_1 \cdot \alpha_2 = b
+\end{align}
+We have 
+\begin{align}
+    & \alpha_1^2 + \alpha_2^2 = (\alpha_1+\alpha_2)^2 - 2 \alpha_1 \alpha_2 = a^2 - 2 b\\
+    & \alpha_1^3 + \alpha_2^3 = (\alpha_1+\alpha_2)^3 - 3 \alpha_1 \alpha_2 (\alpha_2 + \alpha_1) = - a^3 + 3 b a
+\end{align}
+Similarly, we have 
+\begin{align}
+    & \beta_1 + \beta_2 + \beta_3 = 0\\
+    & \beta_1 \beta_2 + \beta_1 \beta_3 + \beta_2 \beta_3 = p\\
+    & \beta_1 \beta_2 \beta_3 = -q
+\end{align}
+A polynomial with coefficients in $\Q (a,b,p,q)$ having $\alpha_i + \beta_j$ as a root is:
+\begin{align}
+    \prod_{i=1, j=1}^{2,3} (X-\alpha_i - \beta_j)
+\end{align}
+To see why this works, we expand:
+\begin{align}
+    & \prod_{i=1, j=1}^{2,3} (X-\alpha_i - \beta_j)\\
+    & = \bigb{(X-\alpha_1)^3 - \beta_3(X- \alpha_1)^2 - (\beta_1 + \beta_2)(X- \alpha_1)^2 + (\beta_1 + \beta_2)\beta_3 (X - \alpha_1) + \beta_1 \beta_2 (X - \alpha_1) - \beta_1 \beta_2 \beta_3 } \\
+    & \cdot \bigb{\ldots}\\
+    & = \bigb{(X-\alpha_1)^3 + p (X-\alpha_1) + q} \bigp{(X-\alpha_2)^3 + p(X-\alpha_2) + q} \\
+    & = [X^2 + aX + b]^3 + p^2 [ X^2 + aX + b] + q^2\\
+    & + p(X-\alpha_2)(X-\alpha_1)^3 + p(X-\alpha_1)(X-\alpha_2)^3\\
+    & + q(X-\alpha_1)^3 + pq (X-\alpha_1) + q (X-\alpha_2)^3 + pq (X - \alpha_2)
+\end{align}
+expand, we have
+\begin{align}
+    & = [X^2 + aX + b]^3 + p^2 [ X^2 + aX + b] + q^2\\
+    & + p(X^2 + a X + b)(X^2 -2 \alpha_1 X + \alpha_1^2 + X^2 - 2 \alpha_2 X + \alpha_2^2)\\
+    & + 2pqX + apqX\\
+    & + q[ 2X^3 + 3X(\alpha_1^2 + \alpha_2^2) + 3aX^2 - (\alpha_1^3 + \alpha_2^3)]
+\end{align}
+Now, use the expression for $\alpha_1 + \alpha_2$, $\alpha_1^2 + \alpha_2^2$, and $\alpha_1^3 + \alpha_2^3$ that we obtained earlier, we see that we obtain 
+a degree 6 polynomial with coefficients in $\Q (a,b,p,q)$.
+    
     
 
 \end{homeworkProblem}
@@ -163,7 +199,6 @@ Since the labeling of the roots $\alpha_1,\alpha_2,\alpha_3, \alpha_4$ is arbitr
 \begin{homeworkProblem}
 
 \end{homeworkProblem}
-
 
 
 \end{document}

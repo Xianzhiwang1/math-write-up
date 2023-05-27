@@ -1,0 +1,127 @@
+\documentclass{article}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{GAL \ \#06}
+\newcommand{\hmwkDueDate}{Apr 01, 2022}
+\newcommand{\hmwkClass}{Galois Theory}
+\newcommand{\hmwkClassTime}{Section 9}
+\newcommand{\hmwkClassInstructor}{Prof Matyas Domokos}
+\newcommand{\hmwkAuthorName}{\textbf{Xianzhi} }
+\newcommand{\hmwkAuthor}{\textit{Xianzhi Wang}}
+
+\input{preambleBloat.tex}
+% \usepackage{xianzhi}
+
+\begin{document}
+
+\maketitle
+HW06 \\
+Apr 01, 2022 \\
+Exercise 9.4.1\\
+Exercise 9.4.2\\
+Exercise 9.4.3\\
+\pagebreak
+
+\begin{homeworkProblem}
+    \textbf{Exercise 9.4.1} Let $L$ be the splitting field over $\Q$ of a cubic polynomial with rational coefficients,
+    and $\omega$ a primitive cubic root of unity. Show that $L(\omega)$ is a radical extension of $\Q$, by exhibiting explicitly a radical sequence.\\
+    \textit{(Hint: recall Cardano's Method.)}\\
+    \solution \\
+    Let $L$ be splitting field over $\Q$ of a cubic polynomial with radical coefficients $aX^3 + bX^2 + cX + d, a,b,c,d \in \Q$.
+    WLOG, $L$ is the same splitting field if the polynomial is monic
+    \begin{align}
+        X^3 + \frac{ b }{ a }X^2 + \frac{ c }{ a }X + \frac{ d }{ a }, 
+    \end{align}
+    so we could assume $a=1$ from the beginning.\\
+    Also, $L$ is the same if we shift by a rational amount $b/3$ of all the roots of this polynomial, because
+
+    
+
+
+
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem}
+    \textbf{Exercise 9.4.2} Let $L$ be the splitting field over $\Q$ of a monic irreducible cubic polynomial $f$ in $\Q[x]$.
+    \begin{enumerate}
+        \item Show that $\Gamma (L : \Q)$ has order 3 iff the discriminant of $f$ is the square of a rational number. Recall that the discriminant of $f$ is
+            \begin{align}
+                \prod_{1 \leq i < j \leq 3}(\alpha_i - \alpha_j)^2,
+            \end{align}
+            where $\alpha_i$ are the complex roots of $f$.
+        \item Give an example of a monic cubic polynomial $f$ with $|\Gamma(L:\Q)|=3$.\\
+            \textit{You may want to use the fact that the discriminant of} $X^3 + pX + q \in \Q[X]$ \textit{is} $-4p^3 -27q^2$.
+            
+    \end{enumerate}
+    \solution \\
+    \part 
+
+
+    \part 
+
+    
+
+
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem}
+    \textbf{Exercise 9.4.3} Let $L$ be a subfield of $\C$ such that $\Gamma(L)$ is the dihedral group $D_4$ (having 8 elements), 
+    and $L$ a Galois extension of $\Q$. Show that $L$ is a radical extension of $\Q$.\\
+    \begin{proof}
+    We know degree 2 extension is obtained by adjoining an square root from previous homework.
+    Since $\Gamma(L:\Q)$ is $\cong D_4$, and is Galois, we can use Galois Correspondence. Normal subgroup corresponds 
+    to normal (Galois) extension.
+    \begin{align}
+        \begin{matrix}
+            \{e\} & \triangleleft & \langle t \rangle & \triangleleft & \langle t, f^2 \rangle & \triangleleft  & D_4 \\
+            \updownarrow & & \updownarrow & & \updownarrow & & \updownarrow \\ 
+            L & \supset & E & \supset & F & \supset & \Q \\
+        \end{matrix}
+    \end{align}
+    Where the up-down arrow $\updownarrow$ indicates the relationship being the field is fixed field of the group. 
+    Each of the subgroup has index $2$ in the previous one, and it's a subnormal chain. So we have
+    \begin{align}
+       \Gamma (F:\Q) \cong \Gamma (L: \Q) / \Gamma(L:F) = \lvert D_4 / \langle t, f^2 \rangle \rvert = 2
+    \end{align}
+    So $\Gamma(F:\Q)$ has order 2, so $F:\Q$ has degree 2. So $F=\Q(\alpha)$ where $\alpha^2 \in \Q$.
+    Similarly, 
+    \begin{align}
+        \Gamma(E:F) \cong \Gamma(L:F)/\Gamma(L:E) = \lvert \langle t, f^2 \rangle / \langle t \rangle \rvert = 2
+    \end{align}
+    So $\lvert \Gamma (E:F) \rvert = 2$ implies that $E:F$ has degree 2, so $E = F(\beta)$, where $\beta^2 \in F$.\\
+    $\Gamma (L:E) \cong \langle t \rangle$, $\lvert \langle t \rangle \rvert = 2$ implies that $L:E$ has degree 2.\\
+    $ \implies L = E( \gamma)$, where $\gamma^2 \in E$.\\
+    $\implies L = \Q (\alpha, \beta, \gamma)$, so $L$ is a radical extension.
+
+        
+    \end{proof}
+    
+
+
+\end{homeworkProblem}
+
+\pagebreak
+
+
+% Go back to where we left off
+\begin{homeworkProblem}[6]
+    Evaluate the integrals
+    \(\int_0^1 (1 - x^2) \dx\)
+    and
+    \(\int_1^{\infty} \frac{1}{x^2} \dx\).
+\end{homeworkProblem}
+
+\end{document}

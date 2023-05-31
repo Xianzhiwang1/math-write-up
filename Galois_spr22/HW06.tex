@@ -52,7 +52,7 @@ Exercise 9.4.3\\
     \end{align}
     $L(\omega)$ is radical extension, since
     \begin{align}
-        \Q \left(\sqrt{-3}, \sqrt{\frac{ q^2 }{ 4 }+\frac{ p^3 }{ 27 }}, \sqrt[3]{\frac{ -q }{ 2 } + \sqrt{\frac{ q^2 }{ 4 }+\frac{ p^3 }{ 27 }} } \right) = L(\omega). \ (*)
+        E := \Q \left(\sqrt{-3}, \sqrt{\frac{ q^2 }{ 4 }+\frac{ p^3 }{ 27 }}, \sqrt[3]{\frac{ -q }{ 2 } + \sqrt{\frac{ q^2 }{ 4 }+\frac{ p^3 }{ 27 }} } \right) = L(\omega). \ (*)
     \end{align}
     LHS of $(*)$ is a radical sequence, since 
     \begin{align}
@@ -62,11 +62,26 @@ Exercise 9.4.3\\
         & v := \frac{ -p }{ 3u } = \sqrt[3]{\frac{ -q }{ 2 } - \sqrt{\frac{ q^2 }{ 4 }+\frac{ p^3 }{ 27 }} }\\
         & \omega := - \frac{ 1 }{ 2 } + \frac{ \sqrt{-3} }{ 2 }
     \end{align}
-    
-    
-    
-    
-
+    Now, we show the equality in $(*)$. By definition of $u,v,\omega$, we have
+    \begin{align}
+        L(\omega) = \Q (u+v, \omega u + \omega^2 v, \omega^2 u + \omega v, \omega)
+    \end{align}
+    First, we show $E \subset L(\omega)$, then we show $E \supset L(\omega)$.
+    Since $\sqrt{-3} \in L(\omega), \ \sqrt{-3} = 2 \omega + 1$, observe
+    \begin{align}
+        & u+v, \frac{ \omega u + \omega^2 v }{ \omega } = u + \omega v \in L(\omega)\\
+        & \implies (u + \omega v) - (u + v) = (\omega -1)v \in L(\omega)
+    \end{align}
+    since $\omega - 1 \in L(\omega) \implies \ v \in L(\omega)$, similarly, we have $u \in L(\omega)$ or $u = (u+v) - v \in L(\omega)$. 
+    Hence, 
+    \begin{align}
+    \sqrt{ \frac{ q^2 }{ 4 } + \frac{ p^3 }{ 27 } }= u^3 + \frac{ q }{ 2 }  \in L(\omega)
+    \end{align}
+    Now, we show the other direction $E \supset L(\omega)$.
+    We have $w = - \frac{ 1 }{ 2 } + \frac{ 1 }{ 2 }\cdot \sqrt{-3} \in E$,
+    and $u \in E$, by definition, $v = \frac{ -p }{ 3u } \in E$.
+    Thus, $L(\omega) \subset E$. Hence, $E = L(\omega)$, 
+    and we have shown that $L(\omega)$ is a radical extension.
     
 
 

@@ -104,6 +104,40 @@ Exercise 9.4.3\\
     \end{enumerate}
     \solution \\
     \part 
+    
+    $L$ is splitting field over $\Q$ of a monic irreducible cubic polynomial $X^3 + a X^2 + b X + c, \ a,b,c \in \Q,$ let $\alpha_1, \alpha_2,\alpha_3$ denote roots. 
+    Then, by Vieta's theorem,
+    \begin{align}
+        & \alpha_1 + \alpha_2 + \alpha_3 = -a \ \implies \alpha_2 = -a - \alpha_1 - \alpha_3 \\
+        & \alpha_1 \alpha_2 + \alpha_2 \alpha_3 + \alpha_1 \alpha_3 = b \ \implies \alpha_2 \alpha_3 - b = - \alpha_1 \alpha_2 - \alpha_1 \alpha_3\\
+        & \alpha_1 \alpha_2 \alpha_3 = -c \ \implies \alpha_2 = \frac{ -c }{ \alpha_1 \alpha_3 }
+    \end{align}
+    
+    ``$\Leftarrow$''\\
+    Assume discriminant of $f$ is $r^2$ for some $r \in \Q$. Then
+    \begin{align}
+        &(\alpha_1 - \alpha_2)(\alpha_1 - \alpha_3)(\alpha_2 - \alpha_3) = r\\
+        &(\alpha_1^2 - \alpha_2 \alpha_1 - \alpha_1 \alpha_3 + \alpha_2 \alpha_3)(\alpha_2 - \alpha_3) = r\\
+        &(\alpha_1^2 + \alpha_2 \alpha_3 + \alpha_2 \alpha_3 - b)(-a - \alpha_1 - 2 \alpha_3) = r\\
+        &(\alpha_1^2 + 2 \frac{ -c }{ \alpha_1 \alpha_3 } \cdot \alpha_3 - b) ( a + \alpha_1 + \alpha_3) = -r\\
+        &\alpha_3 = \frac{ 1 }{ 2 } \bigp{ \frac{ -r }{ \alpha_1^2 + 2 \frac{ -c }{ \alpha_1 } - b } - a - \alpha_1}
+    \end{align}
+    Thus, $\Q(\alpha_1)$ already has $\alpha_3$ in it. Since Vieta's equations are symetrical equations, and $(\alpha_1 - \alpha_2)(\alpha_1 - \alpha_3)(\alpha_2 - \alpha_3)$
+    is symmetrical except a minus sign for $\alpha_2$ and $\alpha_3$, we can also express $\alpha_2$ using rational numbers and $\alpha_1$, 
+    so $\alpha_2, \alpha_3 \in \Q(\alpha_1)$, and $\Q(\alpha_1)$ is degree 3 since $\alpha_1$ is root of a irreducible cubic polynomial.
+    $\Gamma(L:\Q)$ is Galois extension since $L$ is splitting field, so
+    \begin{align}
+        \lvert \Gamma (L:\Q) \rvert = [L:\Q] = [\Q(\alpha_1):\Q] = 3
+    \end{align}
+    ``$\Rightarrow$''\\
+    Assume $\Gamma(L:\Q)$ has order 3.
+
+    
+    
+
+
+
+    
 
 
     \part 

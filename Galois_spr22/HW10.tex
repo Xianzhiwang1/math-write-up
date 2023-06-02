@@ -1,0 +1,78 @@
+\documentclass{article}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{GAL \ \#10}
+\newcommand{\hmwkDueDate}{May 6, 2022}
+\newcommand{\hmwkClass}{Galois Theory}
+\newcommand{\hmwkClassTime}{Section 12 \& 15}
+\newcommand{\hmwkClassInstructor}{Prof Matyas Domokos}
+\newcommand{\hmwkAuthorName}{\textbf{Xianzhi} }
+\newcommand{\hmwkAuthor}{\textit{Xianzhi Wang}}
+
+\input{preambleBloat.tex}
+% \usepackage{xianzhi}
+
+\begin{document}
+
+\maketitle
+HW10 \\
+Exercise 12.4.12\\
+Exercise 12.4.13\\
+Exercise 15.1.2\\
+\pagebreak
+
+\begin{homeworkProblem}
+    \textbf{Exercise 12.4.12} Prove that $X^4 - 10 X^2 + 1$ is irreducible over $\Q$, but it is reducible in $(\Z/p \Z)[X]$ for any prime $p$.\\
+    \solution 
+
+    \begin{proof}
+        We claim the minimum polynomial is $M_{\Q}(\sqrt{2} + \sqrt{3}) = X^4 - 10 X^2 + 1$.
+        Observe that
+        \begin{align}
+            &(\sqrt{2} + \sqrt{3})^4 - 10 (\sqrt{2} + \sqrt{3})^2 + 1 \\
+            =& (5 + 2 \sqrt{6})^2 - 10 (5 + 2 \sqrt{6}) + 1 \\
+            =& 0
+        \end{align}
+        Thus, $(\sqrt{2} + \sqrt{3})$ is a root of $X^4 - 10 X^2 + 1$.
+        We know $\Q (\sqrt{2} + \sqrt{3}) = \Q (\sqrt{2} , \sqrt{3})$ is a degree $4$ extension over $\Q$, so
+        $X^4 - 10 X^2 + 1$ is the minimal polynomial over $\Q$, hence irreducible.
+        
+
+        
+    \end{proof}
+
+
+
+\end{homeworkProblem}
+
+\pagebreak
+
+
+\begin{homeworkProblem}
+    \textbf{Exercise 12.4.13}
+    \solution \\
+
+
+
+
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem}
+    \textbf{Exercise 15.1.2}
+    \solution \\
+
+
+\end{homeworkProblem}
+
+\end{document}

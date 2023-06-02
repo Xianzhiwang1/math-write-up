@@ -130,20 +130,45 @@ Exercise 9.4.3\\
         \lvert \Gamma (L:\Q) \rvert = [L:\Q] = [\Q(\alpha_1):\Q] = 3
     \end{align}
     ``$\Rightarrow$''\\
-    Assume $\Gamma(L:\Q)$ has order 3.
+    Assume $\Gamma(L:\Q)$ has order 3. $L$ is splitting field over $\Q$ of a monic irreducible cubic polynomial, so $L:\Q$ is Galois, since in $\C$, 
+    irreducible polynomial has no multiple roots. Thus, $\phi \in \Gamma (L:\Q)$ acts transitively on the roots, which we call $\alpha_1, \alpha_2, \alpha_3$.
+    (take $\phi \neq id$. If $\phi (\alpha_1) = \alpha_2$, then $\phi (\alpha_2) = \alpha_3$, since if $\phi (\alpha_2) = \alpha_1$, then
+    $\phi^2(\alpha_1) = \alpha_1$, then $\phi$ has order 2, which does not divide 3.)
+    \begin{align}
+        \phi_1(\alpha_1) &= \alpha_2 \\
+        \phi_1 (\alpha_2) &= \alpha_3 \\
+        \phi_1 (\alpha_3) &= \alpha_1,
+    \end{align}
+    and 
+    \begin{align}
+        \phi (\alpha_1) &= \alpha_3\\
+        \phi (\alpha_3) &= \alpha_2 \\
+        \phi (\alpha_2) &= \alpha_1,
+    \end{align}
+    we have 
+    \begin{align}
+        &\Gamma (L : \Q) \leq S_3, \\
+        &\lvert \Gamma (L:\Q) \rvert = 3, \\
+        \Gamma (L:\Q) &\cong A_3 = \{ id, (123), (132) \} 
+    \end{align}
+    so $\Gamma (L:\Q)$ consists of identity automorphism, and automorphism that do not fix any roots, the action is faithful. 
+    Since the determinant is symmetric, 
+    \begin{align}
+        ((\alpha_1-\alpha_2)(\alpha_1-\alpha_3)(\alpha_2 - \alpha_3))^2
+    \end{align}
+    is fixed by elements of $\Gamma (L:\Q)$. So the discriminant is in the fixed field of $\Gamma (L:\Q)$,
+    so the discriminant is in $\Q$.
 
-    
-    
-
-
-
-    
-
+    \textit{Comment from Professor: the problem was to show that the square root of the discriminant is in} $\Q$.
 
     \part 
 
-    
-
+    example: $X^3 - 3 X + 1$
+    \begin{align}
+        -4 (-3)^3 - 27 \cdot 1 = 4 \cdot 27 - 27 = 81
+    \end{align}
+    by the first part of the problem, $\lvert \Gamma (L:\Q) \rvert = 3$.\\
+    \textit{Comment: Why is this polynomial irreducible?}
 
 \end{homeworkProblem}
 

@@ -35,8 +35,48 @@ Exercise 11.4.8\\
     \textbf{Exercise 11.4.2} Show that $f \in K[X]$ (where $K$ is a subfield of $\C$) has a root
     in a radical extension of $K$ $\iff$ $f$ has an irreducible factor $p$ in $K[X]$ 
     such that $Gal_K(p)$ is solvable.\\
-    \solution \\
+    \solution 
 
+    ``$\Leftarrow$''\\
+    Assume $f$ has irreducible factor $p$ such that $Gal_K(p)$ is solvable. Then apply
+    Galois's theorem, $\exists$ a radical extension $L$ of $K$ contain all roots 
+    of $p$, so $L$ must contain at least one root of $p$, call it $\alpha$.
+    Since $p$ is a factor of $f$, $\alpha$ is also a root of $f$.
+    Thus, $f$ has a root $\alpha$ in radical extension $L$.\\
+    ``$\Rightarrow$''\\
+    Assume $f\in K[X]$ has a root $\alpha$ in a radical extension $L$ of $K$.
+    Thus, $L = K(\beta_1,\beta_2, \cdots, \beta_m)$ with $\beta_1, \cdots, \beta_m$
+    a radical sequence.\\
+    Let $p = m_K^{\alpha}$, then $p$ is automatically an irreducible factor of $f$,
+    since $\alpha$ is a root of $f$.\\
+    We want to show all the roots of $p$ are in some radical extension of $K$,
+    but the radical extension we have, $L$, is not normal, so we modify it.
+    Since 
+    \begin{align}
+        \beta_i^{n_i} \in K(\beta_1, \ldots, \beta_{i-1})
+    \end{align}
+    The sequence $\beta_i$ has corresponding sequence $n_i \in \N$, let
+    \begin{align}
+        L' = K(\beta_1, \zeta_{n_1}, \beta_2, \zeta_{n_2}, \ldots, \beta_m, \zeta_{n_m}) 
+    \end{align}
+    where $\zeta_{n_i}$ is a primitive $n_i$th root of unity.\\
+    Since we obtain $L'$ by adjoin $\beta_i$ and $\zeta_{n_i}$,
+    we join all the roots of the polynomial 
+    \begin{align}
+        X^{n_i} - \beta_i^{n_i}
+    \end{align}
+    at each step, so at each step we obtain a splitting field,
+    and since we are in $\C$, $L'$ is a splitting field, 
+    hence a normal extension of $K$, thus, since $\alpha \in L \subset L'$,
+    all the roots of $p = m_K^{\alpha}$ are in $L'$, so
+    $\exists$ radical extension $L'$
+    containing all the roots of $p \ \implies \ Gal_K(p)$ is solvable by Galois's thm.\\
+
+    \textit{Comment from instructor: The way you try to extend $L$ to get a normal
+    extension of $K$ is not correct, see the following exercise: a normal extension
+    of a normal extension is not necessarily normal.
+    Instead, we gave a proof in class that 
+    the normal closure of a radical extension is normal.}
 
 
 \end{homeworkProblem}
@@ -47,7 +87,43 @@ Exercise 11.4.8\\
 \begin{homeworkProblem}
     \textbf{Exercise 11.4.6} Suppose that $L:K$ and $M:L$ are normal extensions.
     Does it follow that $M:K$ is a normal extension?\\
-    \solution \\
+    \solution 
+
+    We observe that degree $2$ extensions are normal,
+    since by a previous exercise, degree $2$ extension is obtained
+    by adding ``a square root,'' so we add the other root too.
+    \begin{align}
+        L &= K(\alpha), \alpha \notin K, \alpha^2 \in K, \alpha \in L. \\ 
+        [L:K] &= 2
+    \end{align}
+    Take irreducible polynomial that has $\alpha$ as a root, assume $\beta$ is another root. 
+    \begin{align}
+        X^2 + a X + b \ \  a,b \in K
+    \end{align}
+    then 
+    \begin{align}
+        \alpha + \beta &= -a \ \text{by Vieta's theorem} \\
+        \alpha \beta &= b
+    \end{align}
+    so if $\alpha \in L$, then $\beta = -a -\alpha \in L$.\\
+
+    Thus consider
+    \begin{align}
+        \Q \subseteq \Q (\sqrt[2]{3}) \subseteq \Q(\sqrt[4]{3})
+    \end{align}
+    and we claim that both extensions are degree 2 extension, and thus normal.\\
+    \begin{align}
+        [\Q(\sqrt[2]{3}) : \Q] &= 2 \ \text{since} \ m_{\Q}^{\sqrt[2]{3}} = X^2 - 3\\
+        [\Q(\sqrt[4]{3}) : \Q] &= 4 \ \text{since} \ m_{\Q}^{\sqrt[4]{3}} = X^4 - 3\\
+    \end{align}
+    and both polynomial are irreducible by Eisenstein. Now, by Tower Law,
+    \begin{align}
+        [\Q (\sqrt[4]{3}) : \Q(\sqrt[2]{3})] = 2
+    \end{align}
+    But $\Q(\sqrt[4]{3}) : \Q$ is not normal. $X^4 - 3$ has (non-real) complex roots
+    $i \sqrt[4]{3}, - i \sqrt[4]{3}$ not in $\Q(\sqrt[4]{3})$. And we are done.
+    
+
 
 \end{homeworkProblem}
 
@@ -56,7 +132,67 @@ Exercise 11.4.8\\
 \begin{homeworkProblem}
     \textbf{Exercise 11.4.8} Find a degree $6$ irreducible polynomial $f \in \Q[X]$
     whose Galois group is isomorphic to $S_3$.\\
-    \solution \\
+    \solution 
+
+    $X^6 + 3$ is a degree $6$ irreducible polynomial $f \in \Q[X]$
+    Let $L$ be splitting field of $X^6 + 3$ over $\Q$, then
+    \begin{align}
+        \Gamma (L: \Q) \cong S_3
+    \end{align}
+    We claim 
+    \begin{align}
+        L = \Q (\sqrt[6]{-3}, \zeta),
+    \end{align}
+    where $\zeta$ is a primitive 6th root of unity.
+    \begin{align}
+        \zeta = \frac{ 1 }{ 2 } + \frac{ \sqrt{3} }{ 2 } i
+    \end{align}
+    since $(\sqrt[6]{-3})^3 = \sqrt[2]{-3} = i \sqrt[2]{3}$ and
+    \begin{align}
+        \zeta = \frac{ 1 }{ 2 } + \frac{ 1 }{ 2 } (\sqrt[6]{-3})^3 \in \Q(\sqrt[6]{-3}) 
+    \end{align}
+    Thus, $L = \Q (\sqrt[6]{-3})$.\\
+    $[L:\Q] = 6$ since $m_{\Q} \sqrt[6]{-3} = X^6 + 3$ is irreducible by Eisenstein.
+    Then, since $L$ is splitting field over $\Q$, $L:\Q$ is Galois extension. 
+    so $\lvert \Gamma(L:\Q) \rvert = 6$.\\
+    Let $a := \sqrt[6]{-3}$\\
+    Then $\phi \in \Gamma (L:\Q)$ need to take $a$ to some other root $\zeta^{k_{\phi}} a$
+    for $0 \leq k_{\phi} \leq 5$.\\
+    Up to isomorphism, there are only 2 group of order 6, $\Z_6$ and $D_3 \cong S_3$.\\
+    Thus, suffice to show $\Gamma (L:\Q)$ is not abelian.\\
+    Suffice to show $\Gamma (L:\Q)$ has a subgroup that is not normal.\\
+
+    Consider
+    \begin{align}
+        \Q &\subseteq \Q (\sqrt[3]{-3}) \subseteq \Q (\sqrt[6]{-3})\\
+        [\Q (\sqrt[3]{-3}) : \Q] &= 3 \ \text{since} \ m_{\Q} \sqrt[3]{-3} = X^3 + 3
+    \end{align}
+    is irreducible by Eisenstein. But $\Q(\sqrt[3]{-3})$ is not normal over $\Q$, since
+    $X^3 + 3$ has roots $\omega \cdot \sqrt[3]{-3}$  and $\omega^2 \cdot \sqrt[3]{-3}$
+    for $\omega = (-1 + i\sqrt{3})/2$.
+    \begin{align}
+        \omega \cdot \sqrt[3]{-3} \notin \Q (\sqrt[3]{-3}) \iff \omega \notin \Q (\sqrt[3]{-3})
+    \end{align}
+    since $[\Q (\omega):\Q] = 2$, and $\omega$ is root of $X^2 + X + 1$.\\
+    $2 \ndiv 3$ so $\omega \notin \Q (\sqrt[3]{-3})$\\ 
+    $\implies \Q \subseteq \Q (\sqrt[3]{-3})$  not normal, by Galois correspondence,
+    \begin{align}
+        L &:= \Q(\sqrt[6]{-3})\\
+        \Gamma (L : \Q (\sqrt[3]{-3})) \ &\text{not normal in} \ \Gamma(L:\Q)
+    \end{align}
+    so $\Gamma (L:\Q) \cong S_3$. And we are done.
+    
+
+
+
+    
+    
+    
+
+    
+    
+    
+
 
 
 \end{homeworkProblem}

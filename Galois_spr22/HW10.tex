@@ -83,7 +83,6 @@ Exercise 15.1.2\\
     
 
 
-
 \end{homeworkProblem}
 
 \pagebreak
@@ -97,11 +96,33 @@ Exercise 15.1.2\\
     \solution 
 
     \begin{proof}
-        
+        Let $\alpha$ be a root of $f = X^p - X - a \in K[X]$.\\
+        Claim: the $p$ roots of $f$ are $\alpha + \beta$ for $\beta \in \F_p = \{ 0,1,\cdots, p-1\}$.
+        We have $\alpha^p - \alpha - a = 0.$ Let $\beta \in \F_p$.
+        \begin{align}
+            &(\alpha+\beta)^p - (\alpha+\beta) - a\\
+            =& \alpha^p + \beta^p - \alpha - \beta -a \ \text{because} \ char K = p\\
+            =& \beta^p - \beta \mod p \\
+            =& 0
+        \end{align}
+        where the last step is due to Fermat's little theorem, which states, 
+        for integer $z$, prime $p$, we have $$z^p = z \mod p.$$
+    Thus, $\alpha + \beta$ is a root of $f$.\\
+    Since $f$ has $p$ roots, letting $\beta \in \F_p$ gives exactly the $p$ roots 
+    $\alpha + 0, \alpha + 1, \cdots, \alpha + p -1$, and they are distinct.
+    Thus, $f$ is separable. $Gal_k(f) = \Gamma (L:K)$ where $L$ is the splitting
+    field of $f$ over $K$. We see that $L=K(\alpha)$ for a root $\alpha$ of $f$,
+    since once we adjoin $\alpha$, other roots can be obtained by $\alpha + \beta$,
+    with $\beta \in \F_p \subset K$.\\
+    ($K$ certainly contains it's prime subfield that is isomorphic to $\F_p$.)
+    Since $f$ is irreducible, 
+    \begin{align}
+        \lvert \Gamma (L:K) \rvert = \lvert [L:K] \rvert = \lvert [K(\alpha) : K] \rvert = p
+    \end{align}
+    and this extension is Galois because it is a splitting field of a separable polynomial.\\
+    Thus, $\Gamma (L:K)$ is cyclic. All groups of prime order are cyclic.
     \end{proof}
     
-
-
 
 
 \end{homeworkProblem}
@@ -112,7 +133,59 @@ Exercise 15.1.2\\
     \textbf{Exercise 15.1.2} Let $p$ be a prime and $n$ a positive integer. 
     For $d \in \N$ denote by $\overline{\Phi}_d \in (\Z / p \Z)[X]$ the modulo $p$ reduction of the cyclotomic polynomial $\Phi_d \in \Z [X]$.
     Show that the splitting field of $\overline{\Phi}_{p^n -1}$ over $\F_p = \Z/ p \Z$ is the field $\F_{p^n}$.\\
-    \solution \\
+    \solution 
+
+    We have
+    \begin{align}
+        \prod_{d | p^n -1} \Phi_d = X^{p^n -1} -1
+    \end{align}
+    reduce modulo $p$, we get
+    \begin{align}
+        \prod_{d | p^n - 1} \overline{\Phi}_d = X^{p^n-1} -1
+    \end{align}
+    Let $L$ be the splitting field of $\overline{\Phi}_{p^n -1}$ over $\F_p$.\\
+    Then $L \subset \F_{p^n}$, since roots of $\overline{\Phi}_{p^n-1}$ are 
+    roots of $X^{p^n-1} - 1$ and roots of $X^{p^n-1} - 1$ are precisely
+    the elements of $\F_{p^n}^{\times}$. 
+    ($\implies$ roots of $\overline{\Phi}_{p^n-1} \subset  \F_{p^n}^{\times}$).\\
+    To show $L \supset \F_{p^n}$, we want the generators of $\F_{p^n}^{\times}$ as a cyclic
+    group to be roots of $\overline{\Phi}_{p^n -1}$. 
+    We show any generator $g$ of $\F_{p^n}^{\times}$ cannot be a root of $\overline{\Phi}_d$
+    where $d < p^n -1$. For $d<p^n-1$, we have
+    \begin{align}
+        \prod_{e | d} \Phi_e = X^d -1
+    \end{align}
+    reduce mod $p$, 
+    \begin{align}
+        \prod_{e | d} \overline{\Phi}_e = X^d -1
+    \end{align}
+    Then any root $\alpha$ of $\overline{\Phi}_d$ is also a root of $X^d -1$,
+    so $\alpha^d = 1$, which implies $\lvert \alpha \rvert$ divide $d$,
+    which implies $\lvert \alpha \rvert \leq d$.
+    Hence, roots of $\overline{\Phi}_d$ with $d < p^n -1$ has order $\leq d < p^n -1,$\\
+    so, roots of $\overline{\Phi}_d$ with $d < p^n -1$ cannot be generators. \\
+    Since generators of $\F_{p^n}^{\times}$ are roots of $X^{p^n -1} -1$,
+    so they are roots of 
+    \begin{align}
+        \prod_{d | p^n -1} \overline{\Phi}_d,
+    \end{align}
+    and they have order $= p^n -1$, so they can only be roots of 
+    $\overline{\Phi}_{p^n -1}$.\\
+    Thus, the splitting field of $\overline{\Phi}_{p^n-1}$, $L$ over
+    $\F_p$ contains the generators of $\F_{p^n}^{\times}$, thus,
+    $L \supset \F_{p^n}$.\\
+    Thus, $L = \F_{p^n}.$
+    
+
+    
+
+
+
+
+
+    
+    
+
 
 
 

@@ -34,6 +34,8 @@ Exercise 15.1.2\\
     \textbf{Exercise 12.4.12} Prove that $X^4 - 10 X^2 + 1$ is irreducible over $\Q$, but it is reducible in $(\Z/p \Z)[X]$ for any prime $p$.\\
     \solution 
 
+    \part 
+
     \begin{proof}
         We claim the minimum polynomial is $M_{\Q}(\sqrt{2} + \sqrt{3}) = X^4 - 10 X^2 + 1$.
         Observe that
@@ -43,13 +45,43 @@ Exercise 15.1.2\\
             =& 0
         \end{align}
         Thus, $(\sqrt{2} + \sqrt{3})$ is a root of $X^4 - 10 X^2 + 1$.
-        We know $\Q (\sqrt{2} + \sqrt{3}) = \Q (\sqrt{2} , \sqrt{3})$ is a degree $4$ extension over $\Q$, so
+        Claim: $\Q (\sqrt{2} + \sqrt{3}) = \Q (\sqrt{2} , \sqrt{3})$, and it is a degree $4$ extension over $\Q$, so
         $X^4 - 10 X^2 + 1$ is the minimal polynomial over $\Q$, hence irreducible.
-        
 
-        
+        Now we show the claim. $\Q(\sqrt{2} + \sqrt{3}) \supset \Q(\sqrt{2}, \sqrt{3})$ because 
+        \begin{align}
+            5 + 2 \sqrt{6} &= (\sqrt{2} + \sqrt{3})^2 \in \Q(\sqrt{2} + \sqrt{3})\\
+            &\implies \sqrt{6}(\sqrt{2} + \sqrt{3}) \in  \Q(\sqrt{2} + \sqrt{3})\\
+            &\implies \sqrt{2} = \sqrt{6}(\sqrt{2}+\sqrt{3}) - 2(\sqrt{2}+\sqrt{3}) \in \Q(\sqrt{2} + \sqrt{3})\\
+            &\implies \sqrt{3} = \sqrt{2} + \sqrt{3} - \sqrt{2} \in \Q(\sqrt{2} + \sqrt{3})\\
+        \end{align}
+        $\Q(\sqrt{2} + \sqrt{3}) \subset \Q(\sqrt{2}, \sqrt{3})$ because $\sqrt{2} + \sqrt{3} \in \Q(\sqrt{2}, \sqrt{3})$. 
+        Hence, we showed $X^4 - 10X^2 + 1$ is irreducible over $\Q$.\\
     \end{proof}
 
+    \part
+
+    \begin{proof}
+        Now, observe
+        \begin{align}
+            X^4 - 10 X^2 + 1 &= (X^2 - 5)^2 - 2^2 \cdot 6\\
+            &= (X^2 -1)^2 - (2X)^2 \cdot 2\\
+            &= (X^2 + 1)^2 - (2X)^2 \cdot 3
+        \end{align}
+        Thus, in $(\Z / p\Z)$, as long as at least one of $6,2,3$ is a square, then $X^4 - 10 X^2 +1$ factors in $\Z/ p \Z [X]$ use formula $a^2 - b^2 = (a+b)(a-b)$.\\
+        For any prime $p$, $\Z/ p\Z^{\times} = \F_p^{\times} = \F_p \setminus \{0\}$ is cyclic,
+        (multiplicative group of any finite field is cyclic), $\exists$ generator $g$, thus
+        \begin{align}
+            \{1, g, g^2, g^3, g^4, \cdots, g^{p-2} \} = \F_p^{\times}
+        \end{align}
+        Those with even power are squares.\\
+        Assume for contradiction that all $2,3,6$ are not squares in $\F_p$.\\
+        $\implies \ 2 = g^j, \ 3 = g^i$ for some $j,i$ odd.\\
+        But $6 = g^{j+i}$ has even power $j+i$, so $6$ should be square in $\F_p$. We have a contradiction.\\
+        Thus, $\exists$ at least $1$ square among $2,3,6$. And we are done.
+    \end{proof}
+    
+
 
 
 \end{homeworkProblem}
@@ -58,8 +90,16 @@ Exercise 15.1.2\\
 
 
 \begin{homeworkProblem}
-    \textbf{Exercise 12.4.13}
-    \solution \\
+    \textbf{Exercise 12.4.13} Let $K$ be a field of characteristic $p$ (where $p$ is a prime), and suppose 
+    that $f = X^p - X -a \in K[X]$ is irreducible. Show that $f$ is separable,
+    and determine the Galois group of $f$. 
+    \textit{Warning: $K$ is not assumed to be finite.)}\\
+    \solution 
+
+    \begin{proof}
+        
+    \end{proof}
+    
 
 
 
@@ -69,8 +109,12 @@ Exercise 15.1.2\\
 \pagebreak
 
 \begin{homeworkProblem}
-    \textbf{Exercise 15.1.2}
+    \textbf{Exercise 15.1.2} Let $p$ be a prime and $n$ a positive integer. 
+    For $d \in \N$ denote by $\overline{\Phi}_d \in (\Z / p \Z)[X]$ the modulo $p$ reduction of the cyclotomic polynomial $\Phi_d \in \Z [X]$.
+    Show that the splitting field of $\overline{\Phi}_{p^n -1}$ over $\F_p = \Z/ p \Z$ is the field $\F_{p^n}$.\\
     \solution \\
+
+
 
 
 \end{homeworkProblem}

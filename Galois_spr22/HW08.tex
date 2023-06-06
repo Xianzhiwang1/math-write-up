@@ -1,0 +1,95 @@
+\documentclass{article}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{GAL \ \#08}
+\newcommand{\hmwkDueDate}{Apr 22, 2022}
+\newcommand{\hmwkClass}{Galois Theory}
+\newcommand{\hmwkClassTime}{Section 12}
+\newcommand{\hmwkClassInstructor}{Prof Matyas Domokos}
+\newcommand{\hmwkAuthorName}{\textbf{Xianzhi} }
+\newcommand{\hmwkAuthor}{\textit{Xianzhi Wang}}
+
+\input{preambleBloat.tex}
+% \usepackage{xianzhi}
+
+\begin{document}
+
+\maketitle
+HW08 \\
+Apr 29, 2022 \\
+Exercise 12.4.8\\
+Exercise 12.4.9\\
+Exercise 12.4.10\\
+\pagebreak
+
+\begin{homeworkProblem}
+    \textbf{Exercise 12.4.8} Factor $X^4 + X + 1 \in \F_{2}[X]$ as a product of irreducibles over $\F_4$.
+    \solution 
+
+    $\F_4 = \F_{2^2} = \F_2 (\alpha)$ where $\alpha$ is a root of the irreducible polynomial
+    $X^2 + X + 1$. Thus, $\alpha^2 + \alpha + 1 = 0$, so $\alpha^2 = \alpha + 1$. Hence,
+    \begin{align}
+        \F_2 (\alpha) = \{ 0,1,\alpha,\alpha+1 \}
+    \end{align}
+    We want to factor $X^4 + X + 1 \in \F_2[X]$. First, we check if it has
+    roots in $\F_2 (\alpha)$: 
+    \begin{align}
+        X &= 1 \implies X^4 + X + 1 = 1\\
+        X &= 0 \implies X^4 + X + 1 = 1\\
+        X &= \alpha \implies X^4 + X + 1 = (\alpha+1)^2 + \alpha + 1 = \alpha^2 + 1 + \alpha + 1 = \alpha + 1 + \alpha = 1\\
+        X &= \alpha + 1 \implies (\alpha + 1)^4 + \alpha + 1 + 1 = (\alpha^2 + 1)^2 + \alpha = \alpha^2 + \alpha = 1
+    \end{align}
+    so $X^4 + X + 1$ does not have linear factors in $\F_2(\alpha)$, so $X^4 + X + 1$
+    can only factor into 
+    \begin{align}
+        (X^2 + \alpha_1 X + \alpha_0)(X^2 + \beta_1 X + \beta_0)
+    \end{align}
+    for $\alpha_1, \alpha_0, \beta_1, \beta_0 \in \F_2 (\alpha)$.
+    
+
+    
+    
+
+
+
+\end{homeworkProblem}
+
+\pagebreak
+
+
+\begin{homeworkProblem}
+    \textbf{Exercise 12.4.9}
+    \begin{enumerate}
+        \item What is the splitting field of $X^4 + X + 1$ over $\F_{64}$?
+        \item Factor $X^4 + X + 1$ into the product of irreducibles over $\F_{64}$.
+    \end{enumerate}
+    
+    \solution \\
+
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem}
+    \textbf{Exercise 12.4.10} 
+    \begin{enumerate}
+        \item Show that the polynomial $X^2 + 1$ is irreducible over $\F_7$.
+        \item Consider the field $\F_7 (\alpha)$, where $\alpha$ is a root of $X^2 + 1$.
+            Show that all quadratic polynomials over $\F_7$ have a root in $\F_7 (\alpha)$.
+        \item Determine explicitly the roots in $\F_7(\alpha)$ of $5 X^2 + 3 X + 1 \in \F_7 [X]$.
+    \end{enumerate}
+    
+    \solution \\
+
+\end{homeworkProblem}
+
+\end{document}

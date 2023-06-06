@@ -33,6 +33,7 @@ Exercise 12.4.10\\
 
 \begin{homeworkProblem}
     \textbf{Exercise 12.4.8} Factor $X^4 + X + 1 \in \F_{2}[X]$ as a product of irreducibles over $\F_4$.
+
     \solution 
 
     $\F_4 = \F_{2^2} = \F_2 (\alpha)$ where $\alpha$ is a root of the irreducible polynomial
@@ -53,13 +54,56 @@ Exercise 12.4.10\\
     \begin{align}
         (X^2 + \alpha_1 X + \alpha_0)(X^2 + \beta_1 X + \beta_0)
     \end{align}
-    for $\alpha_1, \alpha_0, \beta_1, \beta_0 \in \F_2 (\alpha)$.
-    
+    for $\alpha_1, \alpha_0, \beta_1, \beta_0 \in \F_2 (\alpha)$. Thus,
+    \begin{align}
+        X^4 + X + 1 = X^4 + (\beta_1 + \alpha_1)X^3 + 
+        (\alpha_0 + \beta_0 + \alpha_1 \beta_1) X^2 +
+        (\alpha_1 \beta_0 + \alpha_0 \beta_1) X +
+        \alpha_0 \beta_0
+    \end{align}
+    Hence,
+    \begin{align}
+        \beta_1 + \alpha_1 &= 0\\
+        \alpha_0 + \beta_0 + \alpha_1 \beta_1 &= 0\\
+        \alpha_1 \beta_0 + \alpha_0 \beta_1 &= 1\\
+        \alpha_0 \beta_0 &= 1
+    \end{align}
+    implies 
+    \begin{align}
+        \alpha_1 &= 1 \\
+        \beta_1 &= 1\\
+        \alpha_0 &= \alpha\\
+        \beta_0 &= \alpha + 1
+    \end{align}
+    is one possible factorization. Hence,
+    \begin{align}
+        X^4 + X + 1 = (X^2 + X + \alpha)(X^2 +  X + \alpha + 1)
+    \end{align}
+    Now, in $\F_2 (\alpha)$, degree $1$ irreducible polynomials are
+    \begin{align}
+        X, X+1, X+\alpha, X + \alpha + 1
+    \end{align}
+    degree $2$ NOT irreducible:
+    \begin{align}
+        &X^2 + X, X^2 + \alpha X, X^2 + (\alpha + 1) X\\
+        &X^2 + (\alpha+1)X + \alpha, X^2 + (\alpha+1)X + X + \alpha + 1 = X^2 + \alpha X + \alpha + 1\\
+        &X^2 + \alpha X + (\alpha + 1)X + 1 = X^2 + X + 1
+    \end{align}
+    In $F_2(\alpha)$, we listed all 6 reducible polynomial of degree $2$, since 
+    \begin{align}
+        X^2 + X + \alpha, \ X^2 + X + \alpha + 1
+    \end{align}
+    are not among them, we know they must be irreducible. Hence,
+    $X^4 + X + 1$ factors as product of irreducible over $\F_4 = \F_2 (\alpha)$.\\
 
+    $\F_4 = \F_{2^2} = \F_2 (\alpha)$ \textit{Why?} Since $\alpha$ is root of 
+    degree 2 irreducible polynomial, adjoining $\alpha$ to $\F_2$
+    gives degree 2 extension, since $\F_2 (\alpha) : \F_2 = 2$,
+    $\F_2 (\alpha)$ has 4 elements, and 
+    since the finite field of a prime power ($4$ in this case) is unique,
+    we indeed get $\F_4$ by adjoin $\alpha$ to $\F_2$.
     
-    
-
-
+  
 
 \end{homeworkProblem}
 
@@ -73,7 +117,71 @@ Exercise 12.4.10\\
         \item Factor $X^4 + X + 1$ into the product of irreducibles over $\F_{64}$.
     \end{enumerate}
     
-    \solution \\
+    \solution 
+    
+    \part
+
+    Let $\beta$ be root of $X^4 + X + 1$ over $\F_2$.\\
+    Let $\alpha$ be root of $X^6 + X + 1$ over $\F_2$.
+    \begin{align}
+        \F_2 &\subseteq \F_{16} = \F_2 (\beta) \subseteq \F_{2^{12}} = \F_2 (\alpha, \beta)\\
+        \F_2 &\subseteq \F_{64} = \F_2 (\alpha) \subseteq \F_{2^{12}} = \F_2 (\alpha, \beta).
+    \end{align}
+    In class we established that $X^6 + X + 1$ is irreducible over $\F_2$, so let 
+    $\alpha$ be a root of $X^6 + X + 1$ over $\F_2$.\\
+    Then $\F_{64} = \F_{2}(\alpha)$  since adjoining $\alpha$ gives a degree 6 extension 
+    over $\F_2$, and there is only one field of $2^6$ elements up to isomorphism,
+    so $\F_2 (\alpha)$ is indeed $\F_{64}$.\\
+    We also established that $X^4 + X + 1$ is irreducible over $\F_2$, and
+    since finite extension of finite field is Galois, it is normal,
+    so adding one root $\beta$ of $X^4 + X + 1$ to $\F_2$ automatically adds
+    all the roots. Thus, the splitting field of $X^4 + X + 1$ over $\F_2$
+    is $\F_2 (\beta) = \F_{2^4}$ again because $\exists !$ field of 16 elements (up to isomorphism).\\
+    
+    The splitting field of $X^4 + X + 1$ over $\F_{64}$ must contain $\F_2 (\alpha) = \F_{64}$ and $\beta$
+    so the splitting field is $\F_2 (\alpha, \beta)$, (since adding one root
+    automatically adds all other roots of $X^4 + X + 1$.) Since
+    \begin{align}
+        &\F_{p^r} \subseteq \F_{p^s} \ \iff \ r \mid s\\
+        & lcm(4,6) = 12,
+    \end{align}
+    $\F_{2^{12}}$ is the smallest field containing both $\F_{2^4}$ and $\F_{2^6}$.\\
+        So $\F_{2^{12}} = \F_2 (\alpha, \beta)$ is the splitting field of $X^4 + X + 1$ over $\F_{2^6}$. 
+
+    \part
+
+    Claim: $X^4 + X + 1$ cannot have any root in $\F_{64}$.\\
+    Assume $X^4 + X + 1$ has a root in $\F_{64}$, Then $\F_{64}$ contains all the roots
+    of $X^4 + X + 1$. Thus, $\F_64$ is itself the splitting field of $X^4 + X + 1$
+    over $\F_{64}$, which is a contradiction.\\
+
+    Thus, $X^4 + X + 1$ does not have linear factors in $\F_{64}$, so factorization $3 + 1$ and $1+1+2$
+    cannot happen. Also, since splitting field of $X^4 + X + 1$, $\F_{2^{12}}$, is degree 2 extension
+    over $\F_{2^6}$, we deduce that the only way to factor $X^4 + X + 1$ into 
+    irred. factors over $\F_{64}$ is 
+    \begin{align}
+        (X^2 + a_1 X + a_0) (X^2 + b_1 X + b_0)
+    \end{align}
+    In perticular, $X^4 + X + 1$ must be reducible over $\F_{64}$.\\
+    since $\F_{2^2} \subseteq \F_{2^6}$ because $2 \mid 6$,\\
+    the same factorization in \textbf{12.4.8} works here.
+    \begin{align}
+        X^4 + X + 1 = (X^2 + X + \alpha)(X^2 +  X + \alpha + 1)
+    \end{align}
+    for $\alpha^2 = \alpha + 1$, where $\alpha$ is a root of irred. polynomial 
+    $X^2 + X + 1$ over $\F_2$.\\
+    If we let $\F_{2^6}$ be $\F_2 (\gamma)$ where $\gamma$ is a root of 
+    irred. polynomial $X^6 + X + 1$ over $\F_2$, we should be able to
+    identify $\alpha$ with an element in $\F_2 (\gamma)$ of the form
+    \begin{align}
+        a_5 \gamma^5 + a_4 \gamma^4 + \ldots + a_1 \gamma + a_0
+    \end{align}
+    where $a_i = 0 \ \text{or} \ 1$, since $\F_4 \subseteq \F_{64}$.\\
+    
+
+    
+
+
 
 \end{homeworkProblem}
 

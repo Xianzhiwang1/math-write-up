@@ -1,4 +1,4 @@
-PWD /home/xianzhiwang/Desktop/math-write-up/Galois_spr22
+PWD /Users/xianzhiwang/math-write-up/Galois_spr22
 INPUT /usr/local/texlive/2022/texmf.cnf
 INPUT /usr/local/texlive/2022/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt
@@ -160,6 +160,7 @@ INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
@@ -247,7 +248,7 @@ INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
+INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
@@ -276,15 +277,12 @@ INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg
-INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/graphics/mathcolor.ltx
-INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/graphics/mathcolor.ltx
-INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/graphics/mathcolor.ltx
-INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/graphics/mathcolor.ltx
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
@@ -296,7 +294,6 @@ INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.b
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex
-INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code.tex
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
@@ -390,6 +387,7 @@ INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor.code.t
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
@@ -543,15 +541,19 @@ INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT build/HW08.aux
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb
+INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb

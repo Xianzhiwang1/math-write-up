@@ -178,10 +178,42 @@ Exercise 12.4.10\\
     \end{align}
     where $a_i = 0 \ \text{or} \ 1$, since $\F_4 \subseteq \F_{64}$.\\
     
-
+    Since $\F_{64}^{\times}$ has $63$ elements, and $\F_2 (\alpha) = \F_4$, where $\alpha$ is root of $X^2 + X + 1$,
+    we deduce $\alpha$ is a primitive $3$rd root of unity, so 
+    if $\F_{64} = \F_2 (\gamma)$ where $\gamma$ is root of irreducible polynomial
+    $X^6 + X + 1$, we have
+    \begin{align}
+        \alpha &\leftrightarrow \gamma^{21}\\
+        \alpha^2 = \alpha + 1 &\leftrightarrow \gamma^{42}\\
+        \alpha^3 = (\alpha + 1)\alpha = \alpha^2 + \alpha = 1 &\leftrightarrow \gamma^{63} = 1\\
+        \text{thus}, \ X^4 + X + 1 &= (X^2 + X + \gamma^{21}) (X^2 + X + \gamma^{42}) \label{eqn:factor}
+    \end{align}
+    in $\F_2(\gamma) = \F_{64}$.\\
+    We double check: RHS of equation (\ref{eqn:factor}) is
+    \begin{align}
+        X^4 + (\gamma^{42} + \gamma^{21} + 1)X^2 + (\gamma^{42} +  \gamma^{21})X +  1
+    \end{align}
+    Since $\gamma^6 = \gamma + 1$, we have
+    \begin{align}
+        \gamma^{21} = (\gamma^6)^3 \cdot \gamma^3 
+        = (\gamma+ 1)^3 \cdot \gamma^3 
+        = (\gamma^2 + 1)(\gamma+1)\gamma^3
+        = \gamma + 1 + \gamma^5 + \gamma^4 + \gamma^3
+    \end{align}
+    Similarly, we have
+    \begin{align}
+        \gamma^{42} = (\gamma+1)^7 = (\gamma^2 + 1)^3 (\gamma+1)
+        = (\gamma^6 + 1 + 3 \gamma^4 + 3 \gamma^2)(\gamma+1)
+        =(\gamma + 3 \gamma^4 + 3 \gamma^2)(\gamma+1)
+        = \gamma^5 + \gamma^4 + \gamma^3 + \gamma
+    \end{align}
+    Hence, we have
+    \begin{align}
+        \gamma^{42} + \gamma^{21} &= 1\\
+        \gamma^{42} + \gamma^{21} + 1 &= 0
+    \end{align}
+    as wanted.
     
-
-
 
 \end{homeworkProblem}
 
@@ -196,7 +228,100 @@ Exercise 12.4.10\\
         \item Determine explicitly the roots in $\F_7(\alpha)$ of $5 X^2 + 3 X + 1 \in \F_7 [X]$.
     \end{enumerate}
     
-    \solution \\
+    \solution 
+
+    \part 
+    To show $X^2+1$ is irreducible over $\F_7$, we show $X^2 + 1$ does not
+    factor into linear factors which is equivalent to show $X^2 + 1$ does not have root in $\F_7$.
+    \begin{align}
+        X = 0 &\rightarrow X^2 + 1 = 1\\
+        X = 1 &\rightarrow X^2 + 1 = 2\\
+        X = 2 &\rightarrow X^2 + 1 = 5\\
+        X = 3 &\rightarrow X^2 + 1 = 3 \mod 7\\
+        X = 4 &\rightarrow X^2 + 1 = 3 \mod 7\\
+        X = 5 &\rightarrow X^2 + 1 = 5 \mod 7\\
+        X = 6 &\rightarrow X^2 + 1 = 2 \mod 7
+    \end{align}
+    None of them is zero, so $X^2 + 1$ does not have root in $\F_7$, 
+    so $X^2 + 1$ is irreducible over $\F_7$. 
+
+    \part
+    first, assume quadratic polynomial $f$ is not irreducible. Thus,
+    $f$ can be factored into $2$ linear factors, $\implies$ the roots
+    of $f$ are in $\F_7$, and $\F_7$ is certainly contained in $\F_7 (\alpha)$.\\
+    Now, assume $f$ is irred. Let $\beta$ be a root of $f$. Since $f$ is quadratic,
+    $\F_7 (\beta)$ is degree 2 extension of $\F_7$, (which is also normal,
+    since finite extensions of finite fields are Galois.) Thus,
+    $\F_7(\beta)$ contains all roots of $f$. Since
+    \begin{align}
+        &\F_7 \subseteq \F_7(\alpha) \subseteq L\\
+        &\F_7 \subseteq \F_7(\beta) \subseteq L
+    \end{align}
+    where $L$ is the algebraic closure of $\F_7$. Then $\F_7(\alpha)$
+    and $\F_7(\beta)$ are the same field, since the
+    finite field of any prime power order is unique.
+
+    \part
+    Determine roots in $\F_7 (\alpha)$ of $5 X^2 + 3 X + 1 \in \F_7 [X]$ 
+    Let $a,b \in \F_7$, remember $\alpha^2 + 1 = 0$. $\F_7 (\alpha)$ is
+    degree 2 vector space over $\F_7$, so a general element is of the form $a \alpha + b$.
+    \begin{align}
+        5(a \alpha + b)^2 + 3(a \alpha + b) + 1 &= 0\\
+        5(a^2 \alpha^2 + 2 ab \alpha + b^2) + 3a \alpha + 3 b + 1 &= 0\\
+        5a^2 (-1) + 10 a b \alpha + 5 b^2 + 3 a \alpha + 3b + 1 &= 0\\
+        2a^2 + 3 ab \alpha + 5 b^2 + 3 a \alpha + 3 b + 1 &= 0\\
+    \end{align}
+    Thus,
+    \begin{align}
+        3 ab + 3a &= 0\\
+        2 a^2 + 5 b^2 + 3b + 1 &= 0
+    \end{align}
+    Hence, we have case (1) 
+    \begin{align}
+        a &= 0\\
+        5b^2 + 3b + 1 &= 0
+    \end{align}
+    OR case (2)
+    \begin{align}
+        b &= -1\\
+        2a^2 + 5 -3 + 1 &=0
+    \end{align}
+    If case (1), then we could stop because 
+    $5X^2 + 3X + 1$ has no roots in $\F_7$.
+    \begin{align}
+        X=1 &\rightarrow 5 X^2 + 3 X +1 =2\\
+        X=2 &\rightarrow 5 X^2 + 3 X +1 =6\\
+        X=3 &\rightarrow 5 X^2 + 3 X +1 =6 \mod 7 \\
+        X=4 &\rightarrow 5 X^2 + 3 X +1 =2 \mod 7 \\
+        X=5 &\rightarrow 5 X^2 + 3 X +1 =1 \mod 7 \\
+        X=6 &\rightarrow 5 X^2 + 3 X +1 =3 \mod 7 \\
+    \end{align}
+   so no roots in $\F_7$.\\
+   In case (2), we have
+   \begin{align*}
+       b &= -1\\
+       2a^2 &= -3\\
+       \text{which implies}& \\
+       b &= 6\\
+       2a^2 &= 4
+   \end{align*}
+   Hence, we have $b=6,\ a=3$ (since $18 \equiv 4$) or $b=6, \ a=4$ (since $32 \equiv 4 \mod 7$).\\
+   Thus, the roots are $3 \alpha + 6$ and $4 \alpha + 6$.\\
+   We could double check
+   \begin{align}
+       5(X-6-3 \alpha)(X - 6 - 4 \alpha) &= 5 (X^2 -12X + 36 + 12 \alpha^2 -7 \alpha (X-6))\\
+       &= 5(X^2 + 2 X + 1 -5)\\
+       &= 5 X^2 + 3X + 1 \mod 7.
+   \end{align}
+   
+
+   
+    
+    
+    
+    
+
+
 
 \end{homeworkProblem}
 

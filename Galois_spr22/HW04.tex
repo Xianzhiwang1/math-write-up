@@ -14,6 +14,18 @@
     Is the polynomial $X^4 -2$ irreducible over the field $\Q(\sqrt{3})$?
 \end{question}
 
+\textbf{Soln}
+
+Assume $X^4 - 2$ is reducible over $\Q(\sqrt{3})$.
+Then $X^4 -2$ either factor into 1 degree one factor and 1 degree three factor, or 
+factor into 2 degree two factor (factor means polynomial).
+
+\textbf{Case 1}
+
+$X^4 -2$ has a degree one factor in $\Q(\sqrt{3})$. 
+so it has a root in 
+
+
 \section*{Exercise 6.4.6}
 \begin{question}
     Let $L$ be the splitting field over $\Q$ of $X^5 - 2$ over $\Q$. 
@@ -28,6 +40,35 @@
     Show that if the Galois group $\Gamma (L:K)$ is abelian (i.e. commutative), 
     then its order equals the degree of $p$.
 \end{question}
+
+\begin{proof}
+    Let $p$ be irreducible polynomial over $K \subseteq \C$.
+    Let $L$ be the splitting field of $p$ over $K$.
+    Let $\alpha$ be a root of $p$.
+    Let $m = m_K^{\alpha}$ be the minimal polynomial having $\alpha$ as a root over $K$.
+    Then $m$ divide $p$. But $p$ is already irreducible, so we conclude that $m = p$. 
+    (We can assume $p$ is monic, because if not, we could scale by a constant
+    from $K$ to make it monic.)
+    Since $L$ is the splitting field of $p$ over $K$, and $K \subseteq L \subseteq \C$, 
+    so $p$ has no multiple roots in $L$, we apply the equivalence theorem
+    to say $L$ of $K$ is a Galois extension. Since $\Gamma(L:K)$ is abelian,
+    all subgroups are normal. We apply Galois correspondence.
+    \begin{align}
+        \Gamma(K(\alpha):K) \cong \Gamma(L:K)/\Gamma(L:K(\alpha))
+    \end{align}
+    and $K(\alpha):K$ is Galois extension by Galois correspondence.
+    so $K(\alpha):K$ is normal and separable.
+    Thus, since we established $m_K^{\alpha} = p$, $K(\alpha)$ is normal,
+    so $K(\alpha)$ contain all the roots of $m_K^{\alpha}=p$, 
+    so $K(\alpha) \supset L,$ and since $K(\alpha) \subseteq L$,
+    we conclude $K(\alpha) = L$. Thus,
+    \begin{align}
+        \lvert \Gamma(L:K) \rvert = [L:K] = [K(\alpha):K] = deg \ m_K^{\alpha} = deg \ p
+    \end{align}
+    and the first equal sign is because extension is Galois.
+    
+\end{proof}
+
 
 
 

@@ -1,0 +1,64 @@
+\documentclass[12pt,english]{article}
+\usepackage{xianzhi}
+
+\title{Galois Theory HW03}
+\author{xianzhi wang}
+\date{Due Mar 04, 2022}
+
+\begin{document}
+
+\maketitle
+
+\section*{Exercise 3.2.12}
+\begin{question}
+Show $\pi - \sqrt{\pi}$ is not algebraic over $\Q$.
+\end{question}
+
+First we show $\sqrt{\pi}$ is not algebraic over $\Q$. Assume for contradiction that $\sqrt{\pi}$ is algebraic over $\Q$, so $\exists$ $a_n,\cdot, a_0\in \Q$ not all zero such that
+\begin{align*}
+    a_n(\sqrt{\pi})^n +\cdots+a_1 \sqrt{\pi} +a_0 = 0 \quad \text{denote by } p(\sqrt{\pi}) = 0
+\end{align*}
+Consider 
+\begin{align*}
+    0 = p(\sqrt{\pi})p(-\sqrt{\pi}) = q(\pi) \text{ for some polynomial } q
+\end{align*} some algebra omitted.
+Thus, $q(\pi) = 0$, so $\pi$ is algebraic over $\Q$, contradiction. \\
+
+Now assume for contradiction $\pi-\sqrt{\pi}$ is algebraic over $\Q$, so $\exists$ $b_n \cdots, b_0 \in \Q$ not all zero s.t.
+\begin{align*}
+    b_n(\pi-\sqrt{\pi})^n+\cdots +b_1(\pi-\sqrt{\pi})+b_0 = 0
+\end{align*} multiply out this expression, we obtain a not all zero polynomial of $\sqrt{\pi}$ such that it equals $0$. A contradiction. 
+
+
+\section*{Exercise 5.3.7}
+\begin{question}
+    Let $L$ be the splitting field of a polynomial $f \in K[X].$ Show that $[L:K] \leq n!$, where $n$ is the degree of $f$.
+\end{question}
+
+
+\section*{Exercise 5.3.8}
+
+$i$ is not contained in the splitting field of $x^3-2$ over $\Q$.\\
+
+\begin{proof}
+We know the splitting field of $X^3-2$ is $\Q(\sqrt[3]{2}, \omega)$, 
+first we show $i \not\in \Q(\omega)$. 
+Assume for contradiction $i \in \Q(w) \implies \sqrt{3} \in \Q(\omega)$, which implies 
+\begin{align*}
+    \Q(i,\sqrt{3}) \subset \Q(\omega),
+\end{align*} but the LHS has degree 4 over $\Q$, and RHS has degree 2 over $\Q$. \\
+
+$i \not\in \Q(\omega)$, so $\deg_{\Q(\omega)}i >1$. 
+Thus, $\Q(\omega,i)$ is degree $4$ extension over $\Q$. 
+However, if assume for contradiction $i \in \Q(\omega,\sqrt[3]{2}$, 
+then $\Q(\omega,i) \subset \Q(\omega, \sqrt[3]{2}),$ 
+but the former has degree 4, and the latter has degree 6, and $4 \nmid 6$.
+\end{proof}
+
+
+
+
+
+
+
+\end{document}

@@ -75,6 +75,42 @@ End of Case 2.
     such that the factor group $G/N$ is cyclic.
 \end{question}
 
+Let $L$ be the splitting field of $X^5 - 2$ over $\mathbb{Q}$.
+\begin{align}
+    L = \mathbb{Q}(\sqrt[5]{2}, \omega) \ \text{where} \ \omega = e^{\frac{ 2 \pi i }{5}}
+\end{align}
+we have
+\begin{align}
+    L \subseteq \mathbb{Q}(\sqrt[5]{2}, \sqrt[5]{2}\omega, \sqrt[5]{2}\omega^2, \sqrt[5]{2}\omega^3, \sqrt[5]{2} \omega^4)
+\end{align}
+because $\sqrt[5]{2}$ is in there, and $\omega = \frac{ \sqrt[5]{2} \omega }{ \sqrt[5]{2} }$ is in there.
+\begin{align}
+    L \supseteq \mathbb{Q}(\sqrt[5]{2}, \sqrt[5]{2}\omega, \sqrt[5]{2}\omega^2, \sqrt[5]{2}\omega^3, \sqrt[5]{2} \omega^4)
+\end{align}
+because we can multiply $\sqrt[5]{2}$ and $\omega$ to generate the roots.\\
+Claim: $[L:\mathbb{Q}]=20$.\\
+First $[\mathbb{Q}(\sqrt[5]{2}:\mathbb{Q}]=5$ since $X^5 - 2$ has $\sqrt[5]{2}$ as a root,
+and $X^5 - 2$ is irreducible by Eisenstein (let $p=2$), so 
+$X^5 - 2$ is the minimal polynomial of $\sqrt[5]{2}$ over $\mathbb{Q}$,
+and its degree 5.\\
+$[\mathbb{Q}(\omega):\mathbb{Q}]=4$ since $\omega$ is a root of 
+$X^4 + X^3 + X^2 + X +1$,
+so the degree of $\mathbb{Q}(\omega)$ is at most 4, since $X^5 - 1$ has 4
+primitive roots of unity, the degree $[\mathbb{Q}(\omega):\mathbb{Q}]$ is 4.\\
+Thus, since $\mathbb{Q}(\omega)$ and $\mathbb{Q}(\sqrt[5]{2})$
+are intermediate fields in $L$,
+their degree devides degree of $L$ over $\mathbb{Q}$.
+so $[L:\mathbb{Q}]$ is a multiple of 20. but by previous result
+\begin{align}
+    [K(\alpha_1,\ldots, \alpha_n):K] &\leq deg_K(\alpha_1) \cdots deg_K (\alpha_n)\\
+    [L:\mathbb{Q}] &\leq 5 \cdot 4 = 20\\
+    \implies [L:\mathbb{Q}] &=20
+\end{align}
+
+
+
+
+
 \section*{Exercise 6.4.7}
 \begin{question}
     Let $p$ be an irreducible polynomial over a subfield $K$ of $\C$, and denote by $L$ the splitting field of $p$ over $K$. 

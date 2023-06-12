@@ -106,9 +106,72 @@ so $[L:\mathbb{Q}]$ is a multiple of 20. but by previous result
     [L:\mathbb{Q}] &\leq 5 \cdot 4 = 20\\
     \implies [L:\mathbb{Q}] &=20
 \end{align}
-
-
-
+Since $L$ is splitting field of $X^5 - 2 \in \mathbb{Q}[X]$ that has no multiple roots,
+we conclude $L$ over $\mathbb{Q}$ is Galois extension.
+\begin{align}
+    |G| = [L:\mathbb{Q}] = 20
+\end{align}
+where $G := \Gamma(L:\mathbb{Q})$.\\
+Now, we try to show $\mathbb{Q}(\omega)$ over $\mathbb{Q}$ is Galois extension.
+\begin{align}
+    m_{\mathbb{Q}}^{\omega} = X^4 + X^3 + X^2 + X + 1
+\end{align}
+has roots $\omega = e^{2 \pi i/5}, \omega^2, \omega^3, \omega^4$,
+so $\mathbb{Q}(\omega)$ is the splitting field of $X^4 + X^3 + X^2 + X + 1$
+over $\mathbb{Q}$, with no repeated roots, so by Theorem 6.3, 
+the extension is Galois.\\
+Thus, we apply Galois correspondence to conclude
+there exists a normal subgroup of $G$, which is 
+$\mathbb{Q}(\omega)^{*} = \Gamma(L:\mathbb{Q}(\omega)) =: N$ and we have
+\begin{align}
+    \Gamma(\mathbb{Q}(\omega):\mathbb{Q}) \cong G/\Gamma(L:\mathbb{Q}(\omega)) 
+\end{align}
+Thus,
+\begin{align}
+    4 = [\mathbb{Q}(\omega):\mathbb{Q}] = \lvert \Gamma(\mathbb{Q}(\omega):\mathbb{Q}) \rvert = \lvert G/N \rvert = \frac{ |G| }{ |N| }.
+\end{align}
+Thus,
+\begin{align}
+    4 = \frac{ 20 }{ \lvert N \rvert } \implies \lvert N \rvert = 5.
+\end{align}
+Now, we show $G/N$ is cyclic by showing $\Gamma(\mathbb{Q}(\omega):\mathbb{Q})$ is cyclic.
+One element $b \in \Gamma(\mathbb{Q}(\omega):\mathbb{Q})$
+is conjugation restricted to $\mathbb{Q}(\omega)$. 
+\begin{align}
+    b: \omega^2 &\mapsto \omega^3 \\
+    w &\mapsto w^4
+\end{align}
+Another element of $\Gamma(\mathbb{Q}(\omega):\mathbb{Q})$ is
+\begin{align}
+    a: \omega &\mapsto \omega^2\\
+    a(\omega) &= \omega^2\\
+    a(\omega^2) &= \left( a(\omega) \right)^2 = \omega^4\\
+    a(\omega^3) &= \left( a(\omega) \right)^3 = \omega^6 = \omega\\
+    a(\omega^4) &= \left( a(\omega) \right)^4 = \omega^8 = \omega^3\\
+    a(\omega^5 = 1) &= \left( a(\omega) \right)^5 = \omega^{10} = 1
+\end{align}
+\textit{Comment from instructor: Why does $\Gamma(\mathbb{Q}(\omega):\mathbb{Q})$
+have an element $a$ with $a(\omega) = \omega^2$?}\\
+Observe $b=a^2$.
+\begin{align}
+    a^2(\omega) &= a(\omega^2) = \omega^4\\
+    a^2 (\omega^2) &= a (\omega^4) = \omega^3
+\end{align}
+We could let $c:= a^3$
+\begin{align}
+    c(\omega) &= a^3(\omega) = a(\omega^4) = \omega^3\\
+    c(\omega^2) &= a^3(\omega^2) = a (\omega^3) = \omega\\
+    c(\omega^3) &= a^3 (\omega^3) = a^2(\omega) = \omega^4
+\end{align}
+observe $a^4 = e$\\
+\begin{align}
+    a^4 (\omega) &= a( a^3(\omega) ) = a(\omega^3) = \omega\\
+    a^4 (\omega^2) &= a(\omega) = \omega^2\\
+    a^4 (\omega^3) &= a(\omega^4) = \omega^3\\
+    a^4 (\omega^4) &= a^3 (\omega^3) = \omega^4
+\end{align}
+Thus, we found the generator $a$ and all four elements
+in $\Gamma(\mathbb{Q}(\omega):\mathbb{Q})$, showing it is indeed cyclic.
 
 
 \section*{Exercise 6.4.7}

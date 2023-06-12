@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1686465456 "HW04.tex" "build/HW04.pdf" "HW04" 1686465457
+["pdflatex"] 1686591184 "HW04.tex" "build/HW04.pdf" "HW04" 1686591185
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1136768653 1536 06717a2b50de47d4087ac0e6cd759455 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -156,8 +156,8 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1668738742 2826448 dc0181bbe67b6cc084eb39e7967638f5 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "HW04.tex" 1686465455 7097 081f9a7f3358564ea33e8b057abc702f ""
-  "build/HW04.aux" 1686465457 632 7267bdeff15b814c6e7ab2b3f5423066 "pdflatex"
+  "HW04.tex" 1686591181 9833 e1320f5dcb6aa3cd4f93323323d23bb0 ""
+  "build/HW04.aux" 1686591185 632 ff44368a5342b136468da01f1d1adc5a "pdflatex"
   "xianzhi.sty" 1686078766 2693 21b203212f2c12fa48ad5f17302e9637 ""
   (generated)
   "build/HW04.aux"

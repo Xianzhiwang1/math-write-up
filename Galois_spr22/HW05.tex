@@ -39,6 +39,127 @@ Exercise 7.2.8\\
 
     \solution
 
+    \part
+
+    Let 
+    \begin{align}
+        \sqrt{2 + \sqrt{2}} &= X \\
+        \sqrt{2} &= X^2 - 2 \\
+        2 &= (X^2 - 2)^2 = X^4 - 4 X^2 + 4
+    \end{align}
+    Thus, $\sqrt{2+\sqrt{2}}$ is a root of $X^4 - 4X^2 + 2 =: f$
+    Since $f$ is irreducible, by Eisenstein $(p=2)$, 
+    $\mathbb{Q}(\gamma)$ is degree 4 over $\mathbb{Q}$,
+    we could find the roots of $f$:
+    \begin{align}
+        f = \left(X + \sqrt{2+\sqrt{2}}\right) \left(X - \sqrt{2+\sqrt{2}} \right) \left(X + \sqrt{2-\sqrt{2}}\right) \left(X - \sqrt{2-\sqrt{2}}\right)
+    \end{align}
+    Let $\phi \in \Gamma(\mathbb{Q}(\gamma):\mathbb{Q})$, we know $\phi$ permutes the roots of $f$.\\
+    If we can find an element $\phi$ with order strictly greater than $2$, 
+    then since order of the element need to divide the order of the group,
+    $\lvert \phi \rvert$ must be 4. Since up to isomorphism, group of order 4
+    is $\mathbb{Z}_4$ and $\mathbb{Z}_2 \oplus \mathbb{Z}_2$, we know once 
+    there exists $\lvert \phi \rvert = 4, \ \Gamma(\mathbb{Q}(\gamma):\mathbb{Q})$ must be cyclic.\\
+    First, we show $ \mathbb{Q}(\gamma) $ is splitting field of $f$
+    that has no multiple roots, which would imply it is normal.
+    since 
+    \begin{align}
+        \sqrt{2+\sqrt{2}} = \gamma \in \mathbb{Q}(\gamma) \implies - \sqrt{2+\sqrt{2}} &\in \mathbb{Q}(\gamma)\\
+        2+\sqrt{2} &= \gamma^2 \in \mathbb{Q}(\gamma) 
+    \end{align}
+    so $\sqrt{2} \in \Q(\gamma)$. Since
+    \begin{align}
+        \sqrt{2+\sqrt{2}} \cdot \sqrt{2 - \sqrt{2}} = \sqrt{2} \in \mathbb{Q}(\gamma) \implies \sqrt{2-\sqrt{2}} \in \mathbb{Q}(\gamma)  
+    \end{align}
+    so $-\sqrt{2-\sqrt{2}} \in \mathbb{Q}(\gamma)$.\\
+    Thus, all 4 roots of $f$ are in $\mathbb{Q}(\gamma)$. And 
+    these roots are all distinct. so
+    \begin{align}
+        \mathbb{Q} \left(\sqrt{2+\sqrt{2}}, -\sqrt{2+\sqrt{2}}, +\sqrt{2-\sqrt{2}}, - \sqrt{2-\sqrt{2}}\right) &\subseteq \mathbb{Q}(\gamma)\\
+        \mathbb{Q} \left(\sqrt{2+\sqrt{2}}, -\sqrt{2+\sqrt{2}}, +\sqrt{2-\sqrt{2}}, - \sqrt{2-\sqrt{2}}\right) &\supseteq \mathbb{Q}(\gamma)\\
+        \text{so} \ \mathbb{Q} \left(\sqrt{2+\sqrt{2}}, -\sqrt{2+\sqrt{2}}, +\sqrt{2-\sqrt{2}}, - \sqrt{2-\sqrt{2}}\right) &= \mathbb{Q}(\gamma)\\
+    \end{align}
+    Thus, $\mathbb{Q}(\gamma)$ is indeed splitting field of $f$ with no multiple roots,
+    so $\mathbb{Q}(\gamma): \mathbb{Q}$ is Galois extension, 
+    and is normal extension. 
+    Now we find $\phi \in \Gamma(\mathbb{Q}(\gamma):\mathbb{Q})$ that has order $\geq 3$. Claim:
+    \begin{align}
+        \sqrt{2 + \sqrt{2}} \mapsto_{\phi} \sqrt{2 - \sqrt{2}}  
+    \end{align}
+    does the job.\\
+    \textit{Why does such an automorphism exist?
+    Answer: Galois group acts transitively on the roots of a minimal polynomial}
+
+
+
+    Let 
+    \begin{align}
+    X_1 = - \sqrt{2 + \sqrt{2}}, \ X_2 = \sqrt{2 + \sqrt{2}}, \ X_3 = - \sqrt{2 - \sqrt{2}}, \ X_4 = \sqrt{2 - \sqrt{2}}
+    \end{align}
+    Hence 
+    \begin{align}
+        \phi \circ \phi \left( \sqrt{2 + \sqrt{2}}\right) &= \phi \left( \sqrt{2 - \sqrt{2}}\right) \\ 
+        &= \phi \left( \frac{ \sqrt{2} }{ \sqrt{2+\sqrt{2}} }\right)\\
+        &= \frac{ \phi (\sqrt{2}) }{ \phi \left( \sqrt{2 + \sqrt{2}}\right) }\\
+        &= \frac{ - \sqrt{2} }{ \sqrt{2-\sqrt{2}} }\\
+        &= - \sqrt{2 + \sqrt{2}}
+    \end{align}
+    We also have
+    \begin{align}
+        \phi(2) + \phi(\sqrt{2}) &= \phi(2 + \sqrt{2})\\
+        &= \phi \left( \sqrt{2 + \sqrt{2}} \cdot \sqrt{2 + \sqrt{2}} \right)\\
+        &= \phi \left( \sqrt{2 + \sqrt{2}} \right) \cdot \phi \left( \sqrt{2 + \sqrt{2}} \right)\\
+        &= \left( \sqrt{2 - \sqrt{2}} \right) \cdot \left( \sqrt{2 - \sqrt{2}} \right)\\
+        &= 2 - \sqrt{2}
+    \end{align}
+    so $\phi(2) + \phi(\sqrt{2}) = 2 - \sqrt{2}$,
+    since $\phi(2) = 2$ implies $\phi(\sqrt{2}) = - \sqrt{2}$.\\
+    Since $\phi^2$ is not identity automorphism, $\lvert \phi \rvert \geq 3,$ 
+    and we found the desired $\phi$.\\
+    We can check $\phi$ indeed permutes $X_1, X_2, X_3, X_4$.\\
+    \begin{align}
+        X_2 &\xrightarrow[]{\phi}    X_4\\
+        \phi(X_1) &= \phi(-\sqrt[]{2+\sqrt[]{2}} = - \sqrt[]{2-\sqrt[]{2}} = X_3\\
+        \phi(X_3) &= \phi(- \sqrt[]{2-\sqrt[]{2}}) = (-1)\cdot (-\sqrt[]{2+\sqrt[]{2}}) = \sqrt[]{2+\sqrt[]{2}} = X_2\\
+        \phi(X_4) &= - \sqrt[]{2+\sqrt[]{2}} = X_1\\
+        \phi: X_1 &\xrightarrow[]{} X_3 \xrightarrow[]{} X_2 \xrightarrow[]{} X_4 \xrightarrow[]{} X_1
+    \end{align}
+
+    \part
+
+    Show $\mathbb{Q}(\gamma, i) = \mathbb{Q}(\phi)$ with $\phi^4 = i$.\\
+    Use formula
+    \begin{align}
+        \cos (A) &= 1 - 2 \sin^2 \frac{ A }{ 2 }\\
+        1 - 2 \sin^2(22.5^{\circ}) &= \cos 45^{\circ}\\
+        \sin^2 (22.5^{\circ}) &= \frac{ \sqrt[]{2}-1 }{ 2 \sqrt{2} }\\
+        \sin^2 (22.5^{\circ}) &= \frac{ \sqrt[]{2-\sqrt[]{2}} }{ 2 } 
+    \end{align}
+    And also,
+    \begin{align}
+        \cos (A) &= 2 \cos^2 \frac{ A }{ 2 } - 1\\
+        \cos 45^{\circ} &= 2 \cos^2 22.5^{\circ} - 1\\
+        \frac{ 1 }{ \sqrt[]{2} }+1 &= 2 \cos^2 (22.5^{\circ})\\
+        \sqrt[]{\frac{ 1+\sqrt{2} }{ 2 \sqrt{2} }} &= \cos (22.5^{\circ})
+    \end{align}
+    
+    
+
+
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+
+
 
 
 

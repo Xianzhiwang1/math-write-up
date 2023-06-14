@@ -1,0 +1,211 @@
+\documentclass{article}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{AAA \ \#Final}
+\newcommand{\hmwkDueDate}{May 2022}
+\newcommand{\hmwkClass}{Adv Abstract Algebra}
+\newcommand{\hmwkClassTime}{All Section}
+\newcommand{\hmwkClassInstructor}{Prof. Peter Hermann}
+\newcommand{\hmwkAuthorName}{\textbf{Xianzhi} }
+\newcommand{\hmwkAuthor}{\textit{Xianzhi Wang}}
+
+\input{preambleBloat.tex}
+% \usepackage{xianzhi}
+
+\begin{document}
+
+\maketitle
+\#Final Exam Spr 2022\\
+\pagebreak
+
+\begin{homeworkProblem}
+    Assume that $H \leq G, \ \lvert G:H \rvert = 4,$ 
+    $L \leq G, \ \lvert L \rvert = 77,$ show that $L \leq H$. \\
+    \solution 
+
+    Let $G$ act on the set of right cosets of $H, \ \cR$ by right action
+    \begin{align}
+        G &\xrightarrow{\varphi} Sym \cR \cong S_4.\\
+        g &\rightarrow \left( Ha \rightarrow Ha \cdot g \right)
+    \end{align}
+    Consider the Image of $L$ under $\varphi$. Since $L \leq G$.
+    \begin{align}
+        &\implies \varphi(L) \leq S_4\\
+        &\implies \lvert \varphi(L) \rvert \ \text{divide} \ \lvert S_4 \rvert = 4! = 24
+    \end{align}
+    so for $\ell \in L$, $\varphi (\ell) \mid order(\ell)$, and
+    $order(\ell) \mid \lvert L \rvert$, so $\varphi (\ell) \mid \lvert L \rvert$
+    which implies $\varphi(\ell) \mid 77$.
+    \begin{align}
+        \frac{ \lvert L \rvert }{ \lvert \restr{ker \varphi}{L} \rvert } = \lvert \text{Im of L under} \varphi \rvert
+    \end{align}
+    which implies 
+    \begin{align}
+        \varphi(L) &\mid \lvert L \rvert \\
+        \implies \varphi(L) &\mid 77 \\
+        \implies \lvert \varphi(\ell) \rvert &\mid gcd(77,24)=1\\
+        \implies L &\in ker \varphi\\
+        \implies L \in ker \varphi &= \cap_{g \in G} gHg^{-1} \leq H\\
+        \implies L &\leq H
+    \end{align}
+    
+
+\end{homeworkProblem}
+
+\pagebreak
+
+
+\begin{homeworkProblem}
+    Let $\lvert G \rvert = 3 \cdot 5 \cdot 59$. Prove:
+    \begin{enumerate}
+        \item $\lvert Z(G) \rvert > 1$.
+        \item $G$ is abelian.
+        \item $G$ is cyclic.
+    \end{enumerate}
+    \solution 
+
+    \part
+    Consider Sylow 59 subgroup
+    \begin{align}
+        &n_{59} \equiv 1 \mod 59\\
+        &n_{59} \mid 3 \cdot 5 
+    \end{align}
+    which implies $n_{59} = 1$.\\
+    Hence $\exists$ unique Sylow 59 subgroup we call $Q$,\\
+    $\implies Q \triangleleft G$, consider $G$ act on $Q$ by conjugation.
+    \begin{align}
+        G &\xrightarrow[]{\varphi} Aut (Q) \ (q \in Q)\\
+        g &\xrightarrow[]{} \ (q \xrightarrow[]{} gqg^{-1})
+    \end{align}
+
+    WTS: $Q \leq Z(G)$\\
+    WTS: $ker \varphi = G$
+    Let $g \in G \ \varphi(g) \mid Aut(Q) = 58$ 
+    since $|Q| = 59$ is prime, $Q$ is cyclic. Also,
+    \begin{align}
+        &\frac{ \lvert G \rvert }{ \lvert ker \varphi \rvert } = \lvert Im \varphi \rvert\\
+        &\varphi(g) \ \text{divides} \ \lvert Im \varphi \rvert 
+        \ \text{which divides} \ \lvert G \rvert \\
+        &\implies \varphi(g) \mid \lvert G \rvert = 3 \cdot 5 \cdot 59
+    \end{align}
+    
+    
+    
+    
+
+    
+
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem}
+    Let $\lvert G \rvert = 2 \cdot 5 \cdot 7 \cdot 79^3$.
+    Show that $G$ is solvable.\\
+    \solution
+
+
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem}
+    Let a solvable group $G$ act faithfully and
+    transitively on the set $\Omega$, where $\lvert \Omega \rvert = 35$.
+    \begin{enumerate}
+        \item Prove that this action is not primitive.
+        \item Show that if $G$ is abelian then it must be cyclic.
+    \end{enumerate}
+    \solution
+
+    \part
+
+    $G$ has a subnormal chain with abelian factor
+    \begin{align}
+        1 &= G_n \lhd \ldots \lhd G_1 \lhd G_0 = G\\  
+        G &\xrightarrow[]{\varphi} \ Sym(\Omega) \cong S_{35}
+    \end{align}
+    $ker \varphi = 1$ since $G$ is faithful,
+    \begin{align}
+        G \cong \frac{ G }{ ker \varphi } \cong Im \varphi \leq S_{35}
+    \end{align}
+    We have $G \leq S_{35}, \ G \hookrightarrow S_{35}, \ \lvert G \rvert \leq 35!$
+    $G$ finite\\
+    $G$ transitive on $\Omega$:\\
+    Primitive $\iff G_y <_{max} G, \ y \in \Omega$ 
+    Try to show $G_y$ is not max subgroup in $G, y \in \Omega$?\\
+
+    Transitive, Orbit Stabilizer Theorem $\implies \lvert \Omega \rvert$ divide
+    $\lvert G \rvert$, so $35 \mid \lvert G \rvert$, now
+    \begin{align}
+        \lvert orbit of y\rvert \cdot \lvert G_y \rvert &= \lvert G \rvert\\
+        \lvert \Omega \rvert &= 5 \cdot 7
+    \end{align}
+    there exist minimal normal subgroup $N \lhd G$, 
+    \textit{(comment from instructor) suppose: primitive, faithful, solvable, 
+        $\implies$ $\lvert N \rvert$ is a prime power, 
+    but $\lvert N \rvert = 35$, contradiction}
+
+    
+    
+
+
+    
+    
+
+
+    
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem}
+    Let $G$ be a finite group, $e$ the identity of $G$
+    and $a$ some nonidentity element. Suppose that $\chi$
+    is a character of $G$ such that $(\forall g \in G)$
+    \begin{align}
+        \chi (g) = 
+        \begin{cases}
+            5, \ \text{if} \ g=e,\\
+            3, \ \text{if} \ g = a,\\
+            0, \ \text{otherwise}
+        \end{cases}
+    \end{align}
+    Determine $G$.\\
+    \solution
+
+    We have $\lvert G \rvert < \infty$, and
+    \begin{align}
+        [\chi, \chi] &= \frac{ 1 }{ \lvert G \rvert } \sum_{g \in G} 
+        \chi(g) \overline{\chi(g)}\\
+        &= \frac{ 1 }{ \lvert G \rvert }(25+9+0)\\
+        &= \frac{ 34 }{ \lvert G \rvert }
+    \end{align}
+    is an integer. so $\lvert G \rvert \mid 34 = 2 \cdot 17$.\\
+    \begin{align}
+        [\chi, \mathbb{1}_G] &= \frac{ 1 }{ \lvert G \rvert }(5+3)
+        = \frac{ 8 }{ \lvert G \rvert } \ \text{is integer}\\
+        \implies \lvert G \rvert &\mid 8\\
+        \implies \lvert G \rvert &\mid gcd(8, 2 \cdot 17) = 2
+    \end{align}
+    implies $G$ is the unique group of $2$ elements,
+    the cyclic group of $2$ elements.
+
+    
+    
+
+
+    
+    
+\end{homeworkProblem}
+
+\end{document}

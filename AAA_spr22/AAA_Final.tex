@@ -147,13 +147,48 @@
     Transitive, Orbit Stabilizer Theorem $\implies \lvert \Omega \rvert$ divide
     $\lvert G \rvert$, so $35 \mid \lvert G \rvert$, now
     \begin{align}
-        \lvert orbit of y\rvert \cdot \lvert G_y \rvert &= \lvert G \rvert\\
+        \lvert \text{orbit of} \ y\rvert \cdot \lvert G_y \rvert &= \lvert G \rvert\\
         \lvert \Omega \rvert &= 5 \cdot 7
     \end{align}
     there exist minimal normal subgroup $N \lhd G$, 
     \textit{(comment from instructor) suppose: primitive, faithful, solvable, 
         $\implies$ $\lvert N \rvert$ is a prime power, 
-    but $\lvert N \rvert = 35$, contradiction}
+    but $\lvert N \rvert = 35$, contradiction}\\
+
+    $\exists$ blocks,
+    \begin{enumerate}
+        \item $7$ blocks $\lvert B_i \rvert = 5$
+        \item $5$ blocks $\lvert B_i \rvert = 7$
+    \end{enumerate}
+    \begin{align}
+        G \xrightarrow[]{} Sym(B_i) \cong S_5
+    \end{align}
+    $G$ acts transitively on $B_i$'s,
+    O-S implies $5 \mid \lvert G \rvert $\\
+
+    $G$ abelian, transitive, faithful on $\Omega$ implies 
+    $G$ acts regularly on $\Omega$.\\
+    $Stab_x = 1 \ \forall \ x \in \Omega$.\\
+    $G$ transitive, $G \xrightarrow[]{} Sym (\Omega)$,
+    \begin{align}
+        1 &= \lvert \# \ \text{of orbits} \rvert = \frac{ 1 }{ \lvert G \rvert } 
+        \sum_{g \in G} \lvert \text{fixed elts by} \ g \rvert \\
+        \lvert G \rvert &= \sum_{g \in G} \lvert \text{fixed elts by} \ g\rvert
+    \end{align}
+    only identity can fix some elts, hence all $\Omega$.\\
+    $e \neq g$ cannot fix any element $\implies$ since action is regular.\\
+    Hence $\lvert G \rvert = 35 + 0$, so $\lvert G \rvert = 35$.\\
+    Since $G$ is abelian, use fundamental theorem for abelian group
+    \begin{align}
+        G \cong \mathbb{Z}_5 \times \mathbb{Z}_7 \cong \mathbb{Z}_{35}
+    \end{align}
+    is cyclic, since 5,7 coprime.\\
+    
+
+
+    
+    
+    
 
     
     

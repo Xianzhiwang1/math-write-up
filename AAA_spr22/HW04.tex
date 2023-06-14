@@ -29,13 +29,55 @@
 
 \begin{homeworkProblem}
     Let $G$ be a finite group and $p$ a prime.
-    Suppose that $N_p \triangleleft G$ such that
+    Suppose that $N_p \lhd G$ such that
     $\lvert G:N_p \rvert$ is some power of $p$ and 
     $\lvert N_p \rvert$ is not divisible by $p$.
     (Then $N_p$ is called \textit{a normal p-complement in} $G$.)
     Prove that (for the give $p$) $N_p$ is unique,
     i.e., a group can have at most one normal $p$-complement.\\
     \solution 
+
+    Take normal $p$-complement $N$ and $N'$ in $G$, we show that
+    they are actually equal.
+    \begin{align}
+        &G\\
+        N &\cdot N' \\
+        N \ \ \ & \ \ \ \ \ \ N'\\
+        N &\cap N'
+    \end{align}
+    Since the order of a normal $p$-complement is not divisible by $p$,
+    and its index in $G$ is some power of $p$, we write 
+    \begin{align}
+        \lvert N \rvert = \lvert N' \rvert &= m \\
+        \lvert G \rvert = p^k \cdot m \ \text{where} \ p \hspace{-4pt}\not| \hspace{2pt} m.
+    \end{align}
+    We know that in general, for $H \leq G, \ N \lhd G, \implies HN \leq G$.\\
+    Thus, $N \cdot N' \leq G$, so $\lvert N \cdot N'\rvert$.\\
+
+    By 2nd iso theorem 
+    \begin{align}
+        \frac{ N \cdot N' }{ N } &\cong \frac{ N' }{ N \cap N' }\\
+        \frac{ \lvert N \cdot N'\rvert }{\lvert N \rvert} 
+        \&= \lvert \frac{ N \cdot N' }{ N }\rvert
+        = \lvert \frac{ N' }{ N \cap N' }\rvert \\
+        &\implies \lvert N \cdot N' \rvert 
+        = \lvert \frac{ N' }{ N \cap N' }\rvert \cdot \lvert N \rvert \\
+    \end{align}
+    Thus, since $\lvert N'\rvert$ is normal $p$-complement, 
+    $p \hspace{-4pt}\not| \hspace{2pt} \lvert N' \rvert$, and since
+    \begin{align}
+        \lvert \frac{ N' }{ N \cap N' }\rvert &= \frac{ \lvert N' \rvert }{ \lvert N \cap N' \rvert }\\
+        &\implies p \hspace{-4pt}\not| \hspace{2pt} \lvert \frac{ N' }{ N \cap N' }\rvert.
+    \end{align}
+    Also, $p \hspace{-4pt}\not| \hspace{2pt} \lvert N \rvert$.\\
+    implies $p \hspace{-4pt}\not| \hspace{2pt} \lvert N \cdot N' \rvert.$\\
+
+
+    
+    
+    
+
+    
 
 
 
@@ -46,10 +88,10 @@
 
 
 \begin{homeworkProblem}
-    Let $G$ be a finite group, $L \triangleleft G$ and $p$ a prime.
+    Let $G$ be a finite group, $L \lhd G$ and $p$ a prime.
     Suppose that $N_p$ is a normal $p$-complement in $G$.
     Show that $L \cap N_p$ is a normal $p$-complement in $L$
-    and $L \cdot N_p/L$ is a normal $p$-complement in $G/L$.\\
+    and $L \cdot N_p / L$ is a normal $p$-complement in $G/L$.\\
     \solution 
     
 
@@ -58,65 +100,25 @@
 \pagebreak
 
 \begin{homeworkProblem}
-    Let $\lvert G \rvert = 2 \cdot 5 \cdot 7 \cdot 79^3$.
-    Show that $G$ is solvable.\\
-    \solution
-
-
-    For the variance:
-
-    \[
-        \begin{split}
-            \Var[\hat{\beta_1}]
-            &= \Var \left[ \frac{
-                \sum {x_i Y_i}
-            }{
-                \sum x_i^2
-            }\right]
-            \\
-            &=
-            \frac{
-                \sum {x_i^2}
-            }{
-                \sum x_i^2 \sum x_i^2
-            } \Var[Y_i]
-            \\
-            &=
-            \frac{
-                \sum {x_i^2}
-            }{
-                \sum x_i^2 \sum x_i^2
-            } \Var[Y_i]
-            \\
-            &=
-            \frac{
-                1
-            }{
-                \sum x_i^2
-            } \Var[Y_i]
-            \\
-            &=
-            \frac{
-                1
-            }{
-                \sum x_i^2
-            } \sigma^2
-            \\
-            &=
-            \frac{
-                \sigma^2
-            }{
-                \sum x_i^2
-            }
-        \end{split}
-    \]
+    Let $p$ be a prime and denote the cyclic group of order $p$ by $C$. 
+    Determine the number of all automorphisms of $C \times C$.
 
 \end{homeworkProblem}
 
 \pagebreak
 
 \begin{homeworkProblem}
-    Let a solvable group $G$ act faithfully and
+    \textbf{For fun:} Let $p$ be a prime, $0 < k < t$ integers,
+    and denote the cyclic group of order $p^k$ by $A$
+    and the cyclic group of order $p^t$ by $B$. Determine the 
+    number of all automorphisms of $A \times B$ and $A \times A$.
+    
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem}
+    From Final: Let a solvable group $G$ act faithfully and
     transitively on the set $\Omega$, where $\lvert \Omega \rvert = 35$.
     \begin{enumerate}
         \item Prove that this action is not primitive.

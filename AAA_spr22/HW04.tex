@@ -72,7 +72,88 @@
     Also, $p \hspace{-4pt}\not| \hspace{2pt} \lvert N \rvert$
     implies $p \hspace{-4pt}\not| \hspace{2pt} \lvert N \cdot N' \rvert.$\\
 
-    Since we have $N \cdot N' \leq G$, and $\lvert N \cdot N'\rvert
+    Since we have $N \cdot N' \leq G$, and $\lvert N \cdot N'\rvert \mid \lvert G \rvert = p^k \cdot m$, 
+    and $\lvert N \rvert = m \mid \lvert N \cdot N' \rvert$, \\
+    We have $\lvert N \cdot N' \rVert = p^{k_0} \cdot m$ for some $k_0 \in \mathbb{Z}^{+} \cup \left\{ 0 \right\}$,\\
+    but $p \hspace{-4pt}\not| \hspace{2pt} \lvert N \cdot N'\rvert$ implies $k_0 = 0$ so $\lvert N \cdot N' \rvert = m$. \\
+    Thus, since $\lvert N \rvert = \lvert N \cdot N'\rvert$ and $ N \leq N \cdot N'$,
+    we conclude $ N = N \cdot N'$. By symmetry, $N = N \cdot N' = N'$.
+    And we are done.
+
+    \part
+
+    Show $L \cap N_p$ is a normal $p$-complement in $L$.\\
+    Let $\lvert G \rvert = p^k \cdot m$ where $p \hspace{-4pt}\not| \hspace{2pt} m$.\\
+    Take $a \in L \cap N_p, \ \ell \in L$. \\
+    Then $\ell a \ell^{-1} \in L$, and $\ell a \ell^{-1} \in N_p$ since $N_p$ is normal.\\
+    So $\ell a \ell^{-1} \in L \cap N_p \ \implies \ L \cap N_p \lhd L$.
+    Or just use 2nd Iso Thm. By 2nd Iso Thm,
+    \begin{align}
+        \frac{ L }{ L \cap N_p } \cong \frac{ L \cdot N_p }{ N_p }
+    \end{align}
+    so 
+    \begin{align}
+        \lvert L: L \cap N_p \rvert = \frac{ \lvert L \rvert }{ \lvert L \cap N_p \rvert } 
+        = \lvert \frac{ L }{ L \cap N_p }\rvert = \lvert \frac{ L \cdot N_p }{ N_p }\rvert
+    \end{align}
+    since $L \cdot N_p \leq G \implies \frac{ L \cdot N_p }{ N_p } \leq \frac{ G }{ N_p }$ 
+    (the factor group $\frac{ L \cdot N_p }{ N_p }$ is subgroup 
+    of the factor group $\frac{ G }{ N_p }$. Thus,
+    \begin{align}
+        \lvert \frac{ L \cdot N_p }{ N_p }\rvert \mid \lvert \frac{ G }{ N_p }\rvert = \frac{ \lvert G \rvert }{ \lvert N_p \rvert } = p^k.
+    \end{align}
+    so $\lvert L:L \cap N_p \rvert$ divide $p^k$ implies that $\lvert L: L \cap N_p \rvert$
+    is some power of $p$.\\
+    $\lvert L \cap N_p \rvert$ is not divisible by $p$ since $\lvert N_p \rvert$ is not divisible
+    by $p$, and $\lvert L \cap N_p \rvert$ is a factor of $\lvert N_p \rvert$.
+    (Since $L \cap N_p \leq N_p$).\\
+    Thus, $L \cap N_p$ is indeed a normal $p$-complement in $L$.\\
+
+    Now we show $\frac{ L \cdot N_p }{ L }$ is a normal $p$-complement 
+    in $\frac{ G }{ L }$.\\
+    Show 
+    \begin{align}
+        (L \cdot N_p)/L \lhd G/L
+    \end{align}
+    Let $\ell \in L, \ n \in N_p, \ g \in G$, so
+    \begin{align}
+        &(g + L)(\ell \cdot n + L)(g^{-1} + L)\\
+        &= g \cdot \ell \cdot n \cdot g^{-1} + L\\
+        &=g \ell g^{-1} g n g^{-1} + L\\
+        &= \ell' n' + L\\
+        &\implies \in (L \cdot N_p) / L
+    \end{align}
+    where $\ell' = g \ell g^{-1} \in L$ and $n' = g n g^{-1} \in N_p$ since normality.\\
+    so the last inclusion follows. Thus,
+    \begin{align}
+        (L \cdot N_p)/L \lhd G / L
+    \end{align}
+    By third isomorphism, we have 
+    \begin{align}
+        \frac{ G/L }{ (L \cdot N_p) / L } \cong G / (L \cdot N_p)
+    \end{align}
+    The reason we could use 3rd Iso Thm because
+    \begin{align}
+        L \lhd G,
+    \end{align}
+    and $L \cdot N_p \lhd G$ because of the same proof.\\
+    for $\ell \in L, n \in N_p, g \in G$, so we have
+    \begin{align}
+        g (\ell \cdot n) g^{-1} = (g \ell g^{-1})\left( g n g^{-1} \right) = \ell' n' \in L \cdot N_p.
+    \end{align}
+    Thus, 
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
 
 
     

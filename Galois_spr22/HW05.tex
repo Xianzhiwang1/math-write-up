@@ -140,8 +140,42 @@ Exercise 7.2.8\\
         \cos (A) &= 2 \cos^2 \frac{ A }{ 2 } - 1\\
         \cos 45^{\circ} &= 2 \cos^2 22.5^{\circ} - 1\\
         \frac{ 1 }{ \sqrt[]{2} }+1 &= 2 \cos^2 (22.5^{\circ})\\
-        \sqrt[]{\frac{ 1+\sqrt{2} }{ 2 \sqrt{2} }} &= \cos (22.5^{\circ})
+        \sqrt[]{\frac{ 1+\sqrt{2} }{ 2 \sqrt{2} }} &= \cos (22.5^{\circ})\\
+        \cos (22.5^{\circ}) &= \frac{ \sqrt[]{\sqrt[]{2}+2} }{ 2 }
     \end{align}
+    Since 
+    \begin{align}
+        \phi = \frac{ \sqrt[]{\sqrt[]{2}+2} }{ 2 } + \frac{ \sqrt[]{2 - \sqrt[]{2}} }{ 2 } i \in \mathbb{Q}(\phi)
+    \end{align}
+    WTS $\phi \in \mathbb{Q}(\gamma, i)$.\\
+    \begin{align}
+        &i \in \mathbb{Q}(\gamma, i), \ \sqrt[]{\sqrt[]{2} + 2} = \gamma \in \mathbb{Q}(\gamma, i)\\
+        &\sqrt[]{2}+2 = \gamma^2 \in \mathbb{Q}(\gamma, i) \implies \ \sqrt[]{2} \in \mathbb{Q}(\gamma, i)
+    \end{align}
+    Thus, since 
+    \begin{align}
+        \sqrt[]{\sqrt[]{2}+2} \cdot \sqrt[]{2 - \sqrt[]{2}} = \sqrt[]{2} 
+        \implies \sqrt[]{2 - \sqrt[]{2}} \in \mathbb{Q}(\gamma, i)
+    \end{align}
+    so $\phi \in \mathbb{Q}(\gamma, i)$ as wanted.\\
+    so $\mathbb{Q}(\phi) \subseteq \mathbb{Q}(\gamma, i)$.
+    Now, we show $\mathbb{Q}(\phi)$ and $\mathbb{Q}(\gamma, i)$ has same degree over $\mathbb{Q}$,
+    which implies they are equal.\\
+    \begin{align}
+        [\mathbb{Q}(\phi):\mathbb{Q}] = 8,
+    \end{align}
+    since $\varphi(16)=8$, there are 8 numbers less than 16 that
+    coprime with 16:
+    \begin{align}
+        &1,3,5,7,9,11,13,15\\
+        &[\mathbb{Q}(\gamma,i):\mathbb{Q}]=8
+    \end{align}
+    
+    
+    
+
+    
+    
     
     
 

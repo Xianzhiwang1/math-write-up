@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1686625609 "HW05.tex" "build/HW05.pdf" "HW05" 1686625610
+["pdflatex"] 1686972878 "HW05.tex" "build/HW05.pdf" "HW05" 1686972879
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -40,6 +40,7 @@
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1248133631 36118 fad905eba93cff5bce1e185fe980a177 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
+  "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb" 1248133631 35309 940e81a5b9e04201a07e8b33a3ae6e64 ""
   "/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex" 1601326656 992 855ff26741653ab54814101ca36e153c ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex" 1601326656 43820 1fef971b75380574ab35a0d37fd92608 ""
@@ -141,8 +142,8 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1668738742 2826448 dc0181bbe67b6cc084eb39e7967638f5 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "HW05.tex" 1686625607 6519 d24339851ac9fdbde6180d82e3d5d9e8 ""
-  "build/HW05.aux" 1686625610 278 ec337e1c93d58f8eb87244c44675edfe "pdflatex"
+  "HW05.tex" 1686972879 9484 bd32bab6022d9716065db026e9f7a400 ""
+  "build/HW05.aux" 1686972879 278 ec337e1c93d58f8eb87244c44675edfe "pdflatex"
   "preambleBloat.tex" 1686274718 4890 b5f90c5cb69a329d17ff747e152129d8 ""
   (generated)
   "build/HW05.aux"

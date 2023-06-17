@@ -177,6 +177,34 @@ Exercise 7.2.8\\
 
     \solution
 
+    Observe that if we adjoint $\sqrt[5]{3}$ to $\mathbb{Q}$, then 
+    \begin{align}
+        \gamma := (\sqrt[5]{3})^4 + 29 (\sqrt[5]{3})^2 + 17 \sqrt[5]{3} - 16 \in \mathbb{Q}(\sqrt[5]{3}).
+    \end{align}
+    since $\sqrt[5]{3}$ is root of $X^5 - 3$, which is irreducible by Eisenstein.
+    \begin{align}
+        m_{\mathbb{Q}}(\sqrt[5]{3}) = X^5 - 3
+    \end{align}
+    and $\mathbb{Q}(\sqrt[5]{3})$ is degree $5$ extension.\\
+    Since $\gamma \in \mathbb{Q}(\sqrt[5]{3})$, we have
+    $[\mathbb{Q}(\gamma) : \mathbb{Q}]$ divides $[\mathbb{Q}(\sqrt[5]{3}:\mathbb{Q})]=5$
+    so $\mathbb{Q}(\gamma)$ is either degree 1 or 5.\\
+    If it's degree 1, then $\gamma \in \mathbb{Q},$ so there exists $q \in \mathbb{Q}$ such that 
+    $\gamma = q$.
+    \begin{align}
+        \left( \sqrt[5]{3} \right)^4 + 29 \left( \sqrt[5]{3} \right)^2 + 17 \sqrt[5]{3} - 16 - q = 0
+    \end{align}
+    Thus, $\sqrt[5]{3}$ is a root of the above polynomial with coefficients in $\mathbb{Q}$,
+    but this polynomial is degree $4$, contradicting the minimal polynomial 
+    of $\sqrt[5]{3}$ having degree $5$.
+    Thus, $\mathbb{Q}(\gamma)$ is degree 5. so the degree of $\gamma$ over $\mathbb{Q}$ is 5.
+
+    
+
+
+    
+    
+
 \end{homeworkProblem}
 
 \pagebreak
@@ -185,6 +213,45 @@ Exercise 7.2.8\\
     \textbf{Exercise 7.2.8} Find the degree of $\sqrt[5]{81}$ over $\Q(\sqrt[81]{5})$.
 
     \solution
+
+    First we show $\mathbb{Q}(\sqrt[5]{81}) = \mathbb{Q}(\sqrt[5]{3})$.\\
+    Want to show $\sqrt[5]{81} \in \mathbb{Q}(\sqrt[5]{3})$. 
+    Write $\sqrt[5]{81} = (\sqrt[5]{3})^4 \in \mathbb{Q}(\sqrt[5]{3})$.
+    So $\mathbb{Q}(\sqrt[5]{81}) \subset \mathbb{Q}(\sqrt[5]{3})$.
+    Want to show $\sqrt[5]{3} \in \mathbb{Q}(\sqrt[5]{81}):$
+    write $3^{1/5} = \left( 3^{4/5} \right)^4 (3^{-1})^3 \in \mathbb{Q} \left( \sqrt[5]{81} \right)$
+    so $\mathbb{Q}(\sqrt[5]{3}) \subseteq \mathbb{Q}(\sqrt[5]{81})$\\
+    so $\mathbb{Q}(\sqrt[5]{81}) = \mathbb{Q}(\sqrt[5]{3})$\\
+    Since $X^5 - 3$ is irreducible by eisenstein, 
+    $\mathbb{Q}(\sqrt[5]{3})$ is degree $5$ over $\mathbb{Q}$,
+    so $\mathbb{Q}(\sqrt[5]{81})$ is degree $5$ over $\mathbb{Q}$.\\
+    $\mathbb{Q}(\sqrt[81]{5})$ is degree $81$ over $\mathbb{Q}$,
+    since $X^{81} - 5$ is irreducible by Eisenstein.\\
+    By earlier exercise
+    \begin{align}
+        [\mathbb{Q}(\sqrt[5]{81}, \sqrt[81]{5}) : \mathbb{Q}] 
+        \leq deg m_{\mathbb{Q}}(\sqrt[5]{81}) \cdot deg m_{\mathbb{Q}}(\sqrt[81]{5}) = 5 \cdot 81
+    \end{align}
+    Also, since $[\mathbb{Q}(\sqrt[5]{81}):\mathbb{Q}] = 5$ and
+    $[\mathbb{Q}(\sqrt[81]{5}: \mathbb{Q}] = 81$ divide
+    $[\mathbb{Q}(\sqrt[5]{81}, \sqrt[81]{5}) : \mathbb{Q}]$
+    by Tower law, $[\mathbb{Q}(\sqrt[5]{81}, \sqrt[81]{5}): \mathbb{Q}]$
+    is a multiple of $5 \cdot 81$ so its exactly $5 \cdot 81$.\\
+    Use tower law again,
+    \begin{align}
+        5 \cdot 81 &= [\mathbb{Q}(\sqrt[5]{81},\sqrt[81]{5}): \mathbb{Q}(\sqrt[81]{5})]
+        \cdot \left[ \mathbb{Q}(\sqrt[81]{5} : \mathbb{Q} \right]\\
+        &= 5 \cdot 81
+    \end{align}
+    Thus, $\sqrt[5]{81}$ is degree $5$ over $\mathbb{Q}(\sqrt[81]{5})$. 
+    And we are done.
+    
+    
+
+
+    
+
+
 
 \end{homeworkProblem}
 

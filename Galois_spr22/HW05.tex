@@ -119,7 +119,7 @@ Exercise 7.2.8\\
     We can check $\phi$ indeed permutes $X_1, X_2, X_3, X_4$.\\
     \begin{align}
         X_2 &\xrightarrow[]{\phi}    X_4\\
-        \phi(X_1) &= \phi(-\sqrt[]{2+\sqrt[]{2}} = - \sqrt[]{2-\sqrt[]{2}} = X_3\\
+        \phi(X_1) &= \phi(-\sqrt[]{2+\sqrt[]{2}}) = - \sqrt[]{2-\sqrt[]{2}} = X_3\\
         \phi(X_3) &= \phi(- \sqrt[]{2-\sqrt[]{2}}) = (-1)\cdot (-\sqrt[]{2+\sqrt[]{2}}) = \sqrt[]{2+\sqrt[]{2}} = X_2\\
         \phi(X_4) &= - \sqrt[]{2+\sqrt[]{2}} = X_1\\
         \phi: X_1 &\xrightarrow[]{} X_3 \xrightarrow[]{} X_2 \xrightarrow[]{} X_4 \xrightarrow[]{} X_1
@@ -167,32 +167,35 @@ Exercise 7.2.8\\
     since $\varphi(16)=8$, there are 8 numbers less than 16 that
     coprime with 16:
     \begin{align}
-        &1,3,5,7,9,11,13,15\\
+        &1,3,5,7,9,11,13,15. \ \text{And also, we have }\\
         &[\mathbb{Q}(\gamma,i):\mathbb{Q}]=8
     \end{align}
-    
-    
-    
-
-    
-    
-    
-    
-
-
-    
-
-    
-    
-    
-
-    
-    
-    
-    
-
-    
-
+    Why? Assume for contradiction $\sqrt[]{2 + \sqrt[]{2}} \in \mathbb{Q}(i)$,
+    We know $\mathbb{Q}(i)$ is degree 2 extension with irreducible polynomial 
+    $X^2 + 1$, with basis $\left\{ 1, i \right\}$.\\
+    So there exists $a,b \in \mathbb{Q}$ such that
+    \begin{align}
+        \sqrt[]{2+\sqrt[]{2}} &= a + bi\\
+        2 + \sqrt[]{2} &= a^2 - b^2 + 2abi
+    \end{align}
+    We have a contradiction since we have $\sqrt[]{2}$ in LHS,
+    but no $\sqrt[]{2}$ in RHS.\\
+    (If we let $\sqrt[]{2}=2abi$ then $2ab = (-i)\cdot \sqrt[]{2}$. contradiction)\\
+    Hence $\sqrt[]{2+\sqrt[]{2}} \not\in \mathbb{Q}(i)$.\\ 
+    So $[\mathbb{Q}(i)(\sqrt[]{2+\sqrt[]{2}}): \mathbb{Q}(i)] = 4$, 
+    because 
+    \begin{align}
+        &\text{deg} \ \sqrt[]{2 + \sqrt[]{2}} \ \text{over} \ \mathbb{Q}(i) \\
+        &= \ \text{deg} \ \sqrt[]{2+\sqrt[]{2}} \ \text{over} \ \mathbb{Q} 
+        = 4.
+    \end{align}
+    So using the tower law:
+    \begin{align}
+        \left[ \mathbb{Q}\left( i, \sqrt[]{2 + \sqrt[]{2}} \right) : \mathbb{Q} \right] 
+        &= 4 \cdot \left[ \mathbb{Q}(i) : \mathbb{Q} \right]\\
+        &= 4 \cdot 2 = 8
+    \end{align}
+    so $\mathbb{Q}(i, \gamma) = \mathbb{Q}(\phi)$. And we are done.
 
 
 

@@ -1,0 +1,219 @@
+\documentclass{article}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{AAA \ \#06}
+\newcommand{\hmwkDueDate}{2022}
+\newcommand{\hmwkClass}{AAA}
+\newcommand{\hmwkClassTime}{Free Graph}
+\newcommand{\hmwkClassInstructor}{Prof Peter Hermann}
+\newcommand{\hmwkAuthorName}{\textbf{Xianzhi} }
+\newcommand{\hmwkAuthor}{\textit{Xianzhi Wang}}
+
+\input{preambleBloat.tex}
+% \usepackage{xianzhi}
+
+\begin{document}
+
+\maketitle
+HW06 \\
+\pagebreak
+
+\begin{homeworkProblem}
+
+    \solution
+
+    prove free groups are torsion free.\\
+    Let $W \in F(X)$ be a non-identity reduced word,
+    so $W = X_{i_1}^{k_1} \cdots X_{i_m}^{k_m}$
+    We observe 
+    \begin{align}
+        \left( X_{i_1}^{k_1} \cdots X_{i_m}^{k_m} \right) \cdot \left( X_{i_1}^{k_1} \cdots X_{i_m}^{k_m} \right) \left( \ldots \right) \ldots
+    \end{align}
+    The potential place cancelation can happen is between 
+    \begin{align}
+        X_{i_m}^{k_m} X_{i_1}^{k_1},
+    \end{align}
+    If there is no cancelation here, then it's clear we 
+    raise $W^n$ to the power $n$ for all $n \in \mathbb{N}$
+    will not get the empty word, so $W$ has infinite order.\\
+    On the other hand, if there  is cancelation between 
+    \begin{align}
+        X_{i_m}^{k_m} \ X_{i_1}^{k_1},
+    \end{align}
+    we can write $W = a^{-1} b a$ where there is 
+    no cancelation between $a, b$ or 
+    $a^{-1}, b$ or $b$ and $b$. We know
+    we can write $W$ in this way since 
+    $W$ is assumed not to be the identity.\\
+    If 
+    \begin{align}
+        \left( X_{i_1}^{k_1} \cdots X_{i_m}^{k_m} \right) \cdot \left( X_{i_1}^{k_1} \cdots X_{i_m}^{k_m} \right) = 1
+    \end{align}
+    then it is clear that at some point during cancelation, we get
+    \begin{align}
+        \left( X_{i_1}^{k_1} \cdots X_{i_{\ell}}^{k_{\ell}} \right) \left( X_{i_{\ell'}}^{k_{\ell'}} \cdots X_{i_m}^{k_m}\right)
+    \end{align}
+    where $1 \leq \ell, \ell' \leq m$, then the fact we can keep on performing 
+    cancelation means $W$ is of the form $a^{-1}a$, so 
+    $a^{-1} a a^{-1} a = 1$, so $W$ is not reduced. Contradiction.\\
+    $W$ is also identity, which is another contradiction.\\
+
+    Thus, $W = a^{-1} b a$, and $W^n = a^{-1} b^n a$, 
+    and since there is no cancelation between $b$ and $b$. 
+    $W$ has infinite order. 
+    
+
+\end{homeworkProblem}
+
+\pagebreak
+
+
+\begin{homeworkProblem}
+    Since a bijective mapping $\alpha: V(\Gamma) \rightarrow V(\Gamma)$ is automorphism 
+    if it preserve edge, direction and label:\\
+    $\forall a,b \in V(\Gamma), x \in X,$ then 
+    \begin{align}
+        (a,b) \in E_x(\Gamma) \Leftrightarrow (a^{\alpha}, b^{\alpha}) \in E_x (\Gamma)
+    \end{align}
+    so multiplication by element $G$ on the right clearly satisfy this,
+    let $(a, xa) \in E_x(\Gamma) = \left\{ (a, xa) | a \in G \right\}$
+    \begin{align}
+        (a, xa) \in E_x(\Gamma) \Leftrightarrow (ag, x(ag)) = (a \cdot g, (xa) \cdot g) \in E_x(\Gamma)
+    \end{align}
+    so $Aut \Gamma \supset G^{*}$.\\
+    Now let $\phi \in Aut \Gamma$, we have (since $\phi$ preserve this for all $a,b \in V(\Gamma)$)
+    \begin{align}
+        (1, X \cdot 1) \in E_x (\Gamma) \Leftrightarrow (\phi(1), \phi(x \cdot 1)) \in E_x(\Gamma)
+    \end{align}
+    since $E_x(\Gamma) = \left\{ (a, xa) | a \in G\right\} $
+    could only be $(\phi(1), x \cdot \phi(1)) \in E_x(\Gamma)$
+    Thus, for all generators $\phi(x) = x \cdot \phi(1)$, and we are right multiplying by 
+    $g = \phi(1)$. so for arbitrary $a \in V(\Gamma)$,
+    \begin{align}
+        (a, xa) \in E_x (\Gamma) &\Leftrightarrow (\phi(a), \phi(x \cdot a)) \in E_x (\Gamma)\\
+        &= (\phi(a), x \phi(a)) \in E_x (\Gamma)
+    \end{align}
+    similarly $\phi (x^{-1}) = x^{-1} \phi(1)$, for all generators, 
+    so since $a = X_{i_1}^{k_1} \cdots X_{i_m}^{k_m}$,
+    we could perform this finitely many times to have 
+    $\phi(a) = X_{i_1}^{k_1} \cdots X_{i_m}^{k_m} \phi(1)$ so
+    \begin{align}
+        (\phi(a), \phi(x \cdot a)) 
+        = (X_{i_1}^{k_1} \cdots X_{i_m}^{k_m} \phi(1), X \cdot X_{i_1}^{k_1} \cdots X_{i_m}^{k_m} \phi(1)) 
+        \in E_x(\Gamma)
+    \end{align}
+    Thus, $\phi$ is indeed right multiply by element $g = \phi(1)$.\\
+
+    
+    
+    
+    
+
+    
+
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem}
+
+    \part
+
+    center of $F(X)$ when $\lvert X \rvert > 1$.
+    We know $1 \in Z(F(X))$. Now assume 
+    $z \neq  1$, and $z \in Z(F(X))$.
+    so $ZW = WZ$ (assume $Z$ and $W$ are reduced.) so
+    \begin{align}
+        X^{k_1}_{i_1} \cdots X_{i_m}^{k_m} \cdot X_{j_1}^{\ell_1} \cdots X_{j_m}^{\ell_m} 
+        &= X_{j_1}^{\ell_1} \cdots X_{j_m}^{\ell_m} \cdots X_{i_1}^{k_1} \cdots X_{i_m}^{k_m}\\
+        ZW &= WZ\\
+    \end{align}
+    since $W$ can be any word in $F(X)$, it is possible we 
+    pick an $W$ such that there is no cancelation between 
+    \begin{align}
+        X_{i_m}^{k_m} \cdot X_{j_1}^{\ell_1}
+    \end{align}
+    and between 
+    \begin{align}
+        X_{j_m}^{\ell_m} \cdot X_{i_1}^{k_1}
+    \end{align}
+    so $ZW$ and $WZ$ are clearly different words.
+    So cannot equal.
+    \textit{It is somewhat simpler to choose $w:= x_i (\forall i),$ etc}
+    so $Z(F(X)) = \left\{ 1\right\}$.\\
+
+    \part
+
+    $Z(F(X)) = F(X)$ when $\lvert X \rvert$, so $F(X)$ is 
+    generated by a single generator $X$, 
+    Thus, fix any $Z \in F(X)$.
+    $Z = X^k$ then for any other element $W = X^{\ell} \in F(X)$
+    (assume reduced),
+    \begin{align}
+        Z \cdot W = X^k \cdot X^{\ell}
+        = X^{k + \ell} 
+        = X^{\ell + k} 
+        =X^{\ell} \cdot X^k
+        = W \cdot Z
+    \end{align}
+    so $Z \in Z(F(X))$,\\
+    so $F(X) \subset Z(F(X))$\\
+    since $Z(F(X)) \subset F(X)$\\
+    $F(x) = Z(F(X))$.\\
+
+    
+    
+    
+
+
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem}
+    Find $a,b,c \in F_2 $ such that $\lvert F_2: \left\langle a,b,c \right\rangle \rvert = 2$\\
+    \begin{align}
+        f: x &\xrightarrow[]{} 0 + 2 \mathbb{Z}\\
+        y &\xrightarrow[]{} 1 + 2 \mathbb{Z}
+    \end{align}
+    $f$ is a map that 
+    \begin{align}
+        x &\xrightarrow[]{} 0 + 2 \mathbb{Z}\\
+        y &\xrightarrow[]{} 1 + 2 \mathbb{Z}
+    \end{align}
+    $F_2 = \langle x, y \rangle$ is the free group
+    generated by $x,y$.
+    Universal property gives a surjective homomorphism $\varphi$,
+    and by 1st iso thm,
+    \begin{align}
+        &F_2 / (ker \varphi) \cong \mathbb{Z} / 2 \mathbb{Z} \cong \mathbb{Z}_2\\
+        &\implies \lvert F_2 : ker \varphi \rvert = 2
+    \end{align}
+    claim: 
+    \begin{align}
+        ker \varphi &= \left\{ x^{k_1} y^{\ell_1} x^{k_2} y^{\ell_2} \cdots x^{k_m} y^{\ell_m} \mid \sum_i \ell_i = even \right\}\\
+        &= \left\langle x, y^2, yxy \right\rangle
+    \end{align}
+    $x \in ker \varphi$ since $\varphi (x) = f(x) = 0 + 2 \mathbb{Z} \implies x \in ker \varphi$ \\
+    $ y^2 \in ker \varphi$ since 
+    $\varphi (y^2 ) = \varphi(y) \varphi(y) = f(y)f(y) = (1+2 \mathbb{Z}) + (1+ 2 \mathbb{Z}) = 0 + 2 \mathbb{Z}$\\
+    $y x y \in ker \varphi$ similarly.\\
+
+
+    
+    
+    
+    
+
+\end{homeworkProblem}
+
+\end{document}

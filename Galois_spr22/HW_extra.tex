@@ -36,6 +36,26 @@ Exercise 15.1.1\\
     
     \solution \\
 
+    Let $n$ in the formula be $p^n$
+    \begin{align}
+        X^n -1 &= \prod_{d | n} \Phi_{d} (X)\\
+        X^{p^n} - 1 &= \prod_{d | p^n} \Phi_d (X)\\
+        X^{p^k} - 1 &= \Phi_1(X) \Phi_{p}(X) \Phi_{p^2}(X) \cdots \Phi_{p^k}(X) \\
+        X^{p^{(k+1)}} - 1 &= \Phi_1(X) \Phi_{p}(X) \Phi_{p^2}(X) \cdots \Phi_{p^k}(X) \Phi_{p^{(k+1)}}(X)
+    \end{align}
+    hence, we deduce 
+    \begin{align}
+        \Phi_{p^{(k+1)}}(X) &= \frac{ X^{ p^{(k+1) }} - 1 }{ X^{ p^k } - 1 } = \frac{ \left( X^{p^k} \right)^p - 1}{ X^{p^k} - 1 } \\
+        &= 1 + \left( X^{p^k} \right) + \left( X^{p^k} \right)^2 + \left( X^{p^k} \right)^3 + \ldots + \left( X^{p^k} \right)^{p-1}
+    \end{align}
+    and we have
+    \begin{align}
+        X^{p^{(k+1)}} = X^{p^k \cdot p} = \left( X^{p^k} \right)^p
+    \end{align}
+    
+    
+    
+
 
 
 \end{homeworkProblem}

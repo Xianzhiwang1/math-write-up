@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1687221553 "HW06.tex" "build/HW06.pdf" "HW06" 1687221554
+["pdflatex"] 1687331918 "HW06.tex" "build/HW06.pdf" "HW06" 1687331919
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -144,8 +144,8 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1668738742 2826448 dc0181bbe67b6cc084eb39e7967638f5 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "HW06.tex" 1687221552 7121 51f324fa77b4f2ee2cc36e01071a05ba ""
-  "build/HW06.aux" 1687221554 360 2592fa446d61b84e8882910913490b97 "pdflatex"
+  "HW06.tex" 1687331916 8659 c6d247e79af35c2460e88343ed13e793 ""
+  "build/HW06.aux" 1687331919 360 2592fa446d61b84e8882910913490b97 "pdflatex"
   "preambleBloat.tex" 1687204889 4551 9de05ebc07aad1a3491a7473c9b0e825 ""
   (generated)
   "build/HW06.aux"

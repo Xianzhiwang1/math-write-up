@@ -32,7 +32,27 @@ Homework set 3
     Suppose that a group $G$ has order $312$. 
     Prove that $G$ has a proper normal subgroup.\\
     \solution
-    
+
+    $312 = 2^3 \times 3 \times 13$.\\
+    The number of Sylow $p=2$ subgroup, $n$, has several possibilities 
+    \begin{align}
+        1,3,13,39 &\equiv \mod p=2
+    \end{align}
+    and they divide $m = 3 \times 13$.\\
+    The number of Sylow $p = 3$ subgroup, $n$ has several possibilities.
+    \begin{align}
+        1,4,13 &\equiv 1 \mod p=3\\
+    \end{align}
+    and they divide $m = 8 \cdot 13$.\\
+    However, the number of Sylow $p=13$ subgroup
+    is one, since $1$ is the only number $\equiv 1 \mod p=13$
+    and divide $m = 2^3 \cdot 3$ at the same time.\\
+    By Sylow's theorem, (and corollary)
+    $G$ has a proper normal subgroup of order $13$.\\
+    The unique Sylow $13$ subgroup.\\
+
+
+
 
 \end{homeworkProblem}
 
@@ -41,6 +61,38 @@ Homework set 3
 \begin{homeworkProblem}
     Suppose that a group $G$ has order $1960$. Prove that $G$ has a proper normal subgroup.\\
     \solution
+
+    Suppose a group has order $1960 = 2^3 \cdot 5 \cdot 7^2$, 
+    the number of Sylow $p=2$ subgroup has several possibilites 
+    \begin{align}
+        1,5,7 \equiv 1 \mod p = 2
+    \end{align}
+    and divide $m = 5 \cdot 7 \cdot 7$.\\
+    The number of Sylow $p=5$ subgroup has several possibilities, 
+    for example, $1,56, 196 \equiv 1 \mod p = 5$
+    and divide $m = 2^3 \cdot 7^2$.\\
+    But the number $n$ of Sylow $p = 7$ subgroup has $2$ 
+    possibilities 
+    \begin{align}
+        1,8 &\equiv 1 \mod p = 7\\
+    \end{align}
+    and divide $m = 2^3 \cdot 5 = 40$.\\
+    Suppose $n = 8$. (If $n=1$, then we are done)\\
+    Since $G$ acts on $Syl_7 (G)$ by conjugation 
+    and the action is transitive, $G$ is 
+    essentially permuting the $8 Syl_7 (G)$ subgroups.\\
+    Thus, we could define a homomorphism
+    \begin{align}
+        G \xrightarrow[]{\psi} S_8
+    \end{align}
+    ($\psi$ is indeed a homomorphism 
+    because of the definition of group action)\\
+    $ker \psi$ cannot be the whole group $G$, 
+    since $G$ acts transitively on the 
+    $Syl_7 (G)$ groups, and we are assuming 
+    there is $8$ of them, 
+    so $\psi$ cannot map everything in $G$ to the identity permutation.\\
+    
 
 
     

@@ -1,0 +1,104 @@
+\documentclass{article}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{AAA \ \#HW02}
+\newcommand{\hmwkDueDate}{2022}
+\newcommand{\hmwkClass}{Adv Abstract Algebra}
+\newcommand{\hmwkClassTime}{Spr 2022}
+\newcommand{\hmwkClassInstructor}{Prof. Peter Hermann}
+\newcommand{\hmwkAuthorName}{\textbf{Xianzhi} }
+\newcommand{\hmwkAuthor}{\textit{Xianzhi Wang}}
+
+\input{preambleBloat.tex}
+% \usepackage{xianzhi}
+
+\begin{document}
+
+\maketitle
+Homework set 2 
+
+\pagebreak
+
+\begin{homeworkProblem}
+    Let $\Gamma$ be an ordinary graph and denote the set of its 
+    vertices by $V(\Gamma)$ and the set of its edges by $E(\Gamma)$.
+    A bijection $\beta: V(\Gamma) \mapsto V(\Gamma)$ is
+    called an \textit{automorphism} of $\Gamma$ if 
+    for all $x,y \in V(\Gamma)$
+    \begin{align}
+        (x,y) \in E(\Gamma) \iff (\beta(x), \beta(y)) \in E(\Gamma)
+    \end{align}
+    holds. Then $Aut \Gamma := \left\{ \beta | \beta \ \text{is an automorphism of} \ \Gamma \right\}$
+    is a group w.r.t. composition. 
+    (It is called the \textit{automorphism group of} $\Gamma$. 
+    It obviously acts on $V(\Gamma)$.)
+    \begin{enumerate}
+        \item Consider the following graph 
+    \end{enumerate}
+    
+
+    
+
+
+    
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem}
+
+    
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem}
+     Let $G$ be a finite group and 
+     $k$ an integer. 
+     Prove that $\left\{ g^k | g \in G \right\} = G$
+     if and only if $gcd \left( \lvert G \rvert, k \right) = 1$.\\
+ 
+     \solution
+ 
+     $\left\{ g^k | g \in G \right\} = G \iff gcd( \lvert G \rvert, k ) = 1$.\\
+     We show ``$\implies$''\\
+     Assume for contradiction $gcd ( \lvert G \rvert, k) \neq 1$,
+     so there exist a smallest prime divisor $p$ 
+     such that $p \mid \lvert G \rvert,$ and $p \mid k$.\\
+     By sylow's theorems, there exist $h \in G$ such that
+     $\lvert h \rvert = p$. Thus,\\
+     \begin{align}
+         \lvert h^k \rvert &= \frac{ p }{ gcd(k,p) } = \frac{ p }{ p } = 1\\
+         \implies h^k &= e.
+     \end{align}
+     Now, since $e^k = e$,
+     \begin{align}
+         \left\{ g^k \mid g \in G \right\}
+     \end{align}
+     has cardinality strictly less than $G$,
+     
+    
+
+
+    
+\end{homeworkProblem}
+
+\pagebreak
+
+\end{document}
+
+
+
+
+
+
+

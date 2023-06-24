@@ -92,6 +92,19 @@ Homework set 3
     $Syl_7 (G)$ groups, and we are assuming 
     there is $8$ of them, 
     so $\psi$ cannot map everything in $G$ to the identity permutation.\\
+
+    Assuming $ker \psi = \left\{ e \right\}$, $\implies \psi$ is one to one,
+    $\lvert G \rvert = \lvert Im \psi \rvert$ need to divide 
+    $\lvert S_8 \rvert$ since $Im \psi \leq S_8$.\\
+    So $\lvert G \rvert$ need to divide $\lvert S_8 \rvert$.\\
+    But $\lvert G \rvert = 2^3 \cdot 5 \cdot 7^2$.
+    and $\lvert S_8\rvert = 8!$.
+    Contradiction.\\
+
+    Thus $ker \psi$ is not the whole group
+    $G$ and is not just the identity,
+    so $ker \psi \lhd G$
+    is the proper normal subgroup we seek.
     
 
 
@@ -108,7 +121,50 @@ and $b \in N_G(A)$. Show that
 $\tau_{G \mapsto A} (g)$ commutes with $b$.\\
 Hint: If $ h_1, \ldots, h_{n} $ is a set of right coset representatives 
 of $A$ then show that $ bh_1, \ldots, bh_n $ is also a set of right
-coset representatives of $A$.
+coset representatives of $A$.\\
+
+\solution
+
+Let $G = \dot{\coprod}_{i=1}^{n} A h_i$ and $b \in N_G(A) = \left\{ g\in G: g A = A g\right\} $,\\
+then $b^{-1} A b = A \implies Ab = bA$.\\
+Thus 
+\begin{align}
+    G &= b G = b \dot{\coprod}_{i=1}^{n} A h_i \\
+    &= \dot{\coprod}_{i=1}^n b A h_i\\
+    &= \dot{\coprod}_{i=1}^{n} A b h_i\\
+\end{align}
+since $Ab = bA$ set wise, not element wise.\\
+so if $h_i$'s are coset representatives,
+then $bh_i$'s are also coset representatives.\\
+Now, let $g \in G$, we have 
+\begin{align}
+    A h_i \cdot g &= A h_{i^g} \\
+    \implies &\exists a_{i,g} \ \forall i \ \text{such that}\\
+    h_i \cdot g &= a_{i,g} \cdot h_{i^g}\\
+    h_i \cdot g \cdot h_{i^g} &= a_{i,g}
+\end{align}
+similarly,
+\begin{align}
+    A b \cdot h_i \cdot g &= A b \cdot h_{i^g} \implies \exists a^{*}_{i,g} \ \forall i \ \text{such that}\\
+    b \cdot h_i \cdot g &= a^{*}_{i,g} \cdot b \cdot h_{i^g}\\
+    b \cdot \underbrace{h_i \cdot g \cdot h_{i^g}}_{a_{i,g}} \cdot b^{-1} &= a^{*}_{i,g} \in A\\
+    b a_{i,g} b^{-1} &= a^{*}_{i,g} \ \forall \ i \in \left\{ 1, \ldots, n \right\}\\
+    \implies a_{i,g} &= b^{-1} a^{*}_{i,g} b \ \forall \ i
+\end{align}
+$\left\{ h_i \right\}, \left\{ b h_i \right\}$ are both coset representations\\
+the $\tau (g)$ is independent of the representatives we pick,
+so $\tau (g) = \prod_{i=1}^{n} a_{i,g} = \prod_{i=1}^{n} a^{*}_{i,g}$. Hence,\\
+\begin{align}
+    \tau (g) &= \prod_{i=1}^n a_{i,g} \\
+    &= \prod_{i=1}^{n} \left( b^{-1} a^*_{i,g} b \right)\\
+    &= b^{-1} \left( \prod_{i=1}^n a^*_{i,g} \right) b\\
+    &= b^{-1} \left( \tau (g) \right) b
+\end{align}
+so $b \tau (g) = \tau (g) b$. Thus commute.
+
+
+
+
 
     
 \end{homeworkProblem}

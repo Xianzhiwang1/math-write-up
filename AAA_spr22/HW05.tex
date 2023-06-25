@@ -1,0 +1,127 @@
+\documentclass{article}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{AAA \ \#HW05}
+\newcommand{\hmwkDueDate}{2022}
+\newcommand{\hmwkClass}{Adv Abstract Algebra}
+\newcommand{\hmwkClassTime}{Spr 2022}
+\newcommand{\hmwkClassInstructor}{Prof. Peter Hermann}
+\newcommand{\hmwkAuthorName}{\textbf{Xianzhi} }
+\newcommand{\hmwkAuthor}{\textit{Xianzhi Wang}}
+
+\input{preambleBloat.tex}
+% \usepackage{xianzhi}
+
+\begin{document}
+
+\maketitle
+Homework Set 5
+\pagebreak
+
+\begin{homeworkProblem}
+    Prove that none of $(\mathbb{Q}, +), \ (\mathbb{Q} \setminus \left\{ 0 \right\}, \cdot)$ 
+    is finitely generated.\\
+    \solution
+
+    Assume for contradiction\\
+    \begin{align}
+        G := (\mathbb{Q} \setminus \left\{ 0 \right\}, \cdot)
+    \end{align}
+    is finitely generated. Then
+    \begin{align}
+        G = \langle \frac{ r_1 }{ s_1 }, \frac{ r_2 }{ s_2 }, \ldots, \frac{ r_n }{ s_n }\rangle 
+    \end{align}
+    where $r_i$ and $s_i$ are coprime.\\
+    Now, take prime number $p > \max \left\{ r_i, s_j \mid 1 \leq i \leq n, 1 \leq j \leq n \right\}$
+    since there are infinitely many primes numbers, 
+    we can take such $p$, then $\frac{ 1 }{ p }$ cannot 
+    be expressed using the generators. Because:
+    A general element of $G$ is of the form:
+    \begin{align}
+        \frac{ r_1^{i_1}\ldots r_n^{i_n} }{ s_1^{i_1}\ldots s_n^{i_n} }
+    \end{align}
+    and if 
+    \begin{align}
+        \frac{ 1 }{ p } &= \frac{ r_1^{i_1}\ldots r_n^{i_n} }{ s_1^{i_1}\ldots s_n^{i_n} },\\
+    p &= \frac{ s_1^{i_1}\ldots s_n^{i_n} }{r_1^{i_1}\ldots r_n^{i_n}} 
+    \end{align}
+    then it contradicts $p$ is prime.\\
+
+    Assume for contradiction $G:= (\mathbb{Q}, +)$ is finitely generated,
+    then $G = \langle \frac{ r_1 }{ s_1 }, \frac{ r_2 }{ s_2 }, \ldots \frac{ r_n }{ s_n }\rangle$
+    where $r_i$ and $s_i$ are coprime.\\
+    Again we take a prime number $p > \max \left\{ r_i, s_j \mid 1 \leq i \leq n, 1 \leq j \leq n \right\}$
+    and $\frac{ 1 }{ p }$ cannot be expressed using generators. 
+    Because: a general element is of the form $(k_1, k_2 \in \mathbb{Z})$.
+    \begin{align}
+        \frac{ k_2 }{ k_1 \cdot s_1 \cdot s_2 \ldots s_n }
+    \end{align}
+    so we have a contradiction if 
+    \begin{align}
+        \frac{ 1 }{ p } = \frac{ k_2 }{ k_1 \cdot s_1 \cdot s_2 \ldots s_n }
+    \end{align}
+    we could assume $k_2$ and $k_1 \cdot s_1 \ldots s_n$ are 
+    coprime. Then $p = k_1 \cdot s_1 \cdot s_2 \ldots s_n$
+    which is a contradiction, since $p$ cannot 
+    have strictly smaller prime factors.
+    
+    
+
+
+    
+    
+    
+    
+
+
+
+    
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem}
+    Let $A$ be abelian.
+    \begin{enumerate}
+        \item Prove that $A$ is finitely generated if and only if 
+        there exist finitely many subgroups $A_i$ such that 
+        \begin{align}
+            A = A_0 \geq A_1 \geq A_2 \geq \ldots \geq A_n \geq A_{n+1} = 1\\
+        \end{align}
+        and all the factor groups $A_i / A_{i+1}$ are cyclic.
+    \item Let $B \leq A$ and assume that $A$ is finitely generated.
+        Show that $B$ is finitely generated.
+    \end{enumerate}
+    \solution
+
+
+    
+
+
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem}
+
+    
+\end{homeworkProblem}
+
+
+\end{document}
+
+
+
+
+
+
+

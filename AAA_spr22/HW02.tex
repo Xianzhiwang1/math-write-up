@@ -42,7 +42,10 @@ Homework set 2
     (It is called the \textit{automorphism group of} $\Gamma$. 
     It obviously acts on $V(\Gamma)$.)
     \begin{enumerate}
-        \item Consider the following graph 
+        \item Consider the following graph (the Petersen graph) below.
+            Show that its automorphism group acts transitively
+            on the $10$ vertices, i.e., all vertices belong to the same orbit.\\
+        \item Determine the order of the automorphism group of the Petersen graph.
     \end{enumerate}
     
 
@@ -55,7 +58,42 @@ Homework set 2
 \pagebreak
 
 \begin{homeworkProblem}
+    A transparent round disc is divided into five congruent sectors.
+    Each sector is painted red or green or white.
+    In how many ways can it be done if two such colorations count
+    the same if and only if one can get them by means of a symmetry of the disc
+    (a rotation or a reflection) from each other?
 
+    \solution
+    
+    We have 
+    \begin{align}
+        \# \text{orbits} &= \frac{ 1 }{ \lvert G \rvert  }\sum_{g \in G} \# \ \text{of fixed points of} \ g
+    \end{align}
+    Since $2$ colorations are counted the same
+    if they belong to the same orbit under $D_5$,
+    we want to know the number of orbits.\\
+    Rotation:
+    \begin{align}
+        &Id: \ \text{fix} \ 243 \ \text{elements}\\
+        &a^1: 3\\
+        &a^2: 3\\
+        &a^3: 3\\
+        &a^4: 3\\
+    \end{align}
+    Reflection:\\
+    All reflections fix $3 \times 3 \times 3 = 27$ elements
+    \begin{align}
+        \# \text{orbits} &= \frac{ 1 }{ \lvert G \rvert  }\sum_{g \in D_5} \# \ \text{of fixed points of} \ g \\
+        &= \frac{ 1 }{ 10 } (243 + 4 \cdot 3 + 5 \cdot 27)\\
+        &= \frac{ 1 }{ 10 } (135 + 12 + 243) \\
+        &= 39.
+    \end{align}
+
+
+    
+
+    
     
 \end{homeworkProblem}
 
@@ -84,7 +122,39 @@ Homework set 2
      \begin{align}
          \left\{ g^k \mid g \in G \right\}
      \end{align}
-     has cardinality strictly less than $G$,
+     has cardinality strictly less than $G$,\\
+     so $\left\{ g^k | g \in G \right\} \neq G$, contradiction.\\
+
+     We show "$\Leftarrow$" in 
+     \begin{align}
+         \left\{ g^k | g \in G \right\} = G &\iff gcd( \lvert G \rvert, k) = 1\\
+     \end{align}
+     Since $g \in G$, we have $g^k \in G \ \forall \ g$.
+     \begin{align}
+        \left\{ g^k \mid g \in G  \right\} \subset G
+     \end{align}
+     follows.\\
+     Let $y \in G$. Use Euclidean Algorithm 
+     $\exists x_1, x_2 \in \mathbb{Z}$.
+     \begin{align}
+         y &= y' = y^{gcd (\lvert G \rvert, k)} \\
+         &= y^{x_1 \lvert G \rvert + x_2 k}\\
+         &=y^{x_1 \lvert G \rvert} y^{x_2 k}\\
+         &= y^{x_2 k}\\
+         &=(y^{x_2})^k
+     \end{align}
+     Thus, $\forall \ y \in G$,
+     we could express $y$ as $y^{x_2}$
+     raise to the power $k$. So
+     \begin{align}
+         \left\{ g^k \mid g \in G \right\} &\supseteq G\\
+         \implies \left\{ g^k \mid g \in G \right\} &= G
+     \end{align}
+     
+
+     
+     
+     
      
     
 

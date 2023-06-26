@@ -12,8 +12,8 @@
 
 \newcommand{\hmwkTitle}{AAA \ \#HW05}
 \newcommand{\hmwkDueDate}{2022}
-\newcommand{\hmwkClass}{Adv Abstract Algebra}
-\newcommand{\hmwkClassTime}{Spr 2022}
+\newcommand{\hmwkClass}{Adv Abs Alg}
+\newcommand{\hmwkClassTime}{Spr22}
 \newcommand{\hmwkClassInstructor}{Prof. Peter Hermann}
 \newcommand{\hmwkAuthorName}{\textbf{Xianzhi} }
 \newcommand{\hmwkAuthor}{\textit{Xianzhi Wang}}
@@ -103,15 +103,177 @@ Homework Set 5
     \end{enumerate}
     \solution
 
+    \part
 
+    ``$\implies$''\\
+    $A$ is finitely generated, so
+    \begin{align}
+        A = \left\langle a_1, a_2, \ldots, a_k \right\rangle
+    \end{align}
+    let 
+    \begin{align}
+        A = A_0 &= \left\langle a_1, \ldots, a_k \right\rangle\\
+        A_1 &= \left\langle a_1, \ldots, a_{k-1} \right\rangle\\
+        &\vdots\\
+        A_{k-1} &= \left\langle a_1 \right\rangle\\
+        A_k &= \left\{ e \right\}
+    \end{align}
+    so this shows existance.\\
+    We define $\varphi$ from the cyclic group $\langle a_k \rangle$ to factor group:
+    \begin{align}
+        \langle a_k \rangle &\xrightarrow[]{\varphi} A_0 / A_1\\
+        a_k^n &\xrightarrow[]{\varphi} A_1 \cdot a_k^n\\
+    \end{align}
+    In general
+    \begin{align}
+        \left\langle a_{k-i} \right\rangle &\xrightarrow[]{\varphi} A_i / A_{i+1}\\
+        (a_{k-i})^n &\rightarrow A_{i+1} \cdot (a_{k-i})^n
+    \end{align}
+    Since $A$ is abelian, all subgroup is normal.\\
+    This is well defined, since if we take an element
+    in $A_0/A_1 : A_1 \cdot x$, where $x \in A_0$,
+    then
+    \begin{align}
+        x = a_1^{n_1} \cdot a_2^{n_2} \cdot \ldots \cdot a_k^{n_k}
+    \end{align}
+    so 
+    \begin{align}
+        A_1 \cdot x = A_1 a_k^{n_k}
+    \end{align}
+    so coset representative is indeed of the form 
+    $a_{k}$ raised to some power. This also shows
+    $\varphi$ is onto. So $Im \varphi = A_0 / A_1$.\\
+    $\varphi$ is homomorphism:
+    \begin{align}
+        \varphi (a_k^n)\varphi (a_k^m) &= (A_1 \cdot a_k^n) (A_1 \cdot a_k^m)\\
+        &= A_1 \cdot a_k^{n+m}\\
+        \varphi (a_k^n \cdot a_k^m) &= A_1 a_k^{n+m}
+    \end{align}
+    Thus, since image of a cyclic group under homomorphism 
+    is cyclic, we conclude $A_0 / A_1$ is cyclic.\\
+    The same proof shows $A_i / A_{i+1}$ is cyclic.\\
+    \part
+
+    ``$\Leftarrow$''\\
+    \begin{align}
+        \left\{ e\right\} = A_k \leq A_{k-1} \leq \ldots \leq A_1 \leq A_0 = A
+    \end{align}
+    since all $A_i / A_{i+1}$ are cyclic,
+    let $a_{i+1}$ denote some generator
+    \begin{align}
+        A_i / A_{i+1} = \left\langle A_{i+1} \cdot a_{i+1} \right\rangle
+    \end{align}
+    so an arbitrary coset is of the form 
+    \begin{align}
+        A_{i+1} \cdot a_{i+1}^n
+    \end{align}
+    let $x \in A$. Then $x$ is in some $A_1$ coset.
+    \begin{align}
+        x \in A_1 \cdot a_1^{n_1}
+    \end{align}
+    Thus $x = x_1 \cdot a_1^{n_1}$ for some $x_1 \in A_1$. Again
+    \begin{align}
+        x_1 \in A_2 \cdot a_2^{n_2}
+    \end{align}
+    implies $x_1 = x_2 \cdot a_2^{n_2}$ for some $x_2 \in A_2$
+    and so on.\\
+    Thus, $x \in A_k \cdot a_{k-1}^{n_{k-1}} \cdot \ldots \cdot a_1^{n_1}$
+    but $A_k = \left\{ e \right\}$, so 
+    \begin{align}
+        x = a_{k-1}^{n_{k-1}} \cdot \ldots \cdot a_1^{n_1}
+    \end{align}
+    so $A$ is finitely generated. And we are done.\\
+    \part
+
+    $A$ is finitely generated $\implies$ 
+    \begin{align}
+        \exists A = A_0 \geq \ldots \geq A_k = \left\{ e \right\}
+    \end{align}
+    and $A_i / A_{i+1}$ is cyclic.\\
+    Let $B \leq A$. If $B=A$ or $B= \left\{ e\right\}$,
+    then we are done. So assume $B$ 
+    is a nontrivial proper subgroup. Let
+    \begin{align}
+        B_0 &= B \cap A_0\\
+        B_1 &= B \cap A_1\\
+        B_i &= B \cap A_i
+    \end{align}
+    in general.
+    Thus, $B_i$ are chain of subgroups
+    \begin{align}
+        B = B_0 \geq B_1 \geq \ldots \geq B_k = \left\{ e\right\}
+    \end{align}
+    If we show $B_i / B_{i+1}$ is cyclic,
+    we are done. To simplify notation, 
+    we consider $B_1/ B_2$. Write
+    \begin{align}
+        \frac{ (B \cap A_1) }{ (B \cap A_2) } = \frac{ (B \cap A_1) }{ \underbrace{A_2}_{N} \cap \underbrace{(B \cap A_1)}_{H} }  
+    \end{align}
+    where the equal sign is because $A_2 \subseteq A_1$.
+    Recall iso thm (we can use it since every subgroup is normal)
+    \begin{align}
+        \frac{ H }{ H \cap N } \cong \frac{ H \cdot N }{ N }
+    \end{align}
+    Thus
+    \begin{align}
+        B_1/B_2 &= \frac{ \underbrace{B \cap A_1 }_{H} }{ \underbrace{A_2}_{N} \cap \underbrace{B \cap A_1}_{H}  } 
+        \cong \frac{ \underbrace{B \cap A_1}_{H} \cdot \underbrace{A_2}_{N} }{ A_2 }
+    \end{align}
+    since $M := (B \cap A_1)\cdot A_2 \subseteq A_1$,
+    and $M$ is a subgroup, and $A_2 \leq M$, implies 
+    $M$ is a subgroup of $A_1$,
+    \begin{align}
+        \implies M / A_2 \leq A_1 / A_2
+    \end{align}
+    since subgroup of cyclic group is cyclic, $M / A_2$ is cyclic.\\
+    Hence, $B_1 / B_2$ is cyclic. $B_i / B_{i+1}$ is exactly the same.\\
     
-
+    
+    
 
 \end{homeworkProblem}
 
 \pagebreak
 
 \begin{homeworkProblem}
+Let $n \geq 2$ be an integer and $A = C_1 \times C_2 \times \ldots \times C_n$,
+the direct product of $n$ infinite cyclic groups.
+Show that (for any $a \in A$) $\lvert A : \langle a \rangle \rvert$ is infinite.\\
+This completes the proof of the following theorem: $C \leq G$,
+$C$ cyclic, $\lvert G: C \rvert$ finite, $G$ torsion-free $\implies G$ is cyclic.\\
+\solution
+
+Let 
+\begin{align}
+    A = C_1 \times C_2 \times \ldots \times C_n
+\end{align}
+where $C_i$ are infinite cyclic groups.\\
+then $A \cong \mathbb{Z} \times \mathbb{Z} \times \ldots \times \mathbb{Z} = \mathbb{Z}^n$\\
+take $a \in A$.\\
+Then $a$ could be identified as 
+\begin{align}
+    (a_1, a_2, \ldots, a_n) \ \text{for} \ a_i \in \mathbb{Z}
+\end{align}
+using additive notation, then
+\begin{align}
+    \left\langle a \right\rangle &= \left\{ k \cdot a \mid k \in \mathbb{Z} \right\}\\
+    &= \left\{ (k a_1, k a_2, \ldots, k a_n ) \mid k \in \mathbb{Z} \right\}
+\end{align}
+we could see this has infinite index in $\mathbb{Z}^d$, since 
+it is just a ``line'' in the integer lattice $\mathbb{Z}^d$,
+and we could have infinitely shifted copy of it, 
+which are cosets.
+\begin{align}
+    (z_1, z_2, \ldots, z_n) + (k a_1, k a_2, \ldots, k a_n) 
+\end{align}
+for $z_i \in \mathbb{Z}, \ k \in \mathbb{Z}$.
+Thus, we have infinitely many distinctive cosets, 
+so $\left\langle a \right\rangle$ has infinite index.
+
+
+
+
+
 
     
 \end{homeworkProblem}

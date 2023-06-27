@@ -1,5 +1,5 @@
-#!/bin/zsh
 #!/bin/bash
+#!/bin/zsh
 
 git add -A
 git commit -m "update"

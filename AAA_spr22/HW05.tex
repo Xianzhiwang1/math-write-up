@@ -270,11 +270,50 @@ for $z_i \in \mathbb{Z}, \ k \in \mathbb{Z}$.
 Thus, we have infinitely many distinctive cosets, 
 so $\left\langle a \right\rangle$ has infinite index.
 
+    
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem}
+    \textbf{For fun: } Prove the following characterization 
+    of the infinite cyclic group.\\
+    Let $G$ be an infinite group; then\\
+    $G$ is cyclic $\iff \ \lvert G:H \rvert$ is finite for all subgroups $1 \neq H \leq G$.\\
+    \solution
+
+    $G$ is infinite group.\\
+    $\Rightarrow$\\
+    Assume $G$ cyclic. Then $G \cong \mathbb{Z}$.\\
+    Let $H \neq e$ be a subgroup of $G$, 
+    since subgroup of cyclic group is cyclic, $H$ is cyclic.\\
+    Then by the same isomorphism that $G \xrightarrow[]{\cong} \mathbb{Z}$,
+    $H$ is isomorphic to $m \mathbb{Z}$ for some $m \in \mathbb{N}$. \\
+    since cyclic groups in $\mathbb{Z}$ are of the form $m \mathbb{Z}$.\\
+    so since $\lvert \mathbb{Z} : m \mathbb{Z} \rvert = m < \infty$\\
+    $H$ also has finite index.\\
+    $\Leftarrow$\\
+    Assume $G$ is not torsion-free, so $\exists 1 \neq h \in G$,
+    such that $h$ has order $n$ for some $n \in \mathbb{N}$.\\
+    consider $\left\langle h \right\rangle \leq G$.\\
+    the order of the cyclic group $\left\langle h \right\rangle$ is also $n$.\\
+    and by assumption $\lvert G: \left\langle h \right\rangle \rvert = m < \infty$,
+    but 
+    \begin{align}
+        \frac{ \lvert G \rvert }{ \lvert \left\langle h \right\rangle \rvert } = \lvert G: \left\langle h \right\rangle \rvert = m
+    \end{align}
+    so $\lvert G \rvert = n \cdot m < \infty$. Contradiction.\\
+    so $G$ is torsion free.\\
+    Now, let $1 \neq g \in G$. 
+    Consider $\left\langle g \right\rangle$.
+    by assumption, $\lvert G : \left\langle g \right\rangle \rvert$
+    is finite.\\
+    $\left\langle g \right\rangle \leq G, \ \left\langle g \right\rangle$ cyclic,
+    $G$ torsion free all satisfied,
+    $\implies G$ is cyclic by theorem in class.\\
 
 
-
-
-
+    
     
 \end{homeworkProblem}
 

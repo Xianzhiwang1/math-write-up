@@ -1,0 +1,64 @@
+\documentclass{article}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{GAL \ Final}
+\newcommand{\hmwkDueDate}{May, 2022}
+\newcommand{\hmwkClass}{Galois Theory}
+\newcommand{\hmwkClassTime}{Spr 2022}
+\newcommand{\hmwkClassInstructor}{Prof Matyas Domokos}
+\newcommand{\hmwkAuthorName}{\textbf{Xianzhi} }
+\newcommand{\hmwkAuthor}{\textit{Xianzhi Wang}}
+
+\input{preambleBloat.tex}
+% \usepackage{xianzhi}
+
+\begin{document}
+
+\maketitle
+Final
+\pagebreak
+
+\begin{homeworkProblem}
+    \begin{align}
+        Gal_{\mathbb{Q}}(h) = \Gamma(L:\mathbb{Q}) 
+    \end{align}
+    where $L$ is the splitting field of $h$ over $\mathbb{Q}$.\\
+    We try to find the roots of $h = f \circ g$.\\
+    Let $Y = X^2 + X + 2$. so $h = Y^3 - Y + 7$. 
+    This is a cubic, so we know it's solvable by 
+    radicals, thus, we could obtain a radical sequence,
+    using Cardano's formula, say, $a_1, a_2, \ldots, a_n,$
+    so $Y^3 - Y + 7$ splits as root factors in 
+    \begin{align}
+        \mathbb{Q}(a_1, a_2, \ldots, a_n)
+    \end{align}
+    then $X^2 + X + 2$ has roots
+    \begin{align}
+        \alpha_1, \alpha_2 = \frac{ -1 \pm \sqrt[]{7} i  }{ 2 }
+    \end{align}
+    so we adjoin $\sqrt[]{7}, i$ to $\mathbb{Q}(a_1, a_2, \ldots, a_n)$
+    \begin{align}
+        L := \mathbb{Q}(a_1, a_2, \ldots, a_n, \sqrt[]{7}, i)
+    \end{align}
+    is clearly a radical sequence. 
+    and $h$ splits as root factors in $L$.
+    Thus, apply Galois's Theorem $\implies$
+    the Galois group $Gal_{\mathbb{Q}}(h)$ is solvable.
+    
+    
+
+\end{homeworkProblem}
+
+\pagebreak
+
+
+\end{document}

@@ -1,0 +1,219 @@
+\documentclass[12pt]{article}%
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.2cm, right=2.2cm]{geometry}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}%
+\setcounter{MaxMatrixCols}{30}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+
+\begin{document}
+
+\title{Sheet 5: A spectral diameter bound }
+\author{Xianzhi Wang}
+\date{fall 2021}
+\maketitle
+
+
+
+
+
+
+Let $G$ be a finite undirected $d$-regular graph on $n$ vertices. Let $A$
+denote the adjacency operator, and let $b_{0},b_{1},\ldots,b_{n-1}$ be an
+orthonormal eigenbasis with real eigenvalues $\lambda_{0}\geq\lambda_{1}\geq%
+\ldots\geq\lambda_{n-1}$. Let $\rho=\rho_{0}(G)$ be the spectral radius. On
+this sheet, we give an upper bound on the diameter using $\rho$.
+
+Of course, $b_{i}^{\top}b_{i}=1$ ($0\leq i<n$). Let us force product the
+other way round. Let 
+\begin{align}
+U_{i}=b_{i}b_{i}^{\top}\text{ \ (}0\leq i<n\text{).}
+\end{align}
+
+
+These matrices may look boring at first, but they are not. It turns out that
+they give an `orthonormal eigendecomposition' for $A$.
+
+\begin{lemma}
+Let $A,B$ be $n\times n$ matrices such that $Av_{i}=Bv_{i}$ ($0\leq i<n$)
+for a basis $(v_{i})$ for $\mathbb{R}^{n}$. Then $A=B$.
+\end{lemma}
+
+\begin{theorem}
+The following hold for $1\leq i,j<n$: \newline
+1) $U_{i}^{2}=U_{i}$; \newline
+2) $U_{i}U_{j}=0$ ($i\neq j$);\newline
+3) $AU_{i}=\lambda _{i}U_{i}$; \newline
+4) $\dsum\limits_{k=1}^{n}U_{k}=I$;\newline
+5) $\dsum\limits_{k=1}^{n}\lambda _{k}U_{k}=A$;
+\end{theorem}
+
+\begin{definition}
+For $x,y\in V(G)$ let the \emph{distance} $d(x,y)$ be the minimal length of
+a path going from $x$ to $y$. 
+\end{definition}
+
+\begin{lemma}
+Let $G$ be an undirected, connected graph. Then $d$ is a metric on $V(G)$. 
+\end{lemma}
+
+\begin{definition}
+Let the \emph{diameter} of $G$ be 
+\begin{equation*}
+\mathrm{diam}(G)=\max \left\{ d(x,y)\mid x,y\in V(G)\right\} .
+\end{equation*}
+\end{definition}
+
+One can give a general lower bound on the diameter as follows.
+
+\begin{lemma}
+Let $G$ be a $d$-regular undirected graph on $n$ vertices with $d\geq 3$.
+Then 
+\begin{align}
+\mathrm{diam}(G)\geq \log _{d-1}(n/3).
+\end{align}
+\end{lemma}
+
+So, for a fixed degree, the diameter is at least logarithmic in the number
+of vertices.
+
+It turns out that for good expanders, one can get a logarithmic upper bound
+for the diameter. 
+
+\begin{lemma}
+Let $x,y\in V(G)$. Then 
+\begin{align}
+d(x,y)=\min \left\{ k\mid X_{\{x\}}^{\top }(A^{k})X_{\{y\}}\neq 0\right\} .
+\end{align}
+
+\end{lemma}
+
+\begin{theorem}
+We have 
+\begin{align}
+\mathrm{diam}(G)\leq \frac{\log (n)}{\log (d/\rho _{0}(G))}\text{.}
+\end{align}
+
+\end{theorem}
+
+Hint: decompose $X_{\{x\}}$ and $X_{\{y\}}$.\\
+\textbf{solution:}\\
+
+  \begin{align}
+      diam (G) &= \max_{x,y \in V(G)} \ \ \min_{\chi^T_{\left\{ x \right\}} A^k \chi_{\left\{ y \right\}} > 0 } k
+  \end{align}
+  (since $A^k$ has non-negative entries, so $\neq 0$ 
+  is the same as $>0$).
+
+   \begin{align}
+        \chi^T_{\left\{ x \right\}} A^k \chi_{\left\{ y \right\}} &= 
+       \chi^T_{\left\{ x \right\}} \sum_{i=0}^{n-1} \lambda_i^k U_i \chi_{\left\{ y \right\}} \\
+       &= \sum_{i=0}^{n-1} \lambda_i^k (U_i)_{x,y} \\
+       &= \lambda_0^k (U_0)_{x,y} + \sum_{i=1}^{n-1} \lambda_i^k (U_i)_{x,y} \\
+   \end{align}
+    since $\lambda_0 = d$, and 
+    \begin{align}
+       U_0 = b_0 b_0^T =
+     \begin{bmatrix}
+         \frac{ 1 }{ n } & \ldots & \ldots & \frac{ 1 }{ n }\\
+          \vdots & \ddots & & \vdots \\
+          \vdots & & \ddots & \vdots \\
+          \frac{ 1 }{ n } & \ldots & \ldots & \frac{ 1 }{ n }
+      \end{bmatrix}
+  \end{align}
+  and 
+    \begin{align}
+        (U_i)_{x,y} &= (b_i b_i^T)_{x,y}\\
+        &= (b_i)_x \cdot (b_i)_y\\
+        &= x_i \cdot y_i
+    \end{align}
+    where 
+    \begin{align}
+        x_i &:= (b_i)_x\\
+        y_i &:= (b_i)_y\\
+        \text{for} \ i &\in \left\{ 0,1,2, \ldots, n-1 \right\}
+    \end{align}
+    is the $x$-th entry in vector $b_i$, the 
+    $y$-th entry in vector $b_i$.
+   \begin{align}
+\chi^T_{\left\{ x \right\}} A^k \chi_{\left\{ y \right\}} &= 
+\lambda_0^k (U_0)_{x,y} + \sum_{i=1}^{n-1} \lambda_i^k (U_i)_{x,y} \\
+&= \frac{ d^k }{ n } + \sum_{i=1}^{n-1} \lambda_i^k x_i \cdot y_i\\
+&\geq \lvert \frac{ d^k }{ n }\rvert - 
+\lvert \sum_{i=1}^{n-1} \lambda_i^k x_i \cdot y_i \rvert >\\
+&\geq \frac{ d^k }{ n } - \rho^k \sum_{i=1}^{n-1} \lvert x_i \rvert \lvert y_i \rvert\\
+&\geq \frac{ d^k }{ n } -
+\rho^k \sqrt[]{\sum_{i=1}^{n-1} \lvert x_i\rvert^2 } \sqrt[]{\sum_{i=1}^{n-1} \lvert y_i \rvert^2}\\
+&\geq \frac{ d^k }{ n } -
+\rho^k \sqrt[]{\sum_{i=0}^{n-1} \lvert x_i\rvert^2 } \sqrt[]{\sum_{i=0}^{n-1} \lvert y_i \rvert^2}\\
+   \end{align}
+   where we used inverse triangle inequality, and then Cauchy-Shwarz inequality. \\
+   since 
+   \begin{align}
+       \sum_{i=0}^{n-1} \lvert x_i \rvert^2 &=
+       \sum_{i=0}^{n-1} (b_i)_x (b_i)_x =  
+       \sum_{i=0}^{n-1} \left( b_i b_i^T \right)_{x,x}
+       = (I)_{x,x} = 1 \\
+       &= \frac{ d^k }{ n } - \rho^k \cdot 1 \cdot 1\\
+       &= \frac{ d^k }{ n } - \rho^k
+   \end{align}
+   Thus,
+   \begin{align}
+       \chi_{\left\{ x \right\}}^T A^k \chi_{\left\{ y \right\}}
+       \geq \frac{ d^k }{ n } - \rho^k \ (*)
+   \end{align}
+   Since max is taken over $x,y \in V(G)$, we want 
+   $\frac{ d^k }{ n } - \rho^k > 0$. So
+   \begin{align}
+       \frac{ d^k }{ n } &> \rho^k \\
+       \frac{ d^k }{ \rho^k } &> n \\
+       \log \left( \frac{ d }{ \rho }\right)^k &> \log n\\
+       k &> \frac{ \log n }{ \log \left( d/ \rho \right) }
+   \end{align}
+   Min of $k$ is taken over all
+   $\chi_{\left\{ x\right\}}^T A^k \chi_{\left\{ y\right\}} > 0$,
+   so $k$ has $\frac{ \log n  }{ \log \left(d/\rho \right) }$ growth.
+    
+    \textbf{end solution}
+
+When $G$ is bipartite, the above theorem (and also the theorem on the
+previous sheet) do not give anything reasonable, as $\rho_{0}(G)=d$.
+However, there is a similar diameter bound for bipartite graphs where all
+the other eigenvalues (in absolute value) are bounded away from $d$.
+
+\begin{theorem}
+Let $G$ be a finite, connected, undirected $d$-regular bipartite graph on $n$ vertices. 
+Assume that $\left\vert \lambda_{i}\right\vert \leq r$ ($1\leq i<n-1$). 
+Then $G$ has logarithmic diameter.
+\end{theorem}
+
+\end{document}
+
+
+

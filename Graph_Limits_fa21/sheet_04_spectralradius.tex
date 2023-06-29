@@ -1,0 +1,322 @@
+\documentclass[12pt]{article}%
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.2cm, right=2.2cm]%
+{geometry}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}%
+\setcounter{MaxMatrixCols}{30}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\begin{document}
+
+\title{Sheet 4: Spectral radius and randomness }
+\author{Xianzhi Wang}
+\date{fall 2021}
+\maketitle
+
+Let $G$ be a finite undirected $d$-regular graph on $n$ vertices. Let $A$
+denote the adjacency matrix of $G$, and let $b_{0},b_{1},\ldots,b_{n-1}$ be an
+orthonormal eigenbasis for $A$ with real eigenvalues $\lambda_{0}\geq
+\lambda_{1}\geq\ldots\geq\lambda_{n-1}$.
+
+\begin{definition}
+Let the spectal radius of $G$ be
+\[
+\rho_{0}(G)=\max\left\{  \left\vert \lambda_{i}\right\vert \mid1\leq i\leq
+n-1\right\}  \text{.}%
+\]
+
+\end{definition}
+
+That is, we exclude the trivial eigenvalue $d$.
+
+\begin{lemma}
+If $G$ is connected, then 
+$b_{0}=\left(  1/\sqrt{n},\ldots,1/\sqrt{n}\right)$.
+\end{lemma}
+
+\begin{solution}
+    If $G$ is connected, then 
+    \begin{align}
+        b_0 = \frac{ 1 }{ \sqrt[]{n} }
+        \begin{bmatrix}
+            1\\
+            1\\
+            \vdots\\
+            1
+        \end{bmatrix}
+    \end{align}
+    Since $G$ is a finite, undirected, $d$-regular graph on $n$ vertices, 
+    thus, by results from the previous sheet, $d$ regular and connectedness
+    implies $\lambda_0 (G) = d$, where $d$ is also maximal degree.\\
+    The associated eigenvector for eigenvalue $d$ is the all $1$'s vector,     
+    \begin{align}
+        \begin{bmatrix}
+            1\\
+            1\\
+            \vdots\\
+            1
+        \end{bmatrix}
+    \end{align}
+    since every row of the adjacency matrix of a regular graph
+    sum to $d$. Thus, we just need to normalize the all one's vector to get
+    \begin{align}
+        b_0 = \frac{ 1 }{ \sqrt[]{n} }
+        \begin{bmatrix}
+            1\\
+            1\\
+            \vdots\\
+            1
+        \end{bmatrix}
+    \end{align}
+
+    
+\end{solution}
+
+Let $S,T$ be subsets of $V(G)$. Assume now that the edges of $G$ are chosed randomly.
+
+\begin{exercise}
+What value do we expect for $e(S,T)$ for a random $G$?
+\end{exercise}
+
+\textbf{solution:}\\
+    Originally, $e(S,T) = \chi^T_S A \chi_T$,
+    but here, the edges between the 2 vertex set, 
+    $S,T$ are chosen randomly.\\
+    since the graph $G$ is $d$-regular on $n$ vertices, 
+    there must be $\frac{ d \cdot n }{ 2 }$ edges 
+    in total, and we have ${n \choose 2}$ possible
+    ``slots'' to put those edges. And we are 
+    doing this randomly. Thus, for each ``slot'',
+    the possibility that there is an edge there, is
+    \begin{align}
+        \mathbb{P}(\exists \ \text{an edge}) = 
+        \frac{ \frac{ d \cdot n }{ 2 } }{ \frac{ n(n-1) }{ 2 } } 
+        = \frac{ d }{ n-1 }
+    \end{align}
+    Thus, we should have a matrix 
+    \begin{align}
+        P = 
+        \begin{bmatrix}
+        0 & & & \frac{ d }{ n-1 }\\
+        & 0 & & \\
+        & & \ddots & \\
+        \frac{ d }{ n-1 }& & &0
+        \end{bmatrix}
+    \end{align}
+    with zero on the diagonal and $\frac{ d }{ n-1 }$ everywhere
+    except the diagonal. 
+    $e(S,T) = \chi_S^T P \chi_T$ would take into account that
+    an edge is in place with possibility $\frac{ d }{ n-1 }$.\\
+    
+\textbf{end solution}\\
+
+It turns out that when the spectral radius is small, the graph mimicks the
+random behaviour.
+
+\begin{exercise}
+For $S\subseteq V(G)$ decompose the characteristic function $X_{S}$ as
+\[
+X_{S}=%
+%TCIMACRO{\dsum _{i=0}^{n-1}}%
+%BeginExpansion
+{\displaystyle\sum_{i=0}^{n-1}}
+%EndExpansion
+\alpha_{i}b_{i}\text{.}%
+\]
+What is $\alpha_{0}$? What is $%
+%TCIMACRO{\dsum _{i=0}^{n-1}}%
+%BeginExpansion
+{\displaystyle\sum_{i=0}^{n-1}}
+%EndExpansion
+\alpha_{i}^{2}$?
+\end{exercise}
+
+\begin{solution}
+    $S \subseteq V(G)$ decompose the characteristic function $\chi_s$
+    as $\chi_s = \sum_{i=0}^{n-1} \alpha_i b_i$ where
+    \begin{align}
+        \chi_s (v) = \begin{cases}
+            &1 \ \text{if} \ v \in S\\
+            &0 \ \text{if} \ v \not\in S
+        \end{cases}
+    \end{align}
+    We could think of $\chi_s$ as a column vector, 
+    where we have the $n$ vertices, and we put 
+    $1$ and $0$ according to whether $v_i$ is 
+    in $S$ or not.\\
+    Since $\chi_s$ is a vector, it could be 
+    expressed as a linear combination of eigenvectors, 
+    since those eigenvectors form an orthonormal eigenbasis:
+    \begin{align}
+        b_0, b_1, \ldots, b_{n-1}.
+    \end{align}
+    Thus, we have
+    \begin{align}
+        \chi_s = \alpha_0 b_0 + \alpha_1 b_1 + \ldots + \alpha_{n-1} b_{n-1}
+    \end{align}
+    $\alpha_0$ is the coefficient corresponding to the eigenvector
+    \begin{align}
+        b_0 = \frac{ 1 }{ \sqrt[]{n} }
+        \begin{bmatrix}
+            1\\
+            1\\
+            \vdots\\
+            1
+        \end{bmatrix}
+    \end{align}
+    Also, 
+    \begin{align}
+        \left\langle \chi_s, b_0 \right\rangle &= \left\langle \sum_i \alpha_i b_i, b_0 \right\rangle\\
+        &= \sum_i \alpha_i \left\langle b_i, b_0 \right\rangle\\
+        &= \sum_i \alpha_i \delta_{i,0}\\
+        &= \alpha_0 \\
+        \sum_{i=0}^{n-1} \alpha_i^2 &= \alpha_0^2 + \alpha_1^2 + \ldots + \alpha_{n-1}^2
+    \end{align}
+
+    
+\end{solution}
+
+\begin{theorem}
+For all $S,T\subseteq V(G)$ we have
+\[
+\left\vert e(S,T)-\frac{d\left\vert S\right\vert \left\vert T\right\vert }%
+{n}\right\vert \leq\rho_{0}(G)\sqrt{\left\vert S\right\vert \left\vert
+T\right\vert }\text{.}%
+\]
+
+\end{theorem}
+
+\begin{proof}
+    As suggested in exercises that builds up to this theorem, 
+    write
+    \begin{align}
+        \chi_S &= \sum_{i=0}^{n-1} \alpha_i b_i \\
+        \chi_T &= \sum_{i=0}^{n-1} \beta_i b_i 
+    \end{align}
+    in eigenbasis. The $\alpha_i$ and $\beta_i$ are coefficients, and 
+    \begin{align}
+        \alpha_i &= \left\langle \chi_S, b_i \right\rangle\\
+        \beta_i &= \left\langle \chi_T, b_i \right\rangle 
+    \end{align}
+    also, in perticular, 
+    \begin{align}
+        \alpha_0 &= \left\langle \chi_S, b_0 \right\rangle\\
+        &= \left\langle \chi_S, \frac{ 1 }{ \sqrt[]{n} } \mathbf{1} \right\rangle \ \text{where} \ \mathbf{1} \ \text{is} \ n \times 1 \ \text{vector of all 1's}\\
+        &= \frac{ 1 }{ \sqrt[]{n} } \left\langle \chi_S, \mathbf{1} \right\rangle \\
+        &= \frac{ 1 }{ \sqrt[]{n} } \lvert S \rvert
+    \end{align}
+    similarly, $\beta_0 = \frac{ 1 }{ \sqrt[]{n} } \lvert T\rvert$.\\
+    Thus 
+    \begin{align}
+    e (S,T) &= \chi_S^T A \chi_T\\
+    &= \sum_{i=0}^{n-1} \alpha_i b_i^T A \beta_j b_j\\
+    &= \sum_{i=0}^{n-1} \alpha_i \beta_i \lambda_i \ \text{since} \ b_i \ \text{form orthonormal basis}\\
+    &= \alpha_0 \beta_0 \lambda_0 + \sum_{i=1}^{n-1} \alpha_i \beta_i \lambda_i\\
+    &= \frac{ \lvert S \rvert }{ \sqrt[]{n} } \frac{ \lvert T \rvert }{ \sqrt[]{n} } d +  \sum_{i=1}^{n-1} \alpha_i \beta_i \lambda_i.
+    \end{align}
+    Thus, we have
+    \begin{align}
+        \lvert e(S,T) - \frac{ d \lvert S\rvert \lvert T\rvert }{ n }\rvert = \lvert \sum_{i=1}^{n-1} \alpha_i \beta_i \lambda_i \rvert.
+    \end{align}
+    Now, LHS of equation we want to show
+    \begin{align}
+        &= \lvert \sum_{i=1}^{n-1} \alpha_i \beta_i \lambda_i \rvert\\
+        &\leq \lvert \sum_{i=1}^{n-1} \alpha_i \beta_i \rvert \rho_0 (G)\\
+        &\leq \lvert \sum_{i=0}^{n-1} \alpha_i \beta_i \rvert \rho_0 (G)\\
+        &= \lvert \left\langle \chi_S, \chi_T \right\rangle\rvert \rho_0 (G)\\
+        &\leq \lVert \chi_S \rVert \lVert \chi_T \rVert \rho_0 (G)\\
+        &= \sqrt[]{\lvert S \rvert} \sqrt[]{\lvert T \rvert} \rho_0 (G)\\
+        &= \rho_0 (G) \sqrt[]{\lvert S \rvert \lvert T \rvert}\\
+        &= RHS
+    \end{align}
+    observe 
+    \begin{align}
+        &\lvert \left\langle \chi_S, \chi_T \right\rangle\rvert\\
+        &= \lvert \left\langle \sum_i \alpha_i b_i, \sum_j \beta_j b_j \right\rangle\rvert\\
+        &= \lvert \sum_{i,j} \alpha_i \beta_j \left\langle b_i, b_j \right\rangle\rvert\\
+        &= \lvert \sum_{i,j} \alpha_i \beta_j \delta_{i,j} \rvert\\
+        &= \lvert \sum_i \alpha_i \beta_i \rvert
+    \end{align}
+    and 
+    \begin{align}
+        \lVert \chi_S \rVert &= \sqrt[]{\left\langle \chi_S, \chi_S \right\rangle}\\
+        &= \sqrt[]{\lvert S \rvert}\\
+        \lVert \chi_T \rVert &= \sqrt[]{\left\langle \chi_T, \chi_T \right\rangle}\\
+        &= \sqrt[]{\lvert T \rvert}\\
+    \end{align}
+    
+    
+    
+    
+\end{proof}
+
+
+A subset $S\subseteq V(G)$ is \emph{independent}, if $E(S,S)$ is empy. Using
+the above theorem, one can easily get an upper bound for the maximal size of
+an independent subset of $G$.
+
+
+\begin{corollary}
+An independent subset of $G$ has size at most
+\[
+\frac{\rho_{0}(G)}{d}n\text{.}%
+\]
+
+\end{corollary}
+
+\begin{proof}
+   From the previous theorem, we have $\forall S,T \subseteq V(G)$,
+   \begin{align}
+    \lvert e(S,T) - \frac{ d \lvert S \rvert \lvert T \rvert }{ n }\rvert 
+    \leq \rho_0 (G) \sqrt[]{\lvert S \rvert \lvert T \rvert}
+   \end{align}
+   Let $S \subseteq V(G)$ be independent, 
+   we have $e(S,S) = 0$.
+   So the above formula reduce to 
+   \begin{align}
+       \lvert e(S,S) - \frac{ d \lvert S \rvert \lvert S \rvert }{ n }\rvert
+       &\leq \rho_0 (G) \sqrt[]{\lvert S \rvert \lvert S \rvert}\\
+       \implies \lvert \frac{ d }{ n }\rvert \lvert S \rvert^2 &\leq \rho_0 (G) \lvert S \rvert\\
+       \implies \lvert \frac{ d }{ n }\rvert \lvert S \rvert &\leq \rho_0 (G) \\
+       \lvert S \rvert &\leq \rho_0 (G) \frac{ n }{ d }.
+   \end{align}
+   Thus, an independent subset $S$ 
+   has size at most $\frac{ \rho_0 (G) }{ d }n$.
+   
+   
+\end{proof}
+
+
+Of course, this bound is only meaningful, if $\rho_{0}(G)$ can go below, say,
+$d/2$. It is also not clear how small $\rho_{0}(G)$ can get for large $d
+$-regular graphs -- we will get a good estimate on this later, using graph limits.
+
+
+\end{document}
+
+

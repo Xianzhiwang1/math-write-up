@@ -60,5 +60,41 @@ Final
 
 \pagebreak
 
+\begin{homeworkProblem}
+    $\alpha \in \mathbb{F}_{p^n}$ of $p^n$ elements.\\
+    We need to show 
+    \begin{align}
+        &\alpha + \alpha^p + \ldots + \alpha^{p^{n-1}}\\
+        &\alpha^{1 + p + p^2 + \ldots + p^{n-1}}
+    \end{align}
+    are fixed by the Frobenious automorphism
+    \begin{align}
+        \Phi: \alpha \xrightarrow[]{} \alpha^p
+    \end{align}
+    which would imply that all elements in the Galois Group
+    $\Gamma(\mathbb{F}_{p^n} : \mathbb{F}_p)$ fix those $2$ elements, so
+    those 2 elements are in the prime field.
+    (Any finite extension of finite field is Galois.)
+    \begin{align}
+        &\left( \alpha + \alpha^p + \alpha^{p^{2}} + \ldots + \alpha^{p^{n-1}} \right)^p\\
+        &= \alpha^p + \alpha^{p^2} + \alpha^{p^3} + \ldots + \alpha^{p^{n-1}} + \alpha^{p^{n}-1} \cdot \alpha \\
+        &= \alpha + \alpha^p + \ldots + \alpha^{p^{n-1}} \\
+        \text{where} \ \alpha^{p^n - 1} &= 1 \ \forall \ \alpha \neq 0, \ \alpha \in \mathbb{F}_{p^n}^{\times}
+    \end{align}
+    Thus this element is indeed fixed by $\Phi$, so in $\mathbb{F}_p$.
+    \begin{align}
+        &\left( \alpha^{1 + p + p^2 + \ldots + p^{n-1}} \right)^p\\
+        &= \alpha^{p+p^2 + p^3 + \ldots + p^{n-1} + p^n}\\
+        &= \alpha^{p + p^2 + p^3 + \ldots + p^{n-1} + 1} \cdot \alpha^{p^n - 1}\\
+        &= \alpha^{1 + p + \ldots + p^{n-1}}
+    \end{align}
+    Thus, this element is also fixed by $\Phi$ so it's in the $\mathbb{F}_p$.
+    
+    
+    
+    
+    
+\end{homeworkProblem}
+
 
 \end{document}

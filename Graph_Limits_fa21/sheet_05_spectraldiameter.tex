@@ -83,6 +83,25 @@ a path going from $x$ to $y$.
 Let $G$ be an undirected, connected graph. Then $d$ is a metric on $V(G)$. 
 \end{lemma}
 
+\begin{proof}
+    We show $d$ is a metric on $V(G)$. 
+    where $G$ undirected connected graph.\\
+    (1) $d (x,y) \geq 0$, since the length of a path is always positive or zero,
+    when $x$ and $y$ are the same vertex. 
+    $x=y \implies d(x,y)=0$ since the shortest path is of zero length
+    when we are going from a vertex to itself.
+    $d(x,y)=0 \implies x=y$, the shortest path is zero length, so we 
+    never moved, it's the same vertex.\\
+    (2) $d(x,y) = d(y,x)$ since traversing the shortest path backwards,
+    the length is the same. (The graph is undirected)\\
+    (3) $d(x,z) \leq d(x,y) + d(y,z) \ \forall \ x,y,z \in V(G)$. the 
+    shortest path from $x$ to $y$, then the shortest path from 
+    $y$ to $z$ could only be a longer path than the shortest path
+    from $x$ to $z$.\\
+    Since graph $G$ is connected, $d(x,y) < \infty$.
+\end{proof}
+
+
 \begin{definition}
 Let the \emph{diameter} of $G$ be 
 \begin{equation*}
@@ -99,6 +118,56 @@ Then
 \mathrm{diam}(G)\geq \log _{d-1}(n/3).
 \end{align}
 \end{lemma}
+
+\begin{proof}
+    Let $G$ be $d$-regular, undirected graph on $n$ vertices $(d \geq 3)$
+    \begin{align}
+        diam (G) &\geq \log_{d-1} \left( \frac{ n }{ 3 }\right) \\
+    \end{align}
+    Let $r$ denote $diam(G)$, then showing 
+    \begin{align}
+        r &\geq \log_{d-1} \left( \frac{ n }{ 3 }\right)
+    \end{align}
+    is the same as showing $(d-1)^r \geq \frac{ n }{ 3 }$,
+    which is 
+    \begin{align}
+        3(d-1)^r &\geq n.\\
+        n &\leq 3 (d-1)^r
+    \end{align}
+    we could have an upper bound on $n$ by fixing 
+    a vertex $v_0$ first, 
+    then since $G$ is $d$ regular, $v_0$ has $d$ neighbors,
+    at $1$st level, as we expand outwards.
+    At 2nd level, each of those neighbors of $v_0$ has
+    $d-1$ new neighbors, so we have $d(d-1)$ 
+    in total (at max). At 3rd level, $d(d-1)^2$ vertices 
+    in total (at max). As we go on, we could iterate at maximum
+    $r-1$ levels, since the diameter of $G$ is $r$. 
+    If our fixed vertex $v_0$ happens to be at the ``center''
+    of the graph, then $n$ might be small compared to the 
+    upper bound we obtained in this way.
+    \begin{align}
+        n &\leq 1 + d + d(d-1) + d(d-1)^2 + \ldots + d(d-1)^{r-1}\\
+        &= 1 + \frac{ d(d-1)^r - d }{ d-2 }\\
+        &\leq 3(d-1)^r\\
+    \end{align}
+    if we show the last $\leq$, then we are done.\\
+    Now, we have $3 \leq d$.\\
+    Use $X := (d-1)^r$ as short hand.\\
+    \begin{align}
+        3X-1 &< 3X < dX\\
+        6X - 2 &< 2dX\\
+        dX-2 &< 3X(d-2)\\
+        \frac{ dX-2 }{ d-2 } &< 3X \\
+        \frac{ d-2 + dX -d }{ d-2 } &< 3X\\
+        1 + \frac{ dX }{ d-2 } - \frac{ d }{ d-2 } &< 3X \\
+        1 + \frac{ d(d-1)^r }{ d-2 } - \frac{ d }{ d-2 } &< 3 (d-1)^r
+    \end{align}
+    as desired. and we are done.
+    
+    
+\end{proof}
+
 
 So, for a fixed degree, the diameter is at least logarithmic in the number
 of vertices.

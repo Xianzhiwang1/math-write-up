@@ -1,0 +1,93 @@
+\documentclass{article}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{Graph Limits \ \#Fekete}
+\newcommand{\hmwkDueDate}{Apr 29, 2022}
+\newcommand{\hmwkClass}{Graph Limits}
+\newcommand{\hmwkClassTime}{fa21}
+\newcommand{\hmwkClassInstructor}{Professor Miklos Abert}
+\newcommand{\hmwkAuthorName}{\textbf{Xianzhi} }
+\newcommand{\hmwkAuthor}{\textit{Xianzhi Wang}}
+
+\input{preambleBloat.tex}
+% \usepackage{xianzhi}
+
+\begin{document}
+
+\maketitle
+\pagebreak
+
+\begin{homeworkProblem}
+    Let $a_1, a_2, a_3, \ldots$, seq of non-negative real numbers with 
+    $a_{i+j} \leq a_i + a_j \ \forall \ i,j \geq 1$. Then
+    \begin{align}
+        \lim_{n \mapsto \infty} \frac{ a_n }{ n }
+    \end{align}
+    exists.\\
+    \solution
+
+    Let $L = \inf_{n \geq 1} \frac{ a_n }{ n }$,
+    and let $\epsilon > 0$ be arbitrary.\\
+    since $L$ is the $\inf$ of $\frac{ a_n }{ n }$, 
+    we could choose $n_0$ such that 
+    \begin{align}
+        L \leq \frac{ a_{n_0} }{ n_0 } \leq L + \epsilon
+    \end{align}
+    now, for $n \geq n_0$, 
+    write $n$ as $n=p n_0 + q$, $p,q \in \mathbb{N}, \ 0 \leq q < n_0$.
+    \begin{align}
+        a_n &= a_{p n_0 + q}\\ 
+        &\leq \underbrace{a_{n_0} + a_{n_0} + \ldots + a_{n_0}}_{p \text{ terms}} + a_q\\
+        &= p a_{n_0} + a_q\\
+    \end{align}
+    Now, divide both sides by $n$.
+    \begin{align}
+        \frac{ a_n }{ n } &\leq \frac{ p }{ n }a_{n_0} + \frac{ a_q }{ n }\\
+        \limsup_{n \mapsto \infty} \frac{ a_n }{ n } &\leq \frac{ a_{n_0} }{ n_0 } + 0
+    \end{align}
+    since 
+    \begin{align}
+        \frac{ a_q }{ n } &\mapsto 0 \ \text{as} \ n \mapsto \infty\\
+        \text{since} \ a_q &\leq \max_{0 \leq q < n_0} a_q < \infty
+    \end{align}
+    since 
+    \begin{align}
+        \limsup_{n \mapsto \infty} \frac{ p }{ n } 
+        &= \limsup_{n \mapsto \infty} \frac{ \frac{ n-q }{ n_0 } }{ n }\\ 
+        &= \limsup_{n \mapsto \infty} \frac{ n-q }{ n } \cdot \frac{ 1 }{ n_0 }.\\
+        &= \lim_{n \mapsto \infty} \frac{ n-q }{ n } \cdot \frac{ 1 }{ n_0 }.\\
+        &= \frac{ 1 }{ n_0 }
+    \end{align}
+    Thus, $\limsup_{n \mapsto \infty} \frac{ a_n }{ n } \leq \frac{ a_{n_0} }{ n_0 } \leq L + \epsilon$\\
+    since $\epsilon > 0$ is arbitrary, we could make $\epsilon \mapsto 0$, so
+    \begin{align}
+        \limsup_{n \mapsto \infty}
+    \end{align}
+    
+    
+    
+    
+    
+    
+
+
+    
+
+
+
+\end{homeworkProblem}
+
+\pagebreak
+
+
+
+\end{document}

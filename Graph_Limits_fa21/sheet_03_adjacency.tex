@@ -1,0 +1,194 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.2cm, right=2.2cm]{geometry}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+
+\begin{document}
+
+\title{Sheet 3: The Adjacency matrix}
+\author{Xianzhi Wang}
+\date{fall 2021}
+\maketitle
+
+All graphs are finite on this sheet. Let $G$ be a directed graph on the
+vertex set $\{1,\ldots,n\}$. Let us define the \emph{adjacency matrix} $A=%
+\mathrm{Adj}(G)$ by setting 
+\begin{equation*}
+A_{i,j}=\text{number of edges from }i\text{ to }j\text{ in }G\text{.}
+\end{equation*}
+So, we allow multiple edges and even loops in $G$.
+
+\begin{exercise}
+Express the following in linear algebra terms, using $A$: \newline
+1)\ the degrees of a vertex;\newline
+2) the number of edges in $G$; \newline
+3) $e(X,Y)$ for $X,Y\subseteq V(G)$.
+\end{exercise}
+
+One of the main reasons why we look at the adjacency (or neighboring)
+relation as a matrix is the following correspondance between matrix
+multiplication and walks in $G$.
+
+\begin{definition}
+A \emph{directed walk of length }$n$ in $G$ is a sequence of directed edges $%
+e_{1},\ldots,e_{n}$ such that $e_{i}^{+}=e_{i+1}^{-}$ ($1\leq i\leq n-1$).
+The walk is a \emph{loop (or returning)}, if $e_{1}^{-}=e_{n}^{+}$.
+\end{definition}
+
+Note that we redefine the notion of walk here: it is a sequence of edges
+rather than vertices.
+
+\begin{theorem}
+For every $k>0$, $(A^{k})_{i,j}$ equals the number of directed walks of
+length $k$ from $i$ to $j$.
+\end{theorem}
+
+\begin{proof}
+    Let's prove by induction.\\
+    When $k=1, \ (A)_{ij}$ is indeed the number of
+    directed walks of length $1$,
+    (which is just directed edge) from $i$ to $j$ by definition.\\
+    Assume true for $k-1$.\\
+    Denote the $ij$th entry of $A$ by $a_{ij}$ and $ij$th 
+    entry of $A^{k-1}$ by $b_{ij}$
+    \begin{align}
+        (A^k)_{i,j} = (A \cdot A^{k-1})_{i,j} = \sum_{\alpha = 1}^{n} a_{i \alpha} b_{\alpha j}
+    \end{align}
+    Thus, for fixed $\alpha$, we multiply together $a_{i \alpha} b_{\alpha j}$,
+    which means multiply number of directed walks of length $1$
+    (which are directed edges) from $i$ to $\alpha$ and the 
+    number of directed walks of length $k-1$ from $\alpha$ to $j$.
+    After this, we sum over $\alpha$, which run through $1$ to $n$,
+    and the result $\sum_{\alpha = 1}^{n} a_{i \alpha} b_{\alpha j}$
+    is indeed number of directed walks of length $k$.\\
+    Thus, we have proved the theorem using induction.
+\end{proof}
+
+
+\begin{corollary}
+For every $k>0$, the trace $\mathrm{tr}(A^{k})$ equals the number of loops
+of length $k$ in $G$.
+\end{corollary}
+
+\begin{proof}
+    Since $(A^k)_{ii}$ equals the number of directed walks
+    of length $k$ from $i$ to $i$, (i.e., a loop),
+    we could sum over the $n$ entries in the diagonal
+    to obtain all the loops of length $k$ in $G$.
+    This is exactly $tr (A^k)$.
+    
+\end{proof}
+
+
+Now assume that $G$ is undirected.
+
+This turns $A$ to be a symmetric real matrix. Using the spectral theorem, it
+follows that $A$ admits an orthonormal eigenbasis $b_{0}(G),b_{1}(G),%
+\ldots,b_{n-1}(G)$ with real eigenvalues $\lambda_{0}(G)\geq\lambda
+_{1}(G)\geq\ldots\geq\lambda_{n-1}(G)$. That is, we have 
+\begin{equation*}
+Ab_{i}=\lambda_{i}b_{i}\text{ \ }(0\leq i<n). 
+\end{equation*}
+Note that the $\lambda_{i}$ are well defined, but the $b_{i}$ are not. Also:
+
+\begin{lemma}
+The eigenvalues are graph invariants, that is, isomorphic graphs have the
+same eigenvalues.
+\end{lemma}
+\begin{proof}
+    Isomorphic graphs have the same eigenvalues. Since 
+    Isomorphic graphs are structurally the same, 
+    they have the exact same adjacency matrix, 
+    thus the same eigenvalues.
+\end{proof}
+
+
+\begin{exercise}
+Compute $\lambda_{i}$ and $b_{i}$ for the triangle.
+\end{exercise}
+
+One way to visualize the adjacency matrix as an operator is as follows.
+Write real numbers on the vertices of $G$, call this function $f$. Now $A$
+acts by taking all neighbors of the vertex $x$, add up the $f$-values there
+and write it to the position $x$. This will be the value of $Af$ at $x$: 
+\begin{equation*}
+(Af)(x)=\dsum \limits_{(x,y)\in E(G)}f(y)\text{.}
+\end{equation*}
+Actually this is how we will \emph{define} the adjacency operator for
+infinite graphs. Using this image, one can prove.
+
+\begin{theorem}
+Let $G$ be an undirected graph with maximal degree $d$. Then $\left\vert
+\lambda_{i}(G)\right\vert \leq d$ ($0\leq i<n$). When $G$ is $d$-regular, we
+have $\lambda_{0}(G)=d$.
+\end{theorem}
+
+Hint: take an eigenvector. Find a particular vertex for it..
+
+\begin{exercise}
+Assume that $G$ is undirected and connected with maximal degree $d$. Then $%
+\lambda_{0}(G)=d$ if and only if $G$ is $d$-regular.
+\end{exercise}
+
+\begin{lemma}
+Let $G$ be a $d$-regular undirected graph. Then the multiplicity of $d$ as
+an eigenvalue of $G$ equals the number of connected components of $G$.
+\end{lemma}
+
+The eigenvalue $-d$ also comes into the picture naturally.
+
+\begin{lemma}
+Let $G$ be a $d$-regular undirected, connected graph. Then $\lambda_{n-1}=-d 
+$ if and only if $G$ is bipartite.
+\end{lemma}
+
+\begin{exercise}
+Let $G$ be a $d$-regular undirected graph. What is the multiplicity of $-d$
+as an eigenvalue of $G$?
+\end{exercise}
+
+Now we look at some simple examples.
+
+\begin{exercise}
+Compute the eigenvalues and eigenvectors for the cycle of length $n$.
+\end{exercise}
+
+Hint: What are the eigenvalues for the directed cycle of length $n$?
+
+\begin{exercise}
+Compute the eigenvalues and an orthonormal eigenbasis for the complete graph
+on $d+1$ points.
+\end{exercise}
+
+Hint: What happens to the eigenvalues and eigenvectors of $A$ if you add a
+scalar matrix to $A$?
+
+\end{document}

@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1688079832 "sheet_05_spectraldiameter.tex" "build/sheet_05_spectraldiameter.pdf" "sheet_05_spectraldiameter" 1688079832
+["pdflatex"] 1689015698 "sheet_05_spectraldiameter.tex" "build/sheet_05_spectraldiameter.pdf" "sheet_05_spectraldiameter" 1689015698
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -71,8 +71,8 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1668738742 2826448 dc0181bbe67b6cc084eb39e7967638f5 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "build/sheet_05_spectraldiameter.aux" 1688079830 32 2d1df76398b3c48c6419a45a7331db2d "pdflatex"
-  "sheet_05_spectraldiameter.tex" 1688079832 10093 900e86d074c05475bd5ae94fb9eba15d ""
+  "build/sheet_05_spectraldiameter.aux" 1689015679 32 77e0dffd05b653a64f0caf3eb9bb454a "pdflatex"
+  "sheet_05_spectraldiameter.tex" 1689015696 11553 e9d11abe62ac8987f11a9a5d55b93923 ""
   (generated)
   "build/sheet_05_spectraldiameter.aux"
   "build/sheet_05_spectraldiameter.log"

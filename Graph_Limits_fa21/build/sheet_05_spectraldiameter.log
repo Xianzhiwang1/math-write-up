@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.17)  29 JUN 2023 16:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.17)  10 JUL 2023 12:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -225,10 +225,10 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 40.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-./sheet_05_spectraldiameter.tex:73: Undefined control sequence.
+./sheet_05_spectraldiameter.tex:89: Undefined control sequence.
 <recently read> \dsum 
                       
-l.73 4) $\dsum
+l.89 4) $\dsum
               \limits_{k=1}^{n}U_{k}=I$;\newline
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -236,15 +236,15 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./sheet_05_spectraldiameter.tex:73: Limit controls must follow a math operator.
-l.73 4) $\dsum\limits
+./sheet_05_spectraldiameter.tex:89: Limit controls must follow a math operator.
+l.89 4) $\dsum\limits
                      _{k=1}^{n}U_{k}=I$;\newline
 I'm ignoring this misplaced \limits or \nolimits command.
 
-./sheet_05_spectraldiameter.tex:74: Undefined control sequence.
+./sheet_05_spectraldiameter.tex:90: Undefined control sequence.
 <recently read> \dsum 
                       
-l.74 5) $\dsum
+l.90 5) $\dsum
               \limits_{k=1}^{n}\lambda _{k}U_{k}=A$;
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -252,37 +252,52 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./sheet_05_spectraldiameter.tex:74: Limit controls must follow a math operator.
-l.74 5) $\dsum\limits
+./sheet_05_spectraldiameter.tex:90: Limit controls must follow a math operator.
+l.90 5) $\dsum\limits
                      _{k=1}^{n}\lambda _{k}U_{k}=A$;
 I'm ignoring this misplaced \limits or \nolimits command.
 
 [1
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 153--157
+./sheet_05_spectraldiameter.tex:121: Double superscript.
+<argument> ...dots + U_n\\ &= b_1 b_1^T + b_2 b^2^
+                                                  T + \ldots + b_n b_n^T\\ &...
+l.121 \end{align}
+                 
+I treat `x^1^2' essentially like `x^1{}^2'.
 
- []
+./sheet_05_spectraldiameter.tex:121: Double superscript.
+<argument> ...dots + U_n\\ &= b_1 b_1^T + b_2 b^2^
+                                                  T + \ldots + b_n b_n^T\\ &...
+l.121 \end{align}
+                 
+I treat `x^1^2' essentially like `x^1{}^2'.
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 194--196
+Underfull \hbox (badness 10000) in paragraph at lines 214--218
 
  []
 
-[3] [4] [5] (build/sheet_05_spectraldiameter.aux) ) 
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 255--257
+
+ []
+
+[4] [5] [6] (build/sheet_05_spectraldiameter.aux) ) 
 Here is how much of TeX's memory you used:
  3387 strings out of 478268
  50111 string characters out of 5846346
- 363036 words of memory out of 5000000
+ 362036 words of memory out of 5000000
  21571 multiletter control sequences out of 15000+600000
  486678 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,16n,62p,241b,214s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on build/sheet_05_spectraldiameter.pdf (5 pages, 151981 bytes).
+Output written on build/sheet_05_spectraldiameter.pdf (6 pages, 155175 bytes).
 PDF statistics:
- 86 PDF objects out of 1000 (max. 8388607)
- 52 compressed objects within 1 object stream
+ 89 PDF objects out of 1000 (max. 8388607)
+ 54 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

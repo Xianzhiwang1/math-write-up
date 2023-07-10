@@ -153,10 +153,137 @@ have $\lambda_{0}(G)=d$.
 
 Hint: take an eigenvector. Find a particular vertex for it..
 
+\begin{proof}
+    Let $G$ be undirected graph with max degree $d$.\\
+    First we show $\lvert \lambda_k \rvert := \lvert \lambda_k (G) \rvert \leq d$
+    for $k \in \left\{ 0, \ldots, n-1 \right\}$.
+    Let $\lambda_k$ be an eigenvalue of adjacency matrix 
+    $A_G$, and let 
+    \begin{align}
+        x = 
+        \begin{bmatrix}
+            x_1\\
+            \vdots\\
+            x_n
+        \end{bmatrix}
+    \end{align}
+    be a corresponding eigenvector. 
+    Choose $x_i$ the max component $\left\{ x_1, \ldots, x_n\right\}$. WLOG $x_i > 0$. 
+    We have 
+    \begin{align}
+        \lvert \lambda_k x_i \rvert &= A \cdot x\\
+        &= \lvert \sum^{n}_{j=1} a_{ij}x_j \rvert\\
+        &\leq \lvert \sum_{j=1}^{n} a_{ij} x_i \rvert\\
+        &\leq \lvert d x_i \rvert \\
+        &= \lvert x_i \rvert d
+    \end{align}
+    since summing over row gives the degree,
+    which is less than the degree bound.
+    Thus, we have $\lvert \lambda_k \rvert \lvert x_i \rvert \leq \lvert x_i \rvert d$
+    so $\lvert \lambda_k \rvert \leq d$ as desired.\\
+    Now, when $G$ is $d$-regular $\implies \lambda_0 (G) = d$.\\
+    We need an eigenvector that has $d$ as its eigenvalue.\\
+    Consider the vector 
+    \begin{align}
+        x = 
+        \begin{bmatrix}
+            1\\
+            1\\
+            \vdots\\
+            1\\
+        \end{bmatrix}
+    \end{align}
+    with $n$ copies of $1$.
+    Since $G$ is $d$-regular,
+    every row of $A_G$ sum to $d$. 
+    Thus,
+    \begin{align}
+        A_G \cdot x =
+        \begin{bmatrix}
+            a_{11} & \ldots & a_{1n} \\
+            \vdots & \ddots & \vdots \\
+            a_{n1} & \ldots & a_{n n}\\
+        \end{bmatrix} 
+        \begin{bmatrix}
+            1\\
+            \vdots\\
+            1\\
+        \end{bmatrix} =
+        \begin{bmatrix}
+            d\\
+            \vdots\\
+            d\\
+        \end{bmatrix} 
+    \end{align}
+    Thus, $d$ is an eigenvalue.
+    Since all eigenvalues are $\leq d$,
+    $d$ is $\lambda_0 (G)$, the biggest. 
+    
+\end{proof}
+
+
 \begin{exercise}
 Assume that $G$ is undirected and connected with maximal degree $d$. Then $%
 \lambda_{0}(G)=d$ if and only if $G$ is $d$-regular.
 \end{exercise}
+
+\begin{proof}
+    $G$ is $d$ regular $\implies \lambda_0 (G) = d$.
+    We already proved this in the previous theorem. \\
+    Let $G$ undirected, connected, max degree is $d$.
+    $\lambda_0(G) = d \implies G$ is $d$-regular. Let 
+    \begin{align}
+        x = 
+        \begin{bmatrix}
+            x_1\\
+            \vdots\\
+            x_n
+        \end{bmatrix}
+    \end{align}
+    be an eigenvector for eigenvalue $d$.
+    Again, WLOG, pick a max component $x_i >$ 
+    among the entries $x_i, \ldots, x_n$. 
+    With $A_G = \left[ a_{ij} \right]$ we have 
+    \begin{align}
+        \lvert d x_i \rvert &= \lvert \sum_{j=1}^n a_{ij} x_j \rvert\\
+        &\leq \lvert \sum_{j=1}^n a_{ij} x_i \rvert\\
+        &\leq \lvert d x_i \rvert
+    \end{align}
+    meaning we have equal signs above.
+    so $x$ is a vector of constants of value $x_i$.
+    Thus, we could rescale to have 
+    \begin{align}
+        x =
+        \begin{bmatrix}
+            1\\
+            \vdots\\
+            1\\
+        \end{bmatrix}
+    \end{align}
+    so $\sum_{j=1}^n a_{ij} = d$,
+    thus, vertex $i$, corresponding the row 
+    \begin{align}
+        \begin{bmatrix}
+            a_{i1} & \ldots & a_{in}\\
+        \end{bmatrix}
+    \end{align}
+    has degree $d$, and since $G$ connected,
+    we could apply 
+    \begin{align}
+        x =
+        \begin{bmatrix}
+            1\\
+            \vdots\\
+            1\\
+        \end{bmatrix}
+    \end{align}
+    to other row $i$
+    to obtain $v_i$ 
+    has degree $d$.
+    Thus, $G$ is $d$-regular.
+    
+\end{proof}
+
 
 \begin{lemma}
 Let $G$ be a $d$-regular undirected graph. Then the multiplicity of $d$ as
@@ -165,10 +292,236 @@ an eigenvalue of $G$ equals the number of connected components of $G$.
 
 The eigenvalue $-d$ also comes into the picture naturally.
 
+\begin{proof}
+    Let $G$ be $d$-regular, undirected, graph that has $n$ vertices.
+    $\implies$ multiplicity of $d$ as an eigenvalue of $G = \#$ of connected components of $G$.
+    Let $G$ have $i$ connected components $C_i$ with $ i \in \left\{ 1, \ldots, k \right\}$ 
+    for some $k$.
+    We define vectors $X^i$ corresponding to $C_i$ in this way:
+    \begin{align}
+        X^i_j &= \begin{cases}
+            &1 \ \text{if} \ v_j \in C_i \\
+            &0 \ \text{else}
+        \end{cases} \\
+        j &\in \left\{ 1, \ldots, n \right\}
+    \end{align}
+    The adjacency matrix of $G$, $A_G$ looks like this:
+    \begin{align}
+        A_G \cdot X_2 = 
+        \begin{bmatrix}
+            C_1 & 0 & \ldots & 0\\
+            0 & C_2 & & 0\\
+            \vdots & & \ddots & \vdots \\
+            0 & 0 & & C_n \\
+        \end{bmatrix} 
+        \begin{bmatrix}
+            0\\
+            1\\
+            \vdots\\
+            0
+        \end{bmatrix}
+        = d
+        \begin{bmatrix}
+            0\\
+            1\\
+            \vdots\\
+            0
+        \end{bmatrix}
+    \end{align}
+    since $d$-regular row sum to $d$.
+    We could see that $X^i$ are eigenvectors 
+    of eigenvalue $d$. 
+    And $x^i$'s are orthogonal to each other.
+    Thus, the multiplicity of $d$
+    is at least the number of connected 
+    components of $G$.\\
+    We want to show that those $X^i$ actually
+    span the eigenbasis of $d$, so there are 
+    no more eigenvectors of $d$ that we 
+    didn't already take into account.\\
+    So let $y$ be an eigenvector of $d$,
+    we want to express it as a linear combination 
+    of $X^i$'s.
+    \begin{align}
+        i \text{-th row of } A_G \cdot
+        \begin{bmatrix}
+            y_1\\
+            y_2\\
+            y_3\\
+            \vdots\\
+            y_n
+        \end{bmatrix} =
+        i \text{-th row of }
+        d \begin{bmatrix}
+            y_1\\
+            y_2\\
+            y_3\\
+            \vdots\\
+            y_n
+        \end{bmatrix}
+    \end{align}
+    We assume $\lvert y_i \rvert$
+    is the max component in vector $y$, 
+    and $y_i \in C_i$.
+    \begin{align}
+        \sum_{(i,j) \in \text{Edge Set}} y_j = d y_i
+    \end{align}
+    LHS has $d$ summands, since $G$ is 
+    $d$-regular. Also,
+    \begin{align}
+        \lvert y_j \rvert \leq \lvert y_i \rvert \forall j
+    \end{align}
+    so in fact all $y_j$ are $y_i$.
+    So those underlying vertices $v_j$ are all connected
+    to the $v_i$, so they are in component $C_i$.
+    Thus, for vector $y$, the ``block'' corresponding 
+    to $C_i$ could be expressed as a linear combination 
+    of $X^i$, like $\alpha X^i$.
+    
+    
+\end{proof}
+
+
 \begin{lemma}
 Let $G$ be a $d$-regular undirected, connected graph. Then $\lambda_{n-1}=-d 
 $ if and only if $G$ is bipartite.
 \end{lemma}
+
+\begin{proof}
+    We know from Ex 8 that since $G$ is $d$-regular, undirected, 
+    connected, $d$ is an eigenvalue. Want To Show:
+    $G$ bipartite $\implies -d$ is also eigenvalue. 
+    (Then $\lambda_{n-1} = -d$ since $\lvert \lambda_i (G) \rvert \leq d$
+    eigenvalue cannot get smaller than $-d$.)\\
+    Since $G$ is bipartite, $A_G$ could be expressed as:
+    \begin{align}
+        \begin{bmatrix} 
+            0 & M \\
+            M^T & 0
+        \end{bmatrix}
+    \end{align}
+    for some matrix $M$ that is $k \times (n-k)$.
+    Now let 
+    \begin{align}
+        \begin{bmatrix}
+            x_1\\
+            \vdots\\
+            x_k\\
+            x_{k+1}\\
+            \vdots\\
+            x_n
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            X\\
+            Y
+        \end{bmatrix}
+    \end{align}
+    be an eigenvector of eigenvalue $d$.\\
+    Therefore, we get
+    \begin{align}
+        d
+        \begin{bmatrix}
+            X\\
+            Y\\
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            0 & M\\
+            M^T & 0\\
+        \end{bmatrix}
+        \cdot
+        \begin{bmatrix}
+            X\\
+            Y\\
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            M Y \\
+            M^T X
+        \end{bmatrix}
+    \end{align}
+    Thus:
+    \begin{align}
+        dX &= MY \\
+        dY &= M^T X
+    \end{align}
+    Claim: $-d$ is eigenvalue with eigenvector 
+    \begin{align}
+        \begin{bmatrix}
+            X\\
+            -Y\\
+        \end{bmatrix} =
+        \begin{bmatrix}
+            x_1\\
+            \vdots\\
+            x_k\\
+            -x_{k+1}\\
+            \vdots\\
+            -x_n
+        \end{bmatrix}
+    \end{align}
+    so we have
+    \begin{align}
+        \begin{bmatrix}
+            0 & M \\
+            M^T & 0 \\
+        \end{bmatrix}
+        \begin{bmatrix}
+            X \\
+            -Y
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            M(-Y)\\
+            M^T X
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            -M Y\\
+            M^T X
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            -dX\\
+            dY
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            -dX \\
+            -d(-Y)
+        \end{bmatrix}
+        = -d
+        \begin{bmatrix}
+            X\\
+            -Y
+        \end{bmatrix}
+        = -d
+        \begin{bmatrix}
+            x_1\\
+            \vdots\\
+            x_k\\
+            -x_{k+1}\\
+            \vdots\\
+            -x_n\\
+        \end{bmatrix}
+    \end{align}
+    Thus, $-d$ is eigenvalue as wanted.\\
+    $\lambda_{n-1} = -d$,
+    $-d$ is also eigenvalue $\implies G$ bipartite.
+    
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
 
 \begin{exercise}
 Let $G$ be a $d$-regular undirected graph. What is the multiplicity of $-d$

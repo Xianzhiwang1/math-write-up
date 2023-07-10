@@ -65,6 +65,22 @@ Let $A,B$ be $n\times n$ matrices such that $Av_{i}=Bv_{i}$ ($0\leq i<n$)
 for a basis $(v_{i})$ for $\mathbb{R}^{n}$. Then $A=B$.
 \end{lemma}
 
+\begin{proof}
+    We show $A=B$ by showing $Ax = Bx$ for all $x \in \mathbb{R}^n$.
+    For all vector $x$, decompose $x = \sum_{i=0}^{n-1} \alpha_i v_i$,
+    \begin{align}
+        Ax &= A(\sum_i \alpha_i v_i)\\
+        &= \sum_i \alpha_i A(v_i)\\
+        &= \sum_i \alpha_i B v_i\\
+        &=  B (\sum_i \alpha_i v_i)\\
+        &= B(x)
+    \end{align}
+    for all $x \in \mathbb{R}^n$.
+    
+\end{proof}
+
+
+
 \begin{theorem}
 The following hold for $1\leq i,j<n$: \newline
 1) $U_{i}^{2}=U_{i}$; \newline
@@ -73,6 +89,51 @@ The following hold for $1\leq i,j<n$: \newline
 4) $\dsum\limits_{k=1}^{n}U_{k}=I$;\newline
 5) $\dsum\limits_{k=1}^{n}\lambda _{k}U_{k}=A$;
 \end{theorem}
+
+\begin{proof}
+1) 
+\begin{align}
+    U_i^2 = (b_i b_i^T)^2 = b_i b_i^T b_i b_i^T = b_i b_i^T = U_i
+\end{align}
+2)
+\begin{align}
+    b_i b_i^T b_j b_j^T = b_i \cdot 0 \cdot b_j^T = 0 \ (i \neq j)
+\end{align}
+3)
+\begin{align}
+    A U_i = A b_i b_i^T = \lambda_i b_i b_i^T = \lambda_i U_i
+\end{align}
+since $b_0, b_1, \ldots, b_{n-1}$ is eigenbasis.\\
+4)
+\begin{align}
+    \sum_{k=1}^n U_k &= U_1 + U_2 + \ldots + U_n\\
+    &= b_1 b_1^T + b_2 b^2^T + \ldots + b_n b_n^T\\
+    &=
+    \begin{bmatrix}
+        b_1 & b_2 & \ldots & b_n\\
+    \end{bmatrix} \cdot
+    \begin{bmatrix}
+        b_1^T\\
+        b_2^T\\
+        \vdots\\
+        b_n^T
+    \end{bmatrix} = I
+\end{align}
+since it's the product of a matrix with orthonormal columns with its transpose.\\
+5)
+\begin{align}
+    \sum_{k=1}^n \lambda_k U_k &= A\\
+    \sum_{k=1}^n \lambda_k U_k &= \sum_k \lambda_k b_k b_k^T\\
+    &= \sum_k A b_k b_k^T\\
+    &= A \sum_k b_k b_k^T\\
+    &= A \sum_k U_k
+    = A I
+    = A
+\end{align}
+
+
+\end{proof}
+
 
 \begin{definition}
 For $x,y\in V(G)$ let the \emph{distance} $d(x,y)$ be the minimal length of

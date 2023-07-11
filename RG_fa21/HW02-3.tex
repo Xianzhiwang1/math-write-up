@@ -1,0 +1,72 @@
+\documentclass{article}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{RG \ \#02-3}
+\newcommand{\hmwkDueDate}{Sept 2021}
+\newcommand{\hmwkClass}{RG}
+\newcommand{\hmwkClassTime}{fa21}
+\newcommand{\hmwkClassInstructor}{Professor Csik\'os Bal\'azs}
+\newcommand{\hmwkAuthorName}{\textbf{Xianzhi} }
+\newcommand{\hmwkAuthor}{\textit{Xianzhi Wang}}
+
+\input{preambleBloat.tex}
+% \usepackage{xianzhi}
+
+\begin{document}
+
+\maketitle
+RG HW 02 Question 3
+\pagebreak
+
+\begin{homeworkProblem}
+    First we fix a chart 
+    \begin{align}
+        \Phi^{-1} : \mathbb{R}^2 &\xrightarrow[]{} S^2 \\
+        (\phi, \theta) &\xrightarrow[]{} \Phi^{-1}(\phi, \theta) := (R \cos \phi \sin \theta, R \sin \phi \sin \theta, R \cos \theta)
+    \end{align}
+    where $R$ is the radius of sphere $S^2$.\\
+    Now we calculate the Riemannian Metric induced from $\mathbb{R}^3$.
+    \begin{align}
+        (\phi, \theta) &\xrightarrow[]{\Phi^{-1}} (x,y,z)\\
+        \frac{ \partial }{ \partial \phi } \left( \Phi^{-1} \left( \phi, \theta \right)\right) 
+        &= \frac{ \partial x }{ \partial \phi } \frac{ \partial  }{ \partial x } \left( \Phi^{-1} \left( \phi, \theta \right)\right) 
+        + \frac{ \partial y }{ \partial \phi } \frac{ \partial  }{ \partial y } \left( \Phi^{-1} \left( \phi, \theta \right)\right) 
+        + \frac{ \partial z }{ \partial \phi } \frac{ \partial }{ \partial z } \left( \Phi^{-1} \left( \phi, \theta \right)\right) \\
+        &= (-R \sin \phi \sin \theta, R \cos \phi \sin \theta, 0)
+    \end{align}
+    In basis $\frac{ \partial }{ \partial x }, \frac{ \partial }{ \partial y }, \frac{ \partial }{ \partial z }$.\\
+    \begin{align}
+        \frac{ \partial }{ \partial \theta } &= \frac{ \partial x }{ \partial \theta } \frac{ \partial }{ \partial x } 
+        + \frac{ \partial y }{ \partial \theta } \frac{ \partial }{ \partial y }
+        + \frac{ \partial z }{ \partial \theta } \frac{ \partial  }{ \partial z }\\
+        &= (R \cos \phi \cos \theta, R \sin \phi \cos \theta, -R \sin \theta)\\
+        g_{\theta, \theta} &= \left\langle \partial_{\theta}, \partial_{\theta} \right\rangle 
+        = \left\langle \frac{ \partial  }{ \partial \theta }, \frac{ \partial  }{ \partial \theta }\right\rangle
+        = R^2 \cos^2 \phi \cos^2 \theta + R^2 \sin^2 \phi \cos^2 \theta + R^2 \sin^2 \theta = R^2
+    \end{align}
+
+             
+    
+
+
+\end{homeworkProblem}
+
+\pagebreak
+
+
+
+\begin{homeworkProblem}
+    Find the derivative of \(f(x) = x^4 + 3x^2 - 2\)
+\end{homeworkProblem}
+
+
+\end{document}

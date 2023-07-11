@@ -1,0 +1,186 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.2cm, right=2.2cm]{geometry}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+
+\begin{document}
+
+\title{Sheet 2: Ultralimits and the amenability of $\mathbb{Z}$ }
+\author{BSM\ }
+\date{}
+\maketitle
+
+The goal of this sheet is to prove the existence of a `universal density
+function' on the integers. \bigskip
+
+For a set $X$ let $P(X)$ denote the set of subsets of $X$.
+
+\begin{theorem}
+There exists a function $m:P(\mathbb{Z})\rightarrow\lbrack0,1]$ that
+satisfies the following: \newline
+1) $m(\mathbb{Z)}=1$;\newline
+2) $m(A\cup B)=m(A)+m(B)$ for all $A,B\subseteq\mathbb{Z}$ with $A\cap
+B=\not \emptyset $; \newline
+3) for every integer $z\in\mathbb{Z}$ and $A\subseteq\mathbb{Z}$ we have $%
+m(A+z)=m(A)$.
+\end{theorem}
+
+Such a function is called an \emph{invariant mean}. One way to produce it is
+as follows.
+
+\begin{definition}
+A set system $U\subseteq P(X)$ is a \emph{filter}, if the following hold: 
+\newline
+1) $\emptyset\notin U$; \newline
+2) If $A\in U$ and $A\subseteq B$ then $B\in U$; \newline
+3) For every $A,B\in U$ we have $A\cap B\in U$.
+\end{definition}
+
+\begin{definition}
+The set system $U\subseteq P(X)$ is an \emph{ultrafilter}, if it is a filter
+and: \newline
+4) For every $A\in P(X)$, either $A\in U$ or $X\diagdown A\in U$.
+\end{definition}
+
+\begin{exercise}
+Show that $A\in U$ or $X\diagdown A\in U$ can not both hold in an
+ultrafilter.
+\end{exercise}
+
+You should think of an ultrafilter, as a `perfect voting scheme' - here,
+elements of the ultrafilter are `majority' and non-elements are `minority'.
+A trivial example for an ultrafilter is to take some fixed $x\in X$ and let $%
+A\in U$ if and only if $x\in A$. (This would be a dictatorship). One can
+prove that there exists nontrivial ultrafilters, but no one has seen one.
+Here is a way to get one.
+
+\begin{lemma}
+Let $X$ be an infinite set. Then the set of cofinite subsets 
+\begin{equation*}
+F=\left\{ A\in P(X)\mid X\diagdown A\text{ is finite}\right\} 
+\end{equation*}
+forms a filter.
+\end{lemma}
+
+\begin{theorem}
+Let $X$ be an infinite set. Then every filter on $X$ is contained in an
+ultrafilter.
+\end{theorem}
+
+Hint: Use Zorn's lemma.
+
+\begin{exercise}
+The cofinite filter can not be a subset of any trivial ultrafilter.
+\end{exercise}
+
+So, there exists a nontrivial ultrafilter. This allows us to define a really
+cool notion, called the ultralimit.
+
+\begin{definition}
+Let $U\subseteq P(\mathbb{N})$ be an ultrafilter. Let $(a_{n})$ be a real
+sequence and $a$ a real number. We say that 
+\begin{equation*}
+\lim\nolimits_{U}(a_{n})=a 
+\end{equation*}
+(or, that the \emph{ultralimit} of $a_{n}$ is $a$) if for all $\varepsilon>0$
+the set 
+\begin{equation*}
+\left\{ n\in\mathbb{N}\mid\left\vert a_{n}-a\right\vert <\varepsilon\right\}
+\in U\text{.}
+\end{equation*}
+\end{definition}
+
+That is, if every open neighborhood of $a$ contains the majority of the
+sequence, according to $U$.
+
+In the following, we fix a nontrivial ultrafilter $U\subseteq P(\mathbb{N})$
+for good.
+
+\begin{lemma}
+The ultralimit, if exists, is unique.
+\end{lemma}
+
+\begin{theorem}
+Every bounded sequence has an ultralimit.
+\end{theorem}
+
+Hint: Remember why every bounded sequence has a convergent subsequence.
+\bigskip
+
+So, EVERY\ bounded sequence is convergent here! :) It turns out that the
+ultralimit also behaves nicely under arithmetic operations.
+
+\begin{theorem}
+Let $(a_{n})$ and $(b_{n})$ be bounded real sequences. Then we have: \newline
+1) $\lim\nolimits_{U}(a_{n}+b_{n})=\lim\nolimits_{U}(a_{n})+\lim%
+\nolimits_{U}(b_{n})$; \newline
+2) $\lim\nolimits_{U}(a_{n}b_{n})=\lim\nolimits_{U}(a_{n})\lim%
+\nolimits_{U}(b_{n})$;\newline
+3)\ if $\lim (a_{n})=a$ then $\lim_{U}(a_{n})=a$.
+\end{theorem}
+
+\begin{exercise}
+What do we get when $U$ is a trivial ultrafilter? Does all the above hold?
+\end{exercise}
+
+Now, we can take the well-known density notion on $\mathbb{Z}$ and `ultra'
+it.
+
+\begin{definition}
+For a subset $A\subseteq Z$ let 
+\begin{equation*}
+m_{n}(A)=\frac{\left\vert A\cap\lbrack-n,\ldots,n]\right\vert }{2n+1}
+\end{equation*}
+be the $n$-th density of $A$.
+\end{definition}
+
+Of course, not every subset has a density.
+
+\begin{exercise}
+Find a subset of $A$ such that $\lim m_{n}(A)$ does not exist.
+\end{exercise}
+
+And, here we go.
+
+\begin{theorem}
+Let $U$ be a nontrivial ultrafilter on $N$. Then 
+\begin{equation*}
+m(A)=\lim\nolimits_{U}(m_{n}(A)) 
+\end{equation*}
+is an invariant mean on $\mathbb{Z}$.
+\end{theorem}
+
+\begin{exercise}
+Show that for any invariant mean $m$ on $\mathbb{Z}$, we have $m(d\mathbb{Z}%
+)=1/d$.
+\end{exercise}
+
+\end{document}

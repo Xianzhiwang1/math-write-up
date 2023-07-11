@@ -1,0 +1,201 @@
+\documentclass{article}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{GAL \ \#09}
+\newcommand{\hmwkDueDate}{Apr 29, 2022}
+\newcommand{\hmwkClass}{Galois Theory}
+\newcommand{\hmwkClassTime}{Section 12 and 13}
+\newcommand{\hmwkClassInstructor}{Professor Matyas Domokos}
+\newcommand{\hmwkAuthorName}{\textbf{Xianzhi} }
+\newcommand{\hmwkAuthor}{\textit{Xianzhi Wang}}
+
+\input{preambleBloat.tex}
+% \usepackage{xianzhi}
+
+\begin{document}
+
+\maketitle
+HW09 \\
+Apr 29, 2022 \\
+Exercise 12.4.11\\
+Exercise 13.3.3\\
+Exercise 13.3.5\\
+\pagebreak
+
+\begin{homeworkProblem}
+    \textbf{Exercise 12.4.11} Factor $x^4 + x + 1 \in \F_2[x]$ as a product of irreducibles over $\F_4$.\\
+    \solution \\
+
+
+
+\end{homeworkProblem}
+
+\pagebreak
+
+
+\begin{homeworkProblem}
+    Write part of \alg{Quick-Sort($list, start, end$)}
+
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem}
+    \pagebreak
+
+    \part
+
+    Calculate the bias and the variance for the estimated slope
+    \(\hat{\beta_1}\).
+    \\
+
+    \solution
+
+    For the bias, we need to calculate the expected value
+    \(\E[\hat{\beta_1}]\):
+
+    \[
+        \begin{split}
+            \E[\hat{\beta_1}]
+            &= \E \left[ \frac{
+                \sum {x_i Y_i}
+            }{
+                \sum x_i^2
+            }\right]
+            \\
+            &= \frac{
+                \sum {x_i \E[Y_i]}
+            }{
+                \sum x_i^2
+            }
+            \\
+            &= \frac{
+                \sum {x_i (\beta_1 x_i)}
+            }{
+                \sum x_i^2
+            }
+            \\
+            &= \frac{
+                \sum {x_i^2 \beta_1}
+            }{
+                \sum x_i^2
+            }
+            \\
+            &= \beta_1 \frac{
+                \sum {x_i^2 \beta_1}
+            }{
+                \sum x_i^2
+            }
+            \\
+            &= \beta_1
+        \end{split}
+    \]
+
+    Thus since our estimator's expected value is \(\beta_1\), we can conclude
+    that the bias of our estimator is 0.
+    \\
+
+    For the variance:
+
+    \[
+        \begin{split}
+            \Var[\hat{\beta_1}]
+            &= \Var \left[ \frac{
+                \sum {x_i Y_i}
+            }{
+                \sum x_i^2
+            }\right]
+            \\
+            &=
+            \frac{
+                \sum {x_i^2}
+            }{
+                \sum x_i^2 \sum x_i^2
+            } \Var[Y_i]
+            \\
+            &=
+            \frac{
+                \sum {x_i^2}
+            }{
+                \sum x_i^2 \sum x_i^2
+            } \Var[Y_i]
+            \\
+            &=
+            \frac{
+                1
+            }{
+                \sum x_i^2
+            } \Var[Y_i]
+            \\
+            &=
+            \frac{
+                1
+            }{
+                \sum x_i^2
+            } \sigma^2
+            \\
+            &=
+            \frac{
+                \sigma^2
+            }{
+                \sum x_i^2
+            }
+        \end{split}
+    \]
+
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem}
+
+    \begin{proof}
+
+        \[
+            \begin{split}
+                a_kn^k + a_{k - 1}n^{k - 1} + \hdots + a_1n^1 + a_0n^0 &=
+                \\
+                &\leq (a_k + a_{k - 1} \hdots a_1 + a_0) \cdot n^k
+                \\
+                &= A \cdot n^k
+                \\
+                &\leq c_2 \cdot n^k
+            \end{split}
+        \]
+    \end{proof}
+\end{homeworkProblem}
+
+\pagebreak
+
+%
+% Non sequential homework problems
+%
+
+% Jump to problem 18
+\begin{homeworkProblem}[18]
+    Evaluate \(\sum_{k=1}^{5} k^2\) and \(\sum_{k=1}^{5} (k - 1)^2\).
+\end{homeworkProblem}
+
+% Continue counting to 19
+\begin{homeworkProblem}
+    Find the derivative of \(f(x) = x^4 + 3x^2 - 2\)
+\end{homeworkProblem}
+
+% Go back to where we left off
+\begin{homeworkProblem}[6]
+    Evaluate the integrals
+    \(\int_0^1 (1 - x^2) \dx\)
+    and
+    \(\int_1^{\infty} \frac{1}{x^2} \dx\).
+\end{homeworkProblem}
+
+\end{document}

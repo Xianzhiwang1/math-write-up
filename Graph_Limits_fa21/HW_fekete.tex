@@ -70,8 +70,31 @@
     Thus, $\limsup_{n \mapsto \infty} \frac{ a_n }{ n } \leq \frac{ a_{n_0} }{ n_0 } \leq L + \epsilon$\\
     since $\epsilon > 0$ is arbitrary, we could make $\epsilon \mapsto 0$, so
     \begin{align}
-        \limsup_{n \mapsto \infty}
+        \limsup_{n \mapsto \infty} \frac{ a_n }{ n } \leq L = \inf_{n \geq 0} \frac{ a_{n} }{ n }
     \end{align}
+    In other direction,
+    \begin{align}
+        \limsup_{n \implies \infty} \frac{ a_n }{ n } 
+        \geq \liminf_{n \implies \infty} \frac{ a_n }{ n } \geq \inf_{n\geq 0} \frac{ a_n }{ n }
+    \end{align}
+    so 
+    \begin{align}
+        \lim_{n \implies \infty} \frac{ a_n }{ n } = \limsup_{n \implies \infty} \frac{ a_n }{ n } 
+        = \inf_{n\geq 0} \frac{ a_n }{ n }.
+    \end{align}
+    \textbf{end of proof.}\\
+
+    $G$ finite undirected $d$-regular graph $n$ vertices,\\
+    $A$: adjacency operator\\
+    $b_0, b_1, \ldots, b_{n-1}$ orthonormal eigenbasis\\
+    $\lambda_0 \geq \ldots \geq \lambda_{n-1}$\\
+    $\rho = \rho_0 (G)$ spectral radius.\\
+    $b_i^T b_i = 1 (0 \leq i < n)$.\\
+    $U_i = b_i b_i^T (0 \leq i < n)$.\\
+    orthonormal eigendecomposition for $A$.\\
+
+    
+    
     
     
     

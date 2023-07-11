@@ -1,0 +1,75 @@
+\documentclass{article}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{Graph Limits \ lower bound}
+\newcommand{\hmwkDueDate}{Nov 16, 2021}
+\newcommand{\hmwkClass}{Graph Limits}
+\newcommand{\hmwkClassTime}{fa21}
+\newcommand{\hmwkClassInstructor}{Professor Miklos Abert}
+\newcommand{\hmwkAuthorName}{\textbf{Xianzhi} }
+\newcommand{\hmwkAuthor}{\textit{Xianzhi Wang}}
+
+\input{preambleBloat.tex}
+% \usepackage{xianzhi}
+
+\begin{document}
+
+\maketitle
+\pagebreak
+
+\begin{homeworkProblem}
+    If $G_n$ are finite, connected, $d$-regular, $\lvert G_n \rvert \implies \infty$,
+    $\implies \lim \inf \rho_0(G_n) \geq \rho (T_d) = \lVert A_{T_d} \rVert = 2 \sqrt[]{d-1}. $ \\
+    $T_d$ is the infinite $d$-regular tree.\\
+    Let $\omega_{G_n} = \#$ of closed walks of length $2k$ on $G_n$
+    at a vertex $v$.\\
+    $\omega_{T_d} = \#$ of closed walks of length $2k$ starting 
+    at the root of $T_d$.\\
+    $\omega_{G_n} \geq \omega_{T_d}$ since given a walk on $T_d$,
+    we could have the same walk on $G$,
+    but $G$ may have cycles that creates more walks.\\
+    $\omega_{T_d} = C_k (d-1)^k$ where
+    $C_k = \frac{ 1 }{ k+1 } {2k \choose k}$ is the $k$-th Catalan number.\\
+    We use $C_k$ since valid walks cannot have more ``return''
+    steps than ``away'' steps.
+    $(d-1)^k$ is because at each step, there is $d-1$
+    possible ways to go on, and we go away $k$ steps.
+    $C_k$ has asymptotic $\frac{ 4^k }{ k^{\frac{ 3 }{ 2 }} }$.\\
+    so $\omega_{T_d}$ has asymptotic 
+    \begin{align}
+        \frac{ 4^k }{ k^{3/2} } (d-1)^k = \frac{ 1 }{ k^{3/2} } 2^{2k} \left( \sqrt[]{d-1} \right)^{2k} = k^{-3/2} \left( 2 \ \sqrt[]{d-1} \right)^{2k} 
+    \end{align}
+    Now
+    \begin{align}
+        d^{2k} + (n-1) \rho_0^{2k} &\geq \sum_{i=0}^{n-1} \lambda_i^{2k} = n \omega_{G_n} \geq n \cdot \omega_{T_d}\\
+        (n-1) \rho_0^{2k} &\geq n \cdot C_k (d-1)^k - d^{2k}\\
+        n \rho_0^{2k} &\geq n \cdot C_k (d-1)^k - d^{2k}\\
+    \rho_0^{2k} &\geq C_k (d-1)^k - \frac{d^{2k}}{n}\\
+    \rho_0 &\geq 2 \ \sqrt[]{d-1}, \ \text{as} \ n \mapsto \infty
+    \end{align}
+    The $i,j$-th entry of $A^k$ is the number of path of length $k$
+    from vertex $i$ to vertex $j$,
+    \begin{align}
+        \sum_{i=0}^{n-1} \lambda_i^{2k} = trace \left( A^{2k} \right) = n \cdot \omega_{G_n}
+    \end{align}
+    there are $\omega_{G_n}$ at a specific vertex $v$,
+    and there are $n$ vertices in $G_n$.
+    
+    
+
+\end{homeworkProblem}
+
+\pagebreak
+
+
+
+\end{document}

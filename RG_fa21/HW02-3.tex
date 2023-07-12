@@ -53,6 +53,123 @@ RG HW 02 Question 3
         = \left\langle \frac{ \partial  }{ \partial \theta }, \frac{ \partial  }{ \partial \theta }\right\rangle
         = R^2 \cos^2 \phi \cos^2 \theta + R^2 \sin^2 \phi \cos^2 \theta + R^2 \sin^2 \theta = R^2
     \end{align}
+    similarly,
+    \begin{align}
+        g_{\phi \phi} = \left\langle \partial_{\phi}, \partial_{\phi} \right\rangle
+        = \left\langle \frac{ \partial }{ \partial \phi }, \frac{ \partial }{ \partial \phi } \right\rangle
+        = R^2 \sin^2 \phi \sin^2 \theta + R^2 \cos^2 \phi \sin^2 \theta 
+        = R^2 \sin^2 \theta
+    \end{align}
+    similarly,
+    \begin{align}
+        g_{\theta \phi} = g_{\phi \theta}
+        = \left\langle \frac{ \partial }{ \partial \phi }, \frac{ \partial }{ \partial \theta } \right\rangle 
+        = - R^2 \sin \phi \sin \theta \cos \phi \cos \theta
+        + R^2 \cos \phi \sin \theta \sin \phi \cos \theta
+        + 0
+        = 0
+    \end{align}
+    Thus,
+    \begin{align}
+        \left[ g_{\phi \theta} \right] =
+        \begin{bmatrix}
+            g_{\phi \phi} & g_{\phi \theta} \\
+            g_{\theta \phi} & g_{\theta \theta}\\
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            R^2 \sin^2 \theta & 0 \\
+            0 & R^2
+        \end{bmatrix}
+    \end{align}
+    $\phi$ is (encoded 1) $x$-axis, $\theta$ (encoded 2) is $y$-axis.\\
+    \begin{align}
+        \begin{bmatrix}
+        g_{\phi \phi} & g_{\phi \theta} \\
+        g_{\theta \phi} & g_{\theta \theta} \\
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            R^2 \sin^2 \theta & 0 \\
+            0 & R^2
+        \end{bmatrix}
+        =: \left[ g_{\phi \theta} \right]
+    \end{align}
+    similarly
+    \begin{align}
+        \begin{bmatrix}
+            g^{\phi \phi} & g^{\phi \theta}\\
+            g^{\theta \phi} & g^{\theta \theta}\\
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            \frac{ 1 }{ R^2 \sin^{2} \theta } & 0 \\
+            0 & \frac{ 1 }{ R^{2} }\\
+        \end{bmatrix} =: \left[ g^{\phi \theta}\right]
+    \end{align}
+    Now, 
+    \begin{align}
+        \Gamma_{\phi \phi}^{\phi} &= \sum_{\ell = 1}^2 \frac{ 1 }{ 2 } \left( \partial_{\phi} g_{\phi \ell} + \partial_{\phi} g_{\phi \ell} 
+        - \partial_{\ell} g_{\phi \phi}\right)
+        g^{\ell \phi}\\
+        &= \frac{ 1 }{ 2 } \left( \frac{ \partial }{ \partial \phi } g_{\phi \phi} + 
+        \frac{ \partial }{ \partial \phi } g_{\phi \phi}
+        - \frac{ \partial }{ \partial \phi } g_{\phi \phi}\right)
+        g^{\phi \phi}\\
+        &+ \frac{ 1 }{ 2 }
+        \left(\frac{ \partial }{ \partial \phi } g_{\phi \theta}
+        + \frac{ \partial }{ \partial \phi }g_{\phi \theta}
+    -\frac{ \partial }{ \partial \theta } g_{\phi \phi}\right)
+    g^{\theta \phi}\\
+    &= 0 \cdot \frac{ 1 }{ R^2 \sin^{2} \theta } + \frac{ 1 }{ 2 }\left( - \frac{ \partial }{ \partial \theta }(R^2 \sin^2 \theta) \right) \cdot 0 = 0
+    \end{align}
+    similarly,
+    \begin{align}
+        \Gamma^{\phi}_{\theta \theta} &= \sum_{\ell = 1}^2 \frac{ 1 }{ 2 }
+        \left( \partial_{\theta} g_{\theta \ell}
+        + \partial_{\theta} g_{\theta \ell}
+    -\partial_{\ell} g_{\theta \theta}\right)
+    g^{\ell \phi}\\
+    &= \frac{ 1 }{ 2 }
+    \left( \partial_{\theta} g_{\theta \phi}
+    + \partial_{\theta} g_{\theta \phi}
+- \partial_{\phi} g_{\theta \theta}\right)
+g^{\phi \phi}\\
+&+ \frac{ 1 }{ 2 }
+\left( \partial_{\theta} g_{\theta \theta}
++ \partial_{\theta} g_{\theta \theta}
+- \partial_{\theta} g_{\theta \theta}\right)
+g^{\theta \phi}\\
+&= \frac{ 1 }{ 2 } (0+0-0)\frac{ 1 }{ R^2 \sin^2 \theta } + \frac{ 1 }{ 2 }(0+0-0)\cdot 0
+=0
+    \end{align}
+    Similarly,
+    \begin{align}
+        \Gamma^{\theta}_{\theta \theta} 
+        &= \sum_{\ell = 1}^2 \frac{ 1 }{ 2 }
+        \left( \partial_{\theta} g_{\phi \ell}
+    +\partial_{\phi} g_{\theta \ell}
+-\partial_{\ell} g_{\theta \phi} \right) 
+g^{\ell \theta}\\
+&= \frac{ 1 }{ 2 }
+\left(
+\partial_{\theta} g_{\phi \phi} 
++\partial_{\theta} g_{\theta \phi} 
+-\partial_{\phi} g_{\theta \phi} 
+\right)
+g^{\phi \theta}\\
+&+ \ldots\\
+&= \frac{ 1 }{ 2 }(0+0-0) \cdot 0 
++ \frac{ 1 }{ 2 } (0 + 0 - 0) \frac{ 1 }{ R^2 } =0
+    \end{align}
+    
+    
+    
+    
+    
+    
+    
+    
 
              
     
